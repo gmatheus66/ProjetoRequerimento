@@ -1,0 +1,39 @@
+.menu{
+    padding:0px;
+    margin:0px;
+    background-color:#266b29;
+    list-style:none;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+    height: 50%;
+}
+
+li{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.menu ul li { display: inline; }
+a:link 
+{ 
+text-decoration:none; 
+
+} 
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+.s{
+	margin-top: 5%;
+	font-size: 30px;
+	text-align: center;
+}
+body{
+	background-color: #ffffff;
+}

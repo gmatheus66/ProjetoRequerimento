@@ -2,45 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Longin</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
 </head>
 <body>
 
-
-<?php
-
-    $dado = $_GET['nome'] . ';' . $_GET['sobrenome'] . ';' . $_GET['idade'] . ';' .  $_GET['e-mail']. ';' .  $_GET ['senha'] . ';' .  $_GET['matricula'] . ';' . "\n";
-
-    $handle = fopen('dados.csv', 'a+');
-    fwrite($handle, $dado);
-    fclose($dado);
-?>
 <div class="topo">
-<a href="index.html" class="a1"> IFPE</a>
-<br>
-<a href="listagem.php" class="a2"> LISTAGEM</a>
+    <a href="index.html" class="a1"> IFPE</a>
+    <br>
+    <a href="index.html" class="a2"> Início</a>
+    <a href="cadastro.php" class="a2"> Cadastro</a>
+    <a href="login.php" class="a2"> Login</a>
+    <a href="listagem.php" class="a2"> Listagem</a>
 </div>
+
+    
     <form action="login.php">
     <div class= "inpu">        
-
-        Nome: <input type="text" name="nome" class="inp1">
+        Matricula: <input type="text" name="Matricula">
         <br>
-        Sobrenome: <input type="text" name="sobrenome">
+        Senha: <input type="text" name="Senha">
         <br>
-        Idade: <input type="text" name="idade">
-        <br>
-        E-mail: <input type="text" name="e-mail">
-        <br>
-        Senha: <input type="text"  name="senha">
-        <br>
-        Matrícula: <input type="text" name="matricula">
-        <br>
-        <button type="submit" onclick="alert('Login efetuado com sucesso!')">Enviar</button>
+        <input type="submit" value="Entrar">
    </form>
  </div> 
 
-<div class="baixo"></div>
-   
+    <div class="baixo"></div>
 </body>
 </html>

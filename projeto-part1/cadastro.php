@@ -2,48 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
+    <title>Longin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
 
 
 <?php
-
-    $dado = $_GET['nome'] . ';' . $_GET['sobrenome'] . ';' . $_GET['idade'] . ';' .  $_GET['e-mail']. ';' .  $_GET ['senha'] . ';' .  $_GET['matricula'] . ';' . "\n";
-
-    $handle = fopen('csv/dados.csv', 'a+');
+    $dado = $_POST['nome'] . ';' . $_POST['sobrenome'] . ';' . $_POST['idade'] . ';' .  $_POST['e-mail']. ';' .  $_POST['senha'] . ';' . $_POST['senhaConfir'] . ';' . $_POST['matricula'] .  "\n";
+    $handle = fopen('csv/dados.csv', 'a');
     fwrite($handle, $dado);
-    fclose($dado);
 ?>
-<div class="topo">
+<div>
+<div id="degrtop" class="topo">
+<img class="foto" src="logoifpe.jpg">
+
 <a href="index.html" class="a1"> IFPE</a>
 <br>
-<a href="index.html" class="a2"> Início</a>
-<a href="cadastro.php" class="a2"> Cadastro</a>
-<a href="login.php" class="a2"> Login</a>
-<a href="listagem.php" class="a2"> Listagem</a>
+<a href="listagem.php" class="a2">LISTAGEM</a>
+<a href="index.html" class="a3">HOME</a>
 </div>
-    <form action="cadastro.php">
-    <div class= "inpu">        
+<div class= "input">        
+    <form action="login.php" method="POST">
 
-        Nome: <input type="text" name="nome" class="inp1">
+        <label>Nome:</label>
+        <input type="text" id="input" class="inp" name="nome" placeholder="Nome...">
         <br>
-        Sobrenome: <input type="text" name="sobrenome">
+
+        <label>Sobrenome:</label>
+        <input type="text" class="inp" name="sobrenome" placeholder="Sobrenome...">
         <br>
-        Idade: <input type="text" name="idade">
+
+        <label>Idade:</label>
+        <input type="text" class="inp" name="idade" placeholder="Idade...">
         <br>
-        E-mail: <input type="text" name="e-mail">
+
+        <label>E-mail:</label>
+        <input type="text" class="inp" name="e-mail" placeholder="E-mail...">
         <br>
-        Senha: <input type="password"  name="senha">
+
+        <label>Senha:</label>
+        <input type="password" class="inp" name="senha" placeholder="Senha...">
         <br>
-        Matrícula: <input type="text" name="matricula">
+
+        <label>Confirmar Senha:</label>
+        <input type="password" class="inp" name="senhaConfir" placeholder="Confirmar Senha...">
         <br>
-        <button type="submit" onclick="alert('Cadastro efetuado com sucesso!')">Enviar</button>
+
+        <label>Matrícula:</label>
+        <input type="text" class="inp" name="matricula" placeholder="Matrícula...">
+        <br>
+        <button type="submit" class="buuton" onclick="alert('Login efetuado com sucesso!')">Enviar</button>
    </form>
- </div> 
-
-<div class="baixo"></div>
-   
+</div> 
+<div id="debrbot" class="baixo"></div>
+</div>
+<footer></footer>  
 </body>
 </html>

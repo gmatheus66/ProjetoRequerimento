@@ -1,45 +1,104 @@
 body{
-	/*background-color:white ;*/
-	text-align: center;
-	margin: 0px;
+	padding: 0px, 0px, 0px, 0px;
 }
+
+/*Top*/
 .topo{
-	background-color: #266B29;
 	width: 100%;
 	height: 18vh;
 	position: fixed;
 	margin: 0%;
 	position: relative;
-	word-spacing: 10px;
-}
-
-.inp1{
-	margin-top: 10%;
+	background-color: #266B29;
+	background-image: linear-gradient(-45deg, #53A500, #266B29);
 
 }
+/*Foto*/
+.foto{
+	width: 4%;
+	height: 51%;
+	display: inline;
+	position: relative;
+	left: 1%;
+	top: 1%;
+}
+.divfoto{
+	display: inline;
+}
 
+/*Inputs*/
+.inp{
+	width: 50%;
+  	padding: 10px 10px;
+  	margin: 8px 0;
+  	display: inline-block;
+  	border: 1px solid #266B29;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+}
+.input{
+	height: 60vh;
+	position: relative;
+	text-align: center;
+}
+#input{
+	margin-top: 30px;
+}
+/*Button*/
+.buuton{
+	background-color: #53A500; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10%;
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+/*Bottom*/
 .baixo{
-    background-color: #18481c;
-    width: 100%;
-    height:20vh; 
-    display:block;
-    position: absolute;
-    bottom:0;
-
+	width: 100%;
+	height:20vh; 
+	display:block;
+	position: relative;	
+	background-color: #18481c;
+	background-image: linear-gradient(-45deg, #266B29, #18481c);
+	margin-bottom: -50%; 	
 }
-.inpu{
-	position: fixed;
-    top: 30%;
-    left:40%;
-}
-
+/*Links*/
 .a1{
 	text-decoration: none;
-	color:black;
+	color: white;
 	font-size: 250%;
+	margin-left: 42%;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.3em;
 }
 .a2{
 	text-decoration: none;
-	color:black;
+	color: white;
 	font-size: 150%;
+	margin-left: 40%;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.3em;
+}
+.a3{
+	text-decoration: none;
+	color: white;
+	font-size: 150%;
+	margin-left: 5%;
+	text-align: center;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.3em;
 }

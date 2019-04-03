@@ -2,6 +2,11 @@
 	padding: 0;
 	margin:0;
 }
+label{
+	text-align: left;
+}
+
+
 /*form */
 .form{
 	margin-top: 2.5%;
@@ -23,7 +28,8 @@
 	display: inline;
 	position: relative;
 	left: 1%;
-	top: 1%;
+	top: 2%;
+	margin-top: 0.5%;
 }
 .divfoto{
 	display: inline;
@@ -38,6 +44,8 @@
   	border: 1px solid #266B29;
   	border-radius: 4px;
   	box-sizing: border-box;
+  	margin-right: 3%;
+  	margin-left: 3%;
 }
 .input{
 	height: 60vh;
@@ -46,18 +54,24 @@
 }
 #input{
 	margin-top: 30px;
+	
 }
 /*Button*/
 .buuton{
-	background-color: #53A500; 
+  background-color: rgba(83, 165, 0, 1); 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 3%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1.5em;
   border-radius: 10%;
+  margin-top: 2%;
+}
+
+.buuton:hover{
+	background-color: rgba(83, 165, 0, 0.8);
 }
 
 /*Bottom*/
@@ -76,7 +90,7 @@
 	color: white;
 	display: inline;
 	font-size: 250%;
-	margin-left: 41%;
+	margin-left: 44%;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 	font-weight: 800;
     letter-spacing: -0.04em;
@@ -86,7 +100,7 @@
 	text-decoration: none;
 	color: white;
 	font-size: 150%;
-	margin-left: 40%;
+	margin-left: 46%;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 	font-weight: 800;
     letter-spacing: -0.04em;
@@ -98,7 +112,7 @@
 	color: white;
 	font-size: 150%;
 	margin-top: 0.2%;
-	margin-left: 45%;
+	margin-left: 48%;
 	width: 5%;
 	height: 15%;
 	text-align: center;

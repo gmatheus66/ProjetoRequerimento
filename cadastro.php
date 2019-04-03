@@ -18,9 +18,9 @@
     <div id="degrtop" class="topo">
         <img class="foto" src="imagens/logoifpe.png">
 
-        <a href="index.html" class="a1"> IFPE</a>
+        <a href="index.php" class="a1"> IFPE</a>
         
-        <a href="index.html" class="a3">HOME</a>
+        <a href="index.php" class="a3">HOME</a>
     </div>
 
 <div class= "input">        

@@ -28,7 +28,7 @@
 
         <label>Nome:</label>
         <input type="text" id="input" class="inp" name="nome" placeholder="Nome...">
-        <br>
+        
 
         <label>Sobrenome:</label>
         <input type="text" class="inp" name="sobrenome" placeholder="Sobrenome...">

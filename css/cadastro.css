@@ -3,7 +3,12 @@
 	margin:0;
 }
 label{
+	position: relative;
+	top: 30px;
 	text-align: left;
+	display: block;
+	margin-left: 19%;
+	margin-right: 75%;
 }
 
 
@@ -37,9 +42,9 @@ label{
 
 /*Inputs*/
 .inp{
-	width: 50%;
-  	padding: 10px 10px;
-  	margin: 8px 0;
+	/*height: 60vh;*/
+	width: 45%;
+  	padding: 15px;
   	display: inline-block;
   	border: 1px solid #266B29;
   	border-radius: 4px;
@@ -53,7 +58,7 @@ label{
 	text-align: center;
 }
 #input{
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 	
 }
 /*Button*/

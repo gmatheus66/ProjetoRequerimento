@@ -1,0 +1,44 @@
+body{
+	/*background-color:white ;*/
+	text-align: center;
+	margin: 0px;
+}
+.topo{
+	background-color: #266B29;
+	width: 100%;
+	height: 18vh;
+	position: fixed;
+	margin: 0%;
+	position: relative;
+	word-spacing: 10px;
+}
+
+.inp1{
+	margin-top: 10%;
+
+}
+
+.baixo{
+    background-color: #18481c;
+    width: 100%;
+    height:20vh; 
+    display:block;
+    position: absolute;
+    bottom:0;
+}
+.inpu{
+	position: fixed;
+    top: 40%;
+    left:40%;
+}
+
+.a1{
+	text-decoration: none;
+	color:black;
+	font-size: 250%;
+}
+.a2{
+	text-decoration: none;
+	color:black;
+	font-size: 150%;
+}

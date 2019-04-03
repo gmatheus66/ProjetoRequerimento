@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Longin</title>
+    <title>Cadastro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
@@ -14,17 +14,17 @@
     $handle = fopen('csv/dados.csv', 'a');
     fwrite($handle, $dado);
 ?>
-<div>
-<div id="degrtop" class="topo">
-<img class="foto" src="logoifpe.jpg">
 
-<a href="index.html" class="a1"> IFPE</a>
-<br>
-<a href="listagem.php" class="a2">LISTAGEM</a>
-<a href="index.html" class="a3">HOME</a>
-</div>
+    <div id="degrtop" class="topo">
+        <img class="foto" src="imagens/logoifpe.png">
+
+        <a href="index.html" class="a1"> IFPE</a>
+        
+        <a href="index.html" class="a3">HOME</a>
+    </div>
+
 <div class= "input">        
-    <form action="login.php" method="POST">
+    <form class="form" action="login.php" method="POST">
 
         <label>Nome:</label>
         <input type="text" id="input" class="inp" name="nome" placeholder="Nome...">

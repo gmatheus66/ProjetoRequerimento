@@ -1,18 +1,25 @@
+@font-face{
+    font-family: 'StMarie-Thin-webfont';
+    src: url('/fonts/StMarie-Thin-webfont.eot'); 
+}
+
 body{
     /*background-color:white ;*/
     text-align: center;
     margin: 0px;
 }
 .topo{
-    background-color: #266B29;
     width: 100%;
-    height: 18vh;
-    position: fixed;
+    height: 7vh;
     margin: 0%;
-    position: relative;
-    word-spacing: 10px;
+    position: sticky;
+    background-image: linear-gradient(-5deg, #81b277, #bfefa5);
 }
-
+nav {
+    position: sticky;
+    top: 0;
+    margin-bottom: 5%
+}
 .inp1{
     margin-top: 10%;
 }
@@ -36,10 +43,50 @@ body{
 }
 .a2{
     text-decoration: none;
-    color:black;
+    color:#5f7a06;
     font-size: 150%;
+    margin-right:2%;
+    font-family: 'AkzidenzGrotesk BQ Bold';
+
 }
 .explica{
     text-align: center;
     font-size: 150%;
+}
+.foto{
+    height: 5vh;
+    display: inline;
+    left: 1%;
+    top: 1%;
+    margin-right: 4%;
+    align-items: left;
+    margin-top: 1vh;
+    margin-left: 3vh;
+}
+.block1{
+    background-color: #78fcaf;
+}
+.teste{
+    font-size: 30px;
+}
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.bgBloco{
+    width: 100%;
+    height: 80vh;
+}
+.txtBloco{
+    position: absolute;
+    font-size: 32px;
+    left:20%;
+    top:50%;
+    font-weight: bold;
+}
+.container {
+  position: relative;
+}
+.degrade{
+    color: ; 
 }

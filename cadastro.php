@@ -32,27 +32,27 @@
 
         <label>Sobrenome:</label>
         <input type="text" class="inp" name="sobrenome" placeholder="Sobrenome...">
-        <br>
+      
 
         <label>Idade:</label>
         <input type="text" class="inp" name="idade" placeholder="Idade...">
-        <br>
+     
 
         <label>E-mail:</label>
         <input type="text" class="inp" name="e-mail" placeholder="E-mail...">
-        <br>
+      
 
         <label>Senha:</label>
         <input type="password" class="inp" name="senha" placeholder="Senha...">
-        <br>
+  
 
         <label>Confirmar Senha:</label>
         <input type="password" class="inp" name="senhaConfir" placeholder="Confirmar Senha...">
-        <br>
+   
 
         <label>Matrícula:</label>
         <input type="text" class="inp" name="matricula" placeholder="Matrícula...">
-        <br>
+     
         <button type="submit" class="buuton" onclick="alert('Login efetuado com sucesso!')">Enviar</button>
    </form>
 </div> 

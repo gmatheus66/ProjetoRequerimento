@@ -69,14 +69,17 @@ label{
   padding: 1% 3%;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 1.5em;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.7em;
   border-radius: 10%;
   margin-top: 2%;
 }
 
 .buuton:hover{
 	background-color: rgba(83, 165, 0, 0.8);
+	text-decoration: underline;
 }
 
 /*Bottom*/

@@ -8,22 +8,26 @@
 <body>
 
 <div class="topo">
+<img class="foto" src="imagens/logoifpe.png">
+
     <a href="index.html" class="a1"> IFPE</a>
-    <br>
-    <a href="index.html" class="a2"> Início</a>
-    <a href="cadastro.php" class="a2"> Cadastro</a>
-    <a href="login.php" class="a2"> Login</a>
-    <a href="listagem.php" class="a2"> Listagem</a>
+    
 </div>
 
     
     <form action="login.php">
-    <div class= "inpu">        
-        Matricula: <input type="text" name="Matricula">
+    <div class= "inpu">
+
+        <input type="text" class="inp" placeholder="Matricula">
         <br>
-        Senha: <input type="text" name="Senha">
+        <input type="text" class="inp" placeholder="Senha">
         <br>
-        <input type="submit" value="Entrar">
+       <button type="submit" class="buuton"  ">Enviar</button>
+        <br>
+        <br>
+         <a href="cadastro.php">Ainda não é cadastrado? Cadastre-se!</a>
+        <br> 
+        <a href="recuperar.php">Esqueceu a senha?</a>
    </form>
  </div> 
 

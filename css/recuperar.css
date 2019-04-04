@@ -15,6 +15,20 @@
 	background-color: #266B29;
 	background-image: linear-gradient(-45deg, #53A500, #266B29);
 }
+	 .r1 {
+	 text-align: center;
+	 margin-left: 35%;
+	 font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size: 2em;
+
+}
+   .r2 {
+   	text-align: center;
+	 margin-left: 43%;
+	  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size:2em;
+   }
+
 /*Foto*/
 .foto{
 	width: 4%;
@@ -29,18 +43,16 @@
 }
 
 /*Inputs*/
-.inp{
-	  width: 20%;
-  	padding: 10px 10px;
-  	margin: 15px;
-  	display: inline-block;
-  	border: 1px solid #266B29;
-  	border-radius: 4px;
-  	box-sizing: border-box;
-  	margin-left:40%;
- 
-	 }
-
+input{
+	display: inline-block;
+	height: 55px;
+	width: 50%;
+	margin: 8px 0;
+	border-radius: 4px;
+	border: 1px solid #266B29;
+	font-size: 16pt;
+	padding: 10px 10px;
+}
 .input{
 	height: 60vh;
 	position: relative;
@@ -49,6 +61,7 @@
 #input{
 	margin-top: 30px;
 }
+
 /*Butao*/
 .buuton {
     background-color: #53A500;
@@ -62,42 +75,36 @@
     border-radius: 10%;
     margin-left: 47%;
 }
-
 /*Bottom*/
 .baixo{
-	width: 100%;
+	width: 1050%;
 	height:15vh; 
 	display:block;
 	position: relative;	
 	background-color: #18481c;
 	background-image: linear-gradient(-45deg, #53A500, #266B29);
-	margin-top: 25%;
+	margin-top: 2%;
 }
 /*Links*/
 .a1{
 	text-decoration: none;
 	color: white;
 	display: inline;
-	font-size: 250%;
-	margin-left: 41%;
+	font-size: 230%;
+	margin-left: 35%;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 	font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 1.3em;
 }
-a{
-	color:black;
-	text-decoration: none;
-	margin-left: 40%;
-  margin-left:45%;
-}
-a:hover{
-  text-decoration: underline; 	
-}
+
+
 
 input{
 	display: block;
-	height: 5%;
+	height: 7%;
 	width: 55%;
-  width: 22em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 27em;
 }

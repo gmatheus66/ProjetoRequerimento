@@ -97,8 +97,8 @@ label{
 	text-decoration: none;
 	color: white;
 	display: inline;
-	font-size: 250%;
-	margin-left: 44%;
+	font-size: 400%;
+	margin-left: 40%;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 	font-weight: 800;
     letter-spacing: -0.04em;
@@ -118,9 +118,9 @@ label{
 	display: block;
 	text-decoration: none;
 	color: white;
-	font-size: 150%;
+	font-size: 200%;
 	margin-top: 0.2%;
-	margin-left: 48%;
+	margin-left: 45%;
 	width: 5%;
 	height: 15%;
 	text-align: center;

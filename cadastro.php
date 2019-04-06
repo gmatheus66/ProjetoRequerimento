@@ -7,14 +7,7 @@
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
-
-
-<?php
-    $dado = $_POST['nome'] . ';' . $_POST['sobrenome'] . ';' . $_POST['idade'] . ';' .  $_POST['e-mail']. ';' .  $_POST['senha'] . ';' . $_POST['senhaConfir'] . ';' . $_POST['matricula'] .  "\n";
-    $handle = fopen('csv/dados.csv', 'a');
-    fwrite($handle, $dado);
-?>
-
+<div class="geral">
     <div id="degrtop" class="topo">
         <img class="foto" src="imagens/logoifpe.png">
 
@@ -35,11 +28,12 @@
       
 
         <label>Idade:</label>
-        <input type="text" class="inp" name="idade" placeholder="Idade...">
-     
+        <input type="number" class="inp" name="idade"  placeholder="Idade...">
+           <label>Matrícula:</label>
+        <input type="text" class="inp" name="matricula" placeholder="Matrícula...">
 
         <label>E-mail:</label>
-        <input type="text" class="inp" name="e-mail" placeholder="E-mail...">
+        <input type="e-mail" class="inp" name="e-mail" placeholder="E-mail...">
       
 
         <label>Senha:</label>
@@ -50,14 +44,14 @@
         <input type="password" class="inp" name="senhaConfir" placeholder="Confirmar Senha...">
    
 
-        <label>Matrícula:</label>
-        <input type="text" class="inp" name="matricula" placeholder="Matrícula...">
+     
      
         <button type="submit" class="buuton" onclick="alert('Login efetuado com sucesso!')">Enviar</button>
    </form>
+   <div id="debrbot" class="baixo"></div>
+    
 </div> 
-<div id="debrbot" class="baixo"></div>
+
 </div>
-<footer></footer>  
 </body>
 </html>

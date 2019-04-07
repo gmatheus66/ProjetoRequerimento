@@ -14,6 +14,7 @@
     <a href="cadastro.php" class="a2"> Cadastro</a>
     <a href="login.php" class="a2"> Login</a>
     <a href="listagem.php" class="a2"> Listagem</a>
+    <a href="cadastroADM.php" class="a2"> cadastro ADM </a>
 </div>
 <div>
     

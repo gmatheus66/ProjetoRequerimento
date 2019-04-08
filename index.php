@@ -7,17 +7,13 @@
     <title>Inicial</title>
 </head>
 <body>
-    
-<div class="topo" align="left">
-        <img class="foto" src="imagens/logoifpe.png">
-    <a href="index.html" class="a2"> Inicio</a>
-    <a href="cadastro.php" class="a2"> Cadastro</a>
-    <a href="login.php" class="a2"> Login</a>
-    <a href="listagem.php" class="a2"> Listagem</a>
-    <a href="cadastroADM.php" class="a2"> cadastro ADM </a>
-</div>
-<div>
-    
+
+<div class="banner"> 
+    <img class="foto" src="imagens/banner.png">  
+    <a href="index.html" class="a2"> HOME</a>
+    <a href="cadastro.php" class="a2"> CADASTRO</a>
+    <a href="login.php" class="a2"> LOGIN</a>
+    <a href="cadastroADM.php" class="a2"> CADASTRO ADM </a>
 </div>
 
 <!--     <div>

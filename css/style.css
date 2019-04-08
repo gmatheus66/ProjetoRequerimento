@@ -1,6 +1,6 @@
 @font-face{
-    font-family: 'StMarie-Thin-webfont';
-    src: url('/fonts/StMarie-Thin-webfont.eot'); 
+    font-family: 'OpenSans-Bold';
+    src: url('/fonts/OpenSans-Bold.ttf'); 
 }
 
 body{
@@ -43,25 +43,29 @@ nav {
 }
 .a2{
     text-decoration: none;
-    color:#5f7a06;
+    color: #FFF;
     font-size: 150%;
     margin-right:2%;
-    font-family: 'AkzidenzGrotesk BQ Bold';
+    font-family: 'OpenSans-Bold';
 
+}
+.banner img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.banner{
+    text-align: left;
+    padding-top: 7%;
+    padding-left: 2%;
 }
 .explica{
     text-align: center;
     font-size: 150%;
 }
 .foto{
-    height: 5vh;
-    display: inline;
-    left: 1%;
-    top: 1%;
-    margin-right: 4%;
-    align-items: left;
-    margin-top: 1vh;
-    margin-left: 3vh;
+    width: 100%;
 }
 .block1{
     background-color: #78fcaf;

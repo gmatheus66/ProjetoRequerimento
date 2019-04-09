@@ -9,7 +9,7 @@
 <body>
 <div class="geral">
     <div id="degrtop" class="topo">
-        <img class="foto" src="imagens/logoifpe.png">
+        <img class="foto" src="imagens/banner.png">  
 
         <a href="index.php" class="a1"> IFPE</a>
         
@@ -31,17 +31,23 @@
         <input type="number" class="inp" name="idade"  placeholder="Idade...">
         
 
-        <label>Função:</label>
-        <input type="text" class="inp" name="Função" placeholder="Função...">
+        <label>Cargo:</label>
+        <input type="text" class="inp" name="Cargo" placeholder="Cargo...">
 
 
-        <label>Matricula:</label>
-        <input type="number" class="inp" name="Matricula" placeholder="Matricula...">
+        <label>Cadastro do Funcionario</label>
+        <input type="number" class="inp" name="Cadastro" placeholder="Cadastro...">
 
 
         <label>E-mail:</label>
         <input type="e-mail" class="inp" name="e-mail" placeholder="E-mail...">
       
+      <label>CPF</label>
+      <input type="number" name="CPF" plceholder="CPF...">
+
+      <label>RG</label>
+        <input type="number" class="inp" name="RG" placeholder="RG...">
+
 
         <label>Senha:</label>
         <input type="password" class="inp" name="senha" placeholder="Senha...">

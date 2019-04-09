@@ -1,0 +1,111 @@
+@font-face{
+    font-family: 'OpenSans-Bold';
+    src: url('/fonts/OpenSans-Bold.ttf'); 
+}
+
+body{
+    /*background-color:white ;*/
+    text-align: center;
+    margin: 0px;
+}
+.topo{
+    width: 100%;
+    height: 7vh;
+    margin: 0%;
+    position: sticky;
+    background-image: linear-gradient(-5deg, #81b277, #bfefa5);
+}
+nav {
+    position: sticky;
+    top: 0;
+    margin-bottom: 5%
+}
+.inp1{
+    margin-top: 10%;
+}
+.baixo{
+    background-color: #18481c;
+    width: 100%;
+    height:20vh; 
+    display:block;
+    position: absolute;
+    bottom:0;
+}
+.input{
+    height: 60vh;
+    position: relative;
+}
+
+.a2{
+    text-decoration: none;
+    color:black;
+    font-size: 250%;
+}
+.a2{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 150%;
+    margin-right:2%;
+    font-family: 'OpenSans-Bold';
+
+}
+.banner img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.banner{
+    text-align: left;
+    padding-top: 7%;
+    padding-left: 2%;
+}
+.explica{
+    text-align: center;
+    font-size: 150%;
+}
+.foto{
+    width: 100%;
+}
+.block1{
+    background-color: #78fcaf;
+}
+.teste{
+    font-size: 30px;
+}
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.bgBloco{
+    width: 100%;
+    height: 80vh;
+}
+.txtBloco{
+    position: absolute;
+    font-size: 32px;
+    left:20%;
+    top:50%;
+    font-weight: bold;
+}
+.container {
+  position: relative;
+}
+.degrade{
+    color: ; 
+}
+
+/*Buuton*/
+.buuton{
+  background-color: rgba(83, 165, 0, 1); 
+  border: none;
+  color: white;
+  padding: 1% 3%;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.7em;
+  border-radius: 10%;
+  margin-top: 2%;

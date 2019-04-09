@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CadastroADM</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/CadastroADM.css">
+    <link rel="stylesheet" href="css/cadastroADM.css">
+    
 </head>
 <body>
 <div class="geral">
@@ -13,7 +13,7 @@
 
         <a href="index.php" class="a1"> IFPE</a>
         
-        <a href="index.php" class="a3">HOME</a>
+        <a href="index.php" class="a1">HOME</a>
     </div>
 
 <div class= "input">        
@@ -42,11 +42,11 @@
         <label>E-mail:</label>
         <input type="e-mail" class="inp" name="e-mail" placeholder="E-mail...">
       
-      <label>CPF</label>
-      <input type="number" name="CPF" plceholder="CPF...">
+      <label>CPF:</label>
+      <input type="number" id="input" class="inp" name="CPF" plceholder="CPF...">
 
-      <label>RG</label>
-        <input type="number" class="inp" name="RG" placeholder="RG...">
+      <label>RG:</label>
+        <input type="number" id="input" class="inp" name="RG" placeholder="RG...">
 
 
         <label>Senha:</label>

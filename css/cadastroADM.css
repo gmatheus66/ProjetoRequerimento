@@ -3,6 +3,7 @@
     src: url('/fonts/OpenSans-Bold.ttf'); 
 }
 
+
 *{
     padding: 0;
     margin:0;
@@ -15,37 +16,15 @@ label{
     margin-left: 19%;
     margin-right: 75%;
 }
-
 .geral {
     /*min-height:100%;
     position:absolute;
     width:800px;*/
 }
-/*Menu top*/
-.banner img{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-}
-.banner{
-    text-align: left;
-    padding-top: 7%;
-    padding-left: 2%;
-}
-.imgBanner{
-    width: 100%;
-}
-.aMenu{
-    text-decoration: none;
-    color: #FFF;
-    font-size: 150%;
-    margin-right:2%;
-    font-family: 'OpenSans-Bold';
 
-}
 /*form */
 .form{
+    margin-top: 2.5%;
     padding-top: 1%;
     padding-bottom: 4%;
 }
@@ -65,17 +44,14 @@ label{
 }
 .input{
     height: 60vh;
-    padding-top: 2%;
+    padding-top: 0%;
     padding-bottom: 5%;
     position: relative;
-    margin-top: 1%;
+    margin-top: 2%;
     margin-bottom: 3%;
     text-align: center;
 }
-#input{
-    /*margin-top: 30px;*/
-    
-}
+
 /*Buuton*/
 .buuton{
   background-color: rgba(83, 165, 0, 1); 
@@ -92,13 +68,14 @@ label{
   margin-top: 2%;
 }
 
+
 .buuton:hover{
     background-color: rgba(83, 165, 0, 0.8);
     text-decoration: underline;
 }
 
 /*Bottom*/
-.baixo{
+/*.baixo{
     margin-top: 5%;
     margin-bottom: 0;
     position:relative;
@@ -106,14 +83,28 @@ label{
     width: 100%;
     height:10vh; 
     background-color: #18481c;
-    background-image: linear-gradient(-45deg, #53A500, #266B29);
-
+    background-image: linear-gradient(-45deg, #266B29);
+}*/
 /*Links*/
+
+
 .a1{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 150%;
-    margin-right:2%;
+    margin-right:5%;
     font-family: 'OpenSans-Bold';
+    margin-top: 2%;
     }
 
+.banner img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.banner{
+    text-align: left;
+    padding-top: 7%;
+    padding-left: 2%;
+}

@@ -8,14 +8,16 @@
 </head>
 <body>
 <div class="geral">
-    <div class="banner"> 
-    <img class="imgBanner" src="imagens/banner.png">  
-    <a href="index.php" class="aMenu"> HOME</a>
-    <a href="cadastro.php" class="aMenu"> CADASTRO</a>
-    <a href="login.php" class="aMenu"> LOGIN</a>
-    <a href="cadastroADM.php" class="aMenu"> CADASTRO ADM </a>
+    <div id="degrtop" class="banner">
+        <img class="foto" src="imagens/banner.png">  
+
     </div>
 
+<div>
+      <a href="index.php" class="a1"> IFPE</a>
+        
+        <a href="index.php" class="a1">HOME</a>
+</div>
 <div class= "input">        
     <form class="form" action="login.php" method="POST">
 
@@ -35,9 +37,11 @@
         <input type="text" class="inp" name="Cargo" placeholder="Cargo...">
 
 
-        <label>Cadastro do Funcionario</label>
-        <input type="number" class="inp" name="Cadastro" placeholder="Cadastro...">
+        <label>Telefone:</label>
+        <input type="number" class="inp" name="Telefone" placeholder="Telefone...">
 
+       <label>Matrícula</label>
+       <input type="text" class="inp" name="matricula" placeholder="Matrícula...">
 
         <label>E-mail:</label>
         <input type="e-mail" class="inp" name="e-mail" placeholder="E-mail...">

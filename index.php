@@ -9,11 +9,11 @@
 <body>
 
 <div class="banner"> 
-    <img class="foto" src="imagens/banner.png">  
-    <a href="index.html" class="a2"> HOME</a>
-    <a href="cadastro.php" class="a2"> CADASTRO</a>
-    <a href="login.php" class="a2"> LOGIN</a>
-    <a href="cadastroADM.php" class="a2"> CADASTRO ADM </a>
+    <img class="imgBanner" src="imagens/banner.png">  
+    <a href="index.html" class="aMenu"> HOME</a>
+    <a href="cadastro.php" class="aMenu"> CADASTRO</a>
+    <a href="login.php" class="aMenu"> LOGIN</a>
+    <a href="cadastroADM.php" class="aMenu"> CADASTRO ADM </a>
 </div>
 
 <!--     <div>

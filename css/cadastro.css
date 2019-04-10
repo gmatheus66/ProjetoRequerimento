@@ -1,3 +1,8 @@
+@font-face{
+    font-family: 'OpenSans-Bold';
+    src: url('/fonts/OpenSans-Bold.ttf'); 
+}
+
 *{
 	padding: 0;
 	margin:0;
@@ -16,7 +21,29 @@ label{
     position:absolute;
     width:800px;*/
 }
+/*Menu top*/
+.banner img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.banner{
+    text-align: left;
+    padding-top: 7%;
+    padding-left: 2%;
+}
+.imgBanner{
+    width: 100%;
+}
+.aMenu{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 150%;
+    margin-right:2%;
+    font-family: 'OpenSans-Bold';
 
+}
 /*form */
 .form{
 	margin-top: 2.5%;

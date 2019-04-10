@@ -8,6 +8,30 @@ body{
     text-align: center;
     margin: 0px;
 }
+
+/*Menu top*/
+.banner img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.banner{
+    text-align: left;
+    padding-top: 7%;
+    padding-left: 2%;
+}
+.imgBanner{
+    width: 100%;
+}
+.aMenu{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 150%;
+    margin-right:2%;
+    font-family: 'OpenSans-Bold';
+
+}
 .topo{
     width: 100%;
     height: 7vh;
@@ -48,17 +72,6 @@ nav {
     margin-right:2%;
     font-family: 'OpenSans-Bold';
 
-}
-.banner img{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-}
-.banner{
-    text-align: left;
-    padding-top: 7%;
-    padding-left: 2%;
 }
 .explica{
     text-align: center;

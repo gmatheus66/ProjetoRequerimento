@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
-<div class="geral">
-    <div id="degrtop" class="topo">
-        <img class="foto" src="imagens/logoifpe.png">
 
-        <a href="index.php" class="a1"> IFPE</a>
-        
-        <a href="index.php" class="a3">HOME</a>
+   <div class="banner"> 
+    <img class="imgBanner" src="imagens/banner.png">  
+    <a href="index.php" class="aMenu"> HOME</a>
+    <a href="cadastro.php" class="aMenu"> CADASTRO</a>
+    <a href="login.php" class="aMenu"> LOGIN</a>
+    <a href="cadastroADM.php" class="aMenu"> CADASTRO ADM </a>
     </div>
 
 <div class= "input">        
@@ -48,10 +48,8 @@
      
         <button type="submit" class="buuton" onclick="alert('Login efetuado com sucesso!')">Enviar</button>
    </form>
-   <div id="debrbot" class="baixo"></div>
     
 </div> 
 
-</div>
 </body>
 </html>

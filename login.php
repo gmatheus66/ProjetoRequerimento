@@ -7,30 +7,31 @@
 </head>
 <body>
 
-<div class="topo">
-<img class="foto" src="imagens/logoifpe.png">
-
-    <a href="index.html" class="a1"> IFPE</a>
-    
-</div>
+<div class="banner"> 
+    <img class="imgBanner" src="imagens/banner.png">  
+    <a href="index.php" class="aMenu"> HOME</a>
+    <a href="cadastro.php" class="aMenu"> CADASTRO</a>
+    <a href="login.php" class="aMenu"> LOGIN</a>
+    <a href="cadastroADM.php" class="aMenu"> CADASTRO ADM </a>
+    </div>
 
     
     <form action="login.php">
     <div class= "inpu">
 
-        <input type="text" class="inp" placeholder="Matricula">
+        <input type="text" class="inp" style="margin-top: 50px" placeholder="Matricula">
         <br>
         <input type="text" class="inp" placeholder="Senha">
         <br>
-       <button type="submit" class="buuton"  ">Enviar</button>
+       <button type="submit" class="button"  ">Enviar</button>
         <br>
         <br>
-         <a href="cadastro.php">Ainda não é cadastrado? Cadastre-se!</a>
+         <a href="cadastro.php" class="uo">Ainda não é cadastrado? Cadastre-se!</a>
         <br> 
-        <a href="recuperar.php">Esqueceu a senha?</a>
+        <a href="recuperar.php" class="uo">Esqueceu a senha?</a>
    </form>
  </div> 
 
-    <div class="baixo"></div>
+
 </body>
 </html>

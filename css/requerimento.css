@@ -1,0 +1,15 @@
+.topico, .subtopico, .motivo, .obs{
+	width: 50%;
+	margin-left: 25%;
+	border-color: #229b36;
+}
+.topico{
+	margin-top: 10%;
+}
+.slectTop{
+   background-color: #229b36;
+   height: 34px;
+   width: 240px;
+   border-color: none;
+   margin-left: 25%; 
+}

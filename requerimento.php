@@ -1,29 +1,23 @@
-<?php  
-
-$topico = $_POST['topico'];
-
-?>
+<?php $topico = $_POST['topico'] ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="sidebar.css">
+  <link rel="stylesheet" type="text/css" href="css/requerimento.css">
   <title>Requerimento</title>
 </head>
 <body>
   <div class="fieldset">
-    <form method="POST">
+    <form method="POST" onclick="menu()">
       <fieldset class="topico">
         <legend>Tópico</legend>
-        <select name="topico" class="slectTop">
-          <option>Matricula</option>
-          <option>Curso</option>
-          <option>Outros</option>
+        <select id="test" name="topico" class="slectTop">
+          <option value="Matricula">Matricula</option>
+          <option value="Curso">Curso</option>
+          <option value="Outros">Outros</option>
         </select>
-        <input type="submit" name="Teste">
       </fieldset>
     </form>
-    <?php if ($topico == 'Matricula'): ?>
-      <fieldset class="subtopico">
+      <fieldset id="subtopico1" class="subtopico" style="display: none;">
         <legend>Subtópico</legend>
         <select class="slectTop">
           <option value="1">Ajuste de Matrícula</option>
@@ -34,9 +28,7 @@ $topico = $_POST['topico'];
           <option value="6">Trancamento de MAtrícula</option>
         </select>
       </fieldset>
-    <?php endif; ?>
-    <?php if ($topico == 'Curso'): ?>
-      <fieldset class="subtopico">
+      <fieldset id="subtopico2" class="subtopico" style="display: none;">
         <legend>Subtópico</legend>
         <select class="slectTop">
           <option value="1">Cancelamento de Disciplina</option>
@@ -47,9 +39,7 @@ $topico = $_POST['topico'];
           <option value="6">Matriz curricular</option>
         </select>
       </fieldset>
-    <?php endif; ?>
-    <?php if ($topico == 'Outros'): ?>
-      <fieldset class="subtopico">
+      <fieldset id="subtopico3" class="subtopico" style="display: none;">
         <legend>Subtópico</legend>
         <select class="slectTop">
           <option value="1">Admissão por Transferência e Análise Curricular</option>
@@ -68,7 +58,6 @@ $topico = $_POST['topico'];
           <option>Solicitação de Conselho de Classe</option>
         </select>
       </fieldset>
-    <?php endif; ?>
       <fieldset class="motivo">
         <legend>Motivo</legend>
         <textarea name="motivo" placeholder="Motivo" class="obs" rows="6" cols="50"></textarea>
@@ -79,5 +68,25 @@ $topico = $_POST['topico'];
       <textarea name="obs" placeholder="Observações" class="obs" rows="6" cols="50"></textarea>
     </fieldset>
   </div>
+  <script type="text/javascript">
+    function menu(){
+      var item = document.getElementById('test').value;
+      if (item == "Matricula") {
+        document.getElementById('subtopico1').style.display = "block";
+        document.getElementById('subtopico2').style.display = "none";
+        document.getElementById('subtopico3').style.display = "none";
+      }else if (item == "Curso") {
+        document.getElementById('subtopico2').style.display = "block";
+        document.getElementById('subtopico1').style.display = "none";
+        document.getElementById('subtopico3').style.display = "none";
+      }else if (item == "Outros") {
+        document.getElementById('subtopico3').style.display = "block";
+        document.getElementById('subtopico2').style.display = "none";
+        document.getElementById('subtopico1').style.display = "none";
+      }else{
+        alert("EITA CARAI");
+      }
+    }
+  </script>
 </body>
 </html>

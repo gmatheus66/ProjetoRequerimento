@@ -1,3 +1,5 @@
+/* javascript do select */
+
 document.getElementById("btnCarregar").onclick = function () {
     var Cadastro = document.getElementById("Cadastro");
 

@@ -20,7 +20,6 @@
     <span><a href="index.html" class="aMenu"> HOME</a></span>
     <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
     <span><a href="login.php" class="aMenu"> LOGIN</a></span>
-    <span><a href="cadastroADM.php" class="aMenu"> CADASTRO ADM</a></span>
 </div>
 
 <div class="container slide" style="width: 100%; padding: 0%;"> 

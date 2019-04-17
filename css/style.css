@@ -2,7 +2,6 @@
     font-family: 'OpenSans-Bold';
     src: url('/fonts/OpenSans-Bold.ttf'); 
 }
-
 body{
     /*background-color:white ;*/
     text-align: center;
@@ -20,7 +19,7 @@ body{
 .banner{
     text-align: left;
     padding-top: 7%;
-    padding-left: 2%;
+    padding-left: 4.5%;
 }
 .imgBanner{
     width: 100%;
@@ -106,9 +105,6 @@ p{
 .container {
   position: relative;
 }
-.degrade{
-    color: ; 
-}
 .slide{
     margin-top: 1%
 }
@@ -145,4 +141,28 @@ span a {
   display: inline-block;
   position: relative;
   font-family: 'Dosis', sans-serif;
+}
+
+.titleBanner{
+    float: left;
+    margin-top: 6em;
+    margin-left: 1em;
+}
+
+.titleBanner2{
+    float: right;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2em;
+    color: #fff;
+    margin: auto;
+}
+.logoIF{
+    width: 4%;
+    float: left;
+    margin-left: 6em;
+    margin-top: 2em;
+}
+.tilt:hover{
+    text-decoration: none;
+    color:white;
 }

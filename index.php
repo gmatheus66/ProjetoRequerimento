@@ -22,30 +22,25 @@
     <img class="imgBanner" src="imagens/banner.png">  
     <span><a href="index.php" class="aMenu"> HOME</a></span>
     <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
-    <span><a href="login.php" class="aMenu"> LOGIN</a></span>
+    <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
+    <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
 </div>
 
 
-<div class="container slide" style="width: 100%; padding: 0%;"> 
+<div class="container slide" style="width: 100%; height:600px; padding: 0%;background-color: #6e9e70;"> 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
 
     <div class="carousel-inner">
-      <div class="item active">
-        <center><img src="imagens/narinas.jpeg" style="width:20%;"></center>
+      <div class="item active" style="height: 600px;">
+        <a href="">.</a>
       </div>
 
-      <div class="item">
-        <center><img src="imagens/desgraça.jpeg" style="width:20%;"></center>
+      <div class="item" style="height: 600px;">
+        <a href="">.</a>
       </div>
     
-      <div class="item">
-        <center><img src="imagens/tristeza.jpeg" style="width:20%;"></center>
+      <div class="item" style="height: 600px;">
+        <a href="">.</a>
       </div>
     </div>
 
@@ -57,6 +52,11 @@
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
   </div>
 </div>
 

@@ -11,17 +11,20 @@
     <meta charset="UTF-8">
     <title>Inicial</title>
 
-
 </head>
 <body>
-
+<div>
+  <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
+  <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
+</div>
+<span class="titleBanner2">Requerimentos</span>
 <div class="banner"> 
     <img class="imgBanner" src="imagens/banner.png">  
-    <span><a href="index.html" class="aMenu"> HOME</a></span>
+    <span><a href="index.php" class="aMenu"> HOME</a></span>
     <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
     <span><a href="login.php" class="aMenu"> LOGIN</a></span>
-    <span><a href="cadastroADM.php" class="aMenu"> CADASTRO ADM</a></span>
 </div>
+
 
 <div class="container slide" style="width: 100%; padding: 0%;"> 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -34,15 +37,15 @@
 
     <div class="carousel-inner">
       <div class="item active">
-        <center><img src="imagens/narinas.jpeg" alt="Los Angeles" style="width:20%;"></center>
+        <center><img src="imagens/narinas.jpeg" style="width:20%;"></center>
       </div>
 
       <div class="item">
-        <center><img src="imagens/desgraça.jpeg" alt="Chicago" style="width:20%;"></center>
+        <center><img src="imagens/desgraça.jpeg" style="width:20%;"></center>
       </div>
     
       <div class="item">
-        <center><img src="imagens/tristeza.jpeg" alt="New york" style="width:20%;"></center>
+        <center><img src="imagens/tristeza.jpeg" style="width:20%;"></center>
       </div>
     </div>
 
@@ -57,9 +60,6 @@
   </div>
 </div>
 
-<!-- <div class="degrade">
-Esta página tem como objetivo a solicitação de requerimentos institucionais do IFPE campos Igarassu.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae officiis molestias, nisi excepturi ipsam natus iste? Vero magni voluptates atque aliquam distinctio, assumenda odio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque provident quam quae nemo, recusandae  -->
 </div>
 </body>
 </html>

@@ -83,7 +83,10 @@
         document.getElementById('subtopico3').style.display = "block";
         document.getElementById('subtopico2').style.display = "none";
         document.getElementById('subtopico1').style.display = "none";
+<<<<<<< HEAD
       }
+=======
+>>>>>>> 30ab74a151f2cb603054d318367a941c443581ad
     }
   </script>
 </body>

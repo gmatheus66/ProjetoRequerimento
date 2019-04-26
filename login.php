@@ -12,7 +12,6 @@
     <a href="index.php" class="aMenu"> HOME</a>
     <a href="cadastro.php" class="aMenu"> CADASTRO</a>
     <a href="login.php" class="aMenu"> LOGIN</a>
-    <a href="cadastroADM.php" class="aMenu"> CADASTRO ADM </a>
     </div>
 
     

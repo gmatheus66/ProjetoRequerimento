@@ -66,6 +66,7 @@
      
         <button type="submit" class="buuton" onclick="alert('Login efetuado com sucesso!')">Enviar</button>
    </form>
+   <div class="select">
     <script type="text/javascript">
         var bool       = true;
 
@@ -81,6 +82,7 @@
         }
 
     </script>
+</div>
 </div> 
 </body>
 </html>

@@ -173,3 +173,12 @@ label{
     letter-spacing: -0.04em;
     line-height: 1.3em;
 }
+
+/* SELECT */
+.select{
+	background-color: rgba(83, 165, 0, 1); 
+  color: white;
+  font-size: 1.7em;
+  width:250px; 
+
+}

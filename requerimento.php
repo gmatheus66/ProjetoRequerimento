@@ -83,9 +83,6 @@
         document.getElementById('subtopico3').style.display = "block";
         document.getElementById('subtopico2').style.display = "none";
         document.getElementById('subtopico1').style.display = "none";
-      }else{
-        alert("EITA CARAI");
-      }
     }
   </script>
 </body>

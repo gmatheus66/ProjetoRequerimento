@@ -104,7 +104,7 @@ p{
 .aMenu{
     text-decoration: none;
     color: #FFF;
-    font-size: 1.2vw;
+    font-size: 20px;
     margin-right:2%;
     font-family: 'OpenSans-Bold';
 
@@ -168,4 +168,48 @@ span a {
 .tilt:hover{
     text-decoration: none;
     color:white;
+}
+
+@media screen and (max-width: 600px) {
+    .aMenu{
+        font-size: 10px;
+        bottom: 4px;
+    }
+    .logoIF{
+        margin-left: 2.5em;
+        margin-top: 0.5em;
+    }
+    .titleBanner{
+        margin-top: 1em;
+        margin-left: 1em;
+
+    }
+    .titleBanner2{
+        font-size: 2.2vw;
+    }
+    .tilt{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aMenu{
+        font-size: 7px;
+        bottom: 4px;
+    }
+    .logoIF{
+        margin-left: 2.5em;
+        margin-top: 0.5em;
+    }
+    .titleBanner{
+        margin-top: 0.4em;
+        margin-left: 0.7em;
+
+    }
+    .titleBanner2{
+        font-size: 1.5vw;
+    }
+    .tilt{
+        font-size: 8px;
+    }
 }

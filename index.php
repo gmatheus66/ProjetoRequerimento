@@ -32,15 +32,15 @@
 
     <div class="carousel-inner">
       <div class="item active" style="height: 600px;">
-        <a href="">.</a>
+        <a href=""></a>
       </div>
 
       <div class="item" style="height: 600px;">
-        <a href="">.</a>
+        <a href=""></a>
       </div>
     
       <div class="item" style="height: 600px;">
-        <a href="">.</a>
+        <a href=""></a>
       </div>
     </div>
 

@@ -26,47 +26,48 @@
         
     <div class="_cadastro" id="">
         <label>Nome:</label>
-        <input type="text" id="input" class="inp" name="nome" placeholder="Nome...">
+        <input type="text" id="input" class="inp" name="nome" placeholder="Nome completo...">
         
 
-        <label>Sobrenome:</label>
-        <input type="text" class="inp" name="sobrenome" placeholder="Sobrenome...">
+        <label>Nome do respónsavel:</label>
+        <input type="text" class="inp" name="sobrenome" placeholder="Nome do respónsavel...">
       
 
-        <label>Idade:</label>
-        <input type="number" class="inp" name="idade"  placeholder="Idade...">
-           <label>Matrícula:</label>
-        <input type="text" class="inp" name="matricula" placeholder="Matrícula...">
+        <label>Data de nascimento:</label>
+        <input type="number" class="inp" name="data de nascimento"  placeholder="Data de nascimento...">
+
+        <div class="d-none" id ="adm">
+        <label>Cargo:</label>
+        <input type="text" name="cargo" class="inp" placeholder="Insira seu Cargo...">
+
+        <label>SIAPE:</label>
+        <input type="text" name="cadFunc" class="inp" placeholder="Insira seu SIAPE..." minlength="9" maxlength="9">
+        </div>
+
+        <label>Matrícula:</label>
+        <input type="text" class="inp" name="matricula" placeholder="Matrícula..." minlength="9" maxlength="9">
 
         <label>E-mail:</label>
         <input type="e-mail" class="inp" name="e-mail" placeholder="E-mail...">
-      
+
+         <label>CPF:</label>
+        <input type="number" name="cpf" class="inp" placeholder="Insira seu CPF..."   minlength="11" maxlength="11">
+
+        <label>RG:</label>
+        <input type="number" name="RG" class="inp" placeholder="Insira seu RG..."  minlength="9" maxlength="9">
 
         <label>Senha:</label>
-        <input type="password" class="inp" name="senha" placeholder="Senha...">
-  
+        <input type="password" class="inp" name="senha" placeholder="Senha..."minlength="6" maxlength="10">
 
         <label>Confirmar Senha:</label>
-        <input type="password" class="inp" name="senhaConfir" placeholder="Confirmar Senha...">
-
-        <label>CPF</label>
-        <input type="number" name="cpf" class="inp" placeholder="Insira seu CPF">
-
-        <label>RG</label>
-        <input type="number" name="RG" class="inp" placeholder="Insira seu RG">
-    </div>
-    <div class="d-none" id ="adm">
-        <label>Cargo</label>
-        <input type="text" name="cargo" class="inp" placeholder="Insira seu Cargo">
-
-        <label>Cadastro do Funcionario</label>
-        <input type="text" name="cadFunc" class="inp" placeholder="Insira seu Cadastro">
-    </div>
+        <input type="password" class="inp" name="senhaConfir" placeholder="Confirmar Senha..."minlength="6" maxlength="10">
      
-     
+    </div>
+
         <button type="submit" class="buuton" onclick="alert('Login efetuado com sucesso!')">Enviar</button>
+
    </form>
-   <div class="select">
+
     <script type="text/javascript">
         var bool       = true;
 

@@ -19,22 +19,22 @@
 
 <div class= "input">        
     <form class="form" action="login.php" method="POST">
-        <select id="Cadastro" onchange="verif()">
+        <select id="Cadastro inputGroupSelect01" onchange="verif()" class="custom-select">
             <option value="aluno">aluno</option>
             <option value="adm">admistração</option>
         </select>
         
     <div class="_cadastro" id="">
         <label>Nome:</label>
-        <input type="text" id="input" class="inp" name="nome" placeholder="Nome completo...">
+        <input type="text" id="input" class="inp" name="nome" placeholder="Nome Completo...">
         
 
         <label>Nome do respónsavel:</label>
-        <input type="text" class="inp" name="sobrenome" placeholder="Nome do respónsavel...">
+        <input type="text" class="inp" name="sobrenome" placeholder="Nome do Respónsavel...">
       
 
         <label>Data de nascimento:</label>
-        <input type="number" class="inp" name="data de nascimento"  placeholder="Data de nascimento...">
+        <input type="date" class="inp" name="data de nascimento"  placeholder="Data de nascimento...">
 
         <div class="d-none" id ="adm">
         <label>Cargo:</label>

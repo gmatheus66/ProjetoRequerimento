@@ -19,7 +19,7 @@
     </form>
       <fieldset id="subtopico1" class="subtopico" style="display: none;">
         <legend>Subtópico</legend>
-        <select class="slectTop">
+        <select class="slectTop" id="matricula">
           <option value="1">Ajuste de Matrícula</option>
           <option value="2">Cancelamento de Matrícula</option>
           <option value="3">Complementação de Matrícula</option>
@@ -69,6 +69,9 @@
     </fieldset>
   </div>
   <script type="text/javascript">
+    var matricula = document.getElementById('matricula').value('1');
+
+
     function menu(){
       var item = document.getElementById('test').value;
       if (item == "Matricula") {
@@ -83,10 +86,7 @@
         document.getElementById('subtopico3').style.display = "block";
         document.getElementById('subtopico2').style.display = "none";
         document.getElementById('subtopico1').style.display = "none";
-<<<<<<< HEAD
       }
-=======
->>>>>>> 30ab74a151f2cb603054d318367a941c443581ad
     }
   </script>
 </body>

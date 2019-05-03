@@ -32,15 +32,19 @@
 
     <div class="carousel-inner">
       <div class="item active" style="height: 600px;">
-        <a href=""></a>
+        <img src="imagens/fatura_eletronica1.jpg">
       </div>
 
       <div class="item" style="height: 600px;">
-        <a href=""></a>
+        <img src="imagens/fatura-eletr-nica-53963506.jpg">
       </div>
     
       <div class="item" style="height: 600px;">
-        <a href=""></a>
+        <img src="imagens/depositphotos_11384206-stock-photo-desktop-computer-screen-tax-form.jpg"></a>
+      </div>
+
+      <div class="item" style="height: 600px;">
+        <img src="imagens/avaliação-em-linha-do-formulário-na-ilustração-vetor-computador-de-secretária-liso-dos-desenhos-animados-que-mostra-o-110366909.jpg">
       </div>
     </div>
 
@@ -54,7 +58,7 @@
     </a>
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="1" ></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
   </div>

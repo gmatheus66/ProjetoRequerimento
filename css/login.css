@@ -3,6 +3,7 @@
     src: url('/fonts/OpenSans-Bold.ttf'); 
 }
 
+
 *{
 	padding: 0;
 	margin:0;
@@ -22,13 +23,46 @@
 .imgBanner{
     width: 100%;
 }
+.topo{
+    width: 100%;
+    height: 7vh;
+    margin: 0%;
+    position: sticky;
+    background-image: linear-gradient(-5deg, #81b277, #bfefa5);
+}
 .aMenu{
     text-decoration: none;
     color: #FFF;
-    font-size: 150%;
+    font-size: 20px;
     margin-right:2%;
     font-family: 'OpenSans-Bold';
 
+}
+.aMenu:hover{
+    text-decoration: none;
+    color:#fff;
+    text-shadow: 0.1em 0.1em 0.2em black
+}
+
+.aMenu:after {
+    content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+.aMenu:hover:after {
+  opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 /*form */
 .form{
@@ -37,7 +71,7 @@
 /*Top*/
 .topo{
 	width: 100%;
-	height: 18vh;
+	height: 7vh;
 	margin: 0%;
 	position: relative;
 	background-color: #266B29;
@@ -64,6 +98,11 @@
 }
 #input{
 	margin-top: 30px;
+}
+nav {
+    position: sticky;
+    top: 0;
+    margin-bottom: 5%
 }
 /*Botao*/
 .button {
@@ -117,4 +156,37 @@ input{
 	height: 5%;
 	width: 55%;
   width: 22em;
+}
+span a {
+  color: #fff;
+  font-size: 1.5vw;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-family: 'Dosis', sans-serif;
+}
+.titleBanner{
+    float: left;
+    margin-top: 6em;
+    margin-left: 1em;
+}
+
+.titleBanner2{
+    float: right;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5vw;
+    color: #fff;
+    margin: auto;
+    margin-top:3%;
+    margin-right:3%;
+}
+.logoIF{
+    width: 4%;
+    float: left;
+    margin-left: 6em;
+    margin-top: 2em;
+}
+.tilt:hover{
+    text-decoration: none;
+    color:white;
 }

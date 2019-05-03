@@ -10,12 +10,7 @@
 </head>
 <body>
 
-   <div class="banner"> 
-        <img class="imgBanner" src="imagens/banner.png">  
-        <a href="index.php" class="aMenu"> HOME</a>
-        <a href="cadastro.php" class="aMenu"> CADASTRO</a>
-        <a href="login.php" class="aMenu"> LOGIN</a>
-    </div>
+  <?php include 'include.php' ?>
 
 <div class= "input">        
     <form class="form" action="login.php" method="POST">

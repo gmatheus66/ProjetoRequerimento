@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
     <script src="js/jquery-3.4.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+         function validar() {
+            var pw = form.pw.value; 
+            var pw2 = form.pw2.value;
+
+            if (pw == "" || pw.length <= 5) {
+                form.pw.focus();
+                return false;
+                 }
+                 if (senha != || pw2) {
+                    alert('Senhas diferentes');
+                    form.pw2.focus();
+                    return false;
+                 }
+
+
+
+    </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -76,12 +94,12 @@
         <input type="number" name="RG" class="inp" placeholder="Insira seu RG..."  minlength="9" maxlength="9">
 
         <label>Senha:</label>
-        <input type="password" class="inp" name="pw" placeholder="Senha..."minlength="8" maxlength="10">
+        <input type="password" class="inp" name="pw" placeholder="Senha..."minlength="6" maxlength="10">
 
         <label>Confirmar Senha:</label>
-        <input type="password" class="inp" name="pw2" placeholder="Confirmar Senha..."minlength="8" maxlength="10">
+        <input type="password" class="inp" name="pw2" placeholder="Confirmar Senha..."minlength="6" maxlength="10">
 
-         <button type="submit" class="buuton">Enviar</button>
+         <button type="submit" class="buuton" onclick="validar()">Enviar</button>
 
     </div>
 

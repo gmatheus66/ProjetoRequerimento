@@ -10,16 +10,39 @@
 </head>
 <body>
 
-  <?php include 'include.php' ?>
-
+   <div class="banner"> 
+        <img class="imgBanner" src="imagens/banner.png">  
+        <a href="index.php" class="aMenu"> HOME</a>
+        <a href="cadastro.php" class="aMenu"> CADASTRO</a>
+        <a href="login.php" class="aMenu"> LOGIN</a>
+    </div>
+<div>
+    <form action="register.php" method="POST">
+       
+        <?php if ($_GET['mr'] ?? false !== false ): ?>
+                <span class="message"><?= $_GET['mr'] ?></span>
+        <?php endif ?>
+    </form>
+</div>
 <div class= "input">        
     <form class="form" action="login.php" method="POST">
         <select id="Cadastro inputGroupSelect01" onchange="verif()" class="custom-select">
             <option value="aluno">aluno</option>
             <option value="adm">admistração</option>
         </select>
-        
     <div class="_cadastro" id="">
+
+        <label>Nome completo:</label>
+        <input type="text" id="input" class="inp" name="nome" placeholder="Nome completo...">
+        
+
+        <label>Nome do respónsavel:</label>
+        <input type="text" class="inp" name="nome_do_respónsavel" placeholder="Nome do respónsavel...">
+      
+
+        <label>Data de nascimento:</label>
+        <input type="Date" class="inp" name="data_de_nascimento"  placeholder="Data de nascimento...">
+
         <label>Nome:</label>
         <input type="text" id="input" class="inp" name="nome" placeholder="Nome Completo...">
         
@@ -31,12 +54,13 @@
         <label>Data de nascimento:</label>
         <input type="date" class="inp" name="data de nascimento"  placeholder="Data de nascimento...">
 
+
         <div class="d-none" id ="adm">
         <label>Cargo:</label>
         <input type="text" name="cargo" class="inp" placeholder="Insira seu Cargo...">
 
         <label>SIAPE:</label>
-        <input type="text" name="cadFunc" class="inp" placeholder="Insira seu SIAPE..." minlength="9" maxlength="9">
+        <input type="text" name="siape" class="inp" placeholder="Insira seu SIAPE..." minlength="9" maxlength="9">
         </div>
 
         <label>Matrícula:</label>
@@ -52,17 +76,16 @@
         <input type="number" name="RG" class="inp" placeholder="Insira seu RG..."  minlength="9" maxlength="9">
 
         <label>Senha:</label>
-        <input type="password" class="inp" name="senha" placeholder="Senha..."minlength="6" maxlength="10">
+        <input type="password" class="inp" name="pw" placeholder="Senha..."minlength="8" maxlength="10">
 
         <label>Confirmar Senha:</label>
-        <input type="password" class="inp" name="senhaConfir" placeholder="Confirmar Senha..."minlength="6" maxlength="10">
-     
+        <input type="password" class="inp" name="pw2" placeholder="Confirmar Senha..."minlength="8" maxlength="10">
+
+         <button type="submit" class="buuton">Enviar</button>
+
     </div>
 
-        <button type="submit" class="buuton" onclick="alert('Login efetuado com sucesso!')">Enviar</button>
-
-   </form>
-
+    </form>
     <script type="text/javascript">
         var bool       = true;
 

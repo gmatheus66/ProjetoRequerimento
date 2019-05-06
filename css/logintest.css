@@ -1,0 +1,570 @@
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("/fonts/OpenSans-Bold.ttf");
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .logoIF {
+    width: 3%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+  }
+
+  .tilt:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  .one {
+    margin-left: 7%;
+  }
+
+  .titleBanner {
+    display: none;
+  }
+
+  .titleBanner2 {
+    float: right;
+    font-family: "Dosis", sans-serif;
+    font-size: 1.5vw;
+    color: #fff;
+    margin: auto;
+    margin-top: 3%;
+    margin-right: 3%;
+  }
+
+  .banner {
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 4.5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 100%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+    margin-right: 5%;
+    font-family: "OpenSans-Bold";
+  }
+
+  .aMenu:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+  }
+
+  .aMenu:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+  }
+
+  .aMenu:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  span a {
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .logoIF {
+    width: 3%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+  }
+
+  .tilt:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  .one {
+    margin-left: 7%;
+  }
+
+  .titleBanner {
+    float: left;
+    margin-top: 2%;
+    margin-left: 1%;
+  }
+
+  .titleBanner2 {
+    float: right;
+    font-family: "Dosis", sans-serif;
+    font-size: 1.5vw;
+    color: #fff;
+    margin: auto;
+    margin-top: 3%;
+    margin-right: 3%;
+  }
+
+  .banner {
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 4.5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 100%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+    margin-right: 5%;
+    font-family: "OpenSans-Bold";
+  }
+
+  .aMenu:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+  }
+
+  .aMenu:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+  }
+
+  .aMenu:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  span a {
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .uo {
+    color: black;
+    text-decoration: none;
+    margin-left: 40%;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input {
+    display: block;
+    height: 5%;
+    width: 55%;
+    width: 22em;
+  }
+
+  span a {
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+  }
+
+  .button {
+    background-color: #53A500;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
+    margin-left: 46%;
+  }
+
+  .inp {
+    width: 30%;
+    padding: 10px 10px;
+    margin: 15px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 37%;
+  }
+
+  .inpu {
+    margin-top: 7%;
+  }
+
+  .uo1 {
+    margin-left: 45%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .logoIF {
+    width: 3%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+  }
+
+  .tilt:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  .one {
+    margin-left: 7%;
+  }
+
+  .titleBanner {
+    float: left;
+    margin-top: 2%;
+    margin-left: 1%;
+  }
+
+  .titleBanner2 {
+    float: right;
+    font-family: "Dosis", sans-serif;
+    font-size: 1.5vw;
+    color: #fff;
+    margin: auto;
+    margin-top: 3%;
+    margin-right: 3%;
+  }
+
+  .banner {
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 4.5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 100%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+    margin-right: 5%;
+    font-family: "OpenSans-Bold";
+  }
+
+  .aMenu:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+  }
+
+  .aMenu:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+  }
+
+  .aMenu:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  span a {
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .uo {
+    color: black;
+    text-decoration: none;
+    margin-left: 40%;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input {
+    display: block;
+    height: 5%;
+    width: 55%;
+    width: 22em;
+  }
+
+  span a {
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+  }
+
+  .button {
+    background-color: #53A500;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
+    margin-left: 45%;
+  }
+
+  .inp {
+    width: 30%;
+    padding: 10px 10px;
+    margin: 15px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 35.5%;
+  }
+
+  .inpu {
+    margin-top: 7%;
+  }
+
+  .uo1 {
+    margin-left: 45%;
+  }
+}
+@media (min-width: 1200px) {
+  .logoIF {
+    width: 4%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+  }
+
+  .tilt:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  .one {
+    margin-left: 7%;
+  }
+
+  .titleBanner {
+    float: left;
+    margin-top: 4%;
+    margin-left: 1%;
+  }
+
+  .titleBanner2 {
+    float: right;
+    font-family: "Dosis", sans-serif;
+    font-size: 1.5vw;
+    color: #fff;
+    margin: auto;
+    margin-top: 3%;
+    margin-right: 3%;
+  }
+
+  .banner {
+    text-align: left;
+    padding-top: 7%;
+    padding-left: 4.5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 100%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+    margin-right: 5%;
+    font-family: "OpenSans-Bold";
+  }
+
+  .aMenu:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+  }
+
+  .aMenu:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+  }
+
+  .aMenu:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  span a {
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .uo {
+    color: black;
+    text-decoration: none;
+    margin-left: 40%;
+    margin-left: 45%;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input {
+    display: block;
+    height: 5%;
+    width: 55%;
+    width: 22em;
+  }
+
+  span a {
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+  }
+
+  .button {
+    background-color: #53A500;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
+    margin-left: 47%;
+  }
+
+  .inp {
+    width: 20%;
+    padding: 10px 10px;
+    margin: 15px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 40%;
+  }
+
+  .inpu {
+    margin-top: 7%;
+  }
+}
+
+/*# sourceMappingURL=logintest.css.map */

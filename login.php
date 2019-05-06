@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/login.css" />-->
+    <link rel="stylesheet" href="css/logintest.css">
 </head>
 <body>
 <div>
@@ -13,18 +14,25 @@
             <?php endif ?>
     </form>
 </div>
+<div>
+  <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
+  <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
+</div>
+
+<span class="titleBanner2">Requerimentos</span>
 <div class="banner"> 
     <img class="imgBanner" src="imagens/banner.png">  
-    <a href="index.php" class="aMenu"> HOME</a>
-    <a href="cadastro.php" class="aMenu"> CADASTRO</a>
-    <a href="login.php" class="aMenu"> LOGIN</a>
-    </div>
+    <span><a href="index.php" class="aMenu one" > HOME</a></span>
+    <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
+    <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
+    <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
+</div>
 
     
     <form action="login.php">
-    <div class= "inpu">
+        <div class= "inpu">
 
-        <input type="text" class="inp" style="margin-top: 50px" placeholder="Matricula">
+        <input type="text" class="inp" style="margin-top: 50px" placeholder="CPF">
         <br>
         <input type="password"name="pw" class="inp" placeholder="Senha">
         <br>
@@ -33,9 +41,9 @@
         <br>
          <a href="cadastro.php" class="uo">Ainda não é cadastrado? Cadastre-se!</a>
         <br> 
-        <a href="recuperar.php" class="uo">Esqueceu a senha?</a>
+        <a href="recuperar.php" class="uo uo1">Esqueceu a senha?</a>
+        </div> 
    </form>
- </div> 
 
 
 </body>

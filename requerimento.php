@@ -3,14 +3,15 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="css/requerimento.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Requerimento</title>
 </head>
 <body>
   <div class="fieldset">
     <form method="POST" onclick="menu()">
       <fieldset class="topico">
-        <legend>Tópico</legend>
-        <select id="test" name="topico" class="slectTop">
+        <legend>Tópico:</legend>
+        <select id="test" name="topico" class="slectTop form-control">
           <option value="Matricula">Matricula</option>
           <option value="Curso">Curso</option>
           <option value="Outros">Outros</option>
@@ -18,8 +19,8 @@
       </fieldset>
     </form>
       <fieldset id="subtopico1" class="subtopico" style="display: none;">
-        <legend>Subtópico</legend>
-        <select class="slectTop" id="matricula">
+        <legend>Subtópico:</legend>
+        <select class="slectTop form-control" >
           <option value="1">Ajuste de Matrícula</option>
           <option value="2">Cancelamento de Matrícula</option>
           <option value="3">Complementação de Matrícula</option>
@@ -29,8 +30,8 @@
         </select>
       </fieldset>
       <fieldset id="subtopico2" class="subtopico" style="display: none;">
-        <legend>Subtópico</legend>
-        <select class="slectTop">
+        <legend>Subtópico:</legend>
+        <select class="slectTop form-control" >
           <option value="1">Cancelamento de Disciplina</option>
           <option value="2">Dispensa da prática de Educação Física</option>
           <option value="3">Decalração Tramitação de Diploma</option>
@@ -40,8 +41,8 @@
         </select>
       </fieldset>
       <fieldset id="subtopico3" class="subtopico" style="display: none;">
-        <legend>Subtópico</legend>
-        <select class="slectTop">
+        <legend>Subtópico:</legend>
+        <select class="slectTop form-control" >
           <option value="1">Admissão por Transferência e Análise Curricular</option>
           <option value="2">Autorização para cursar disciplinas em outras Instituições de Ensino Superior</option>
           <option value="3">Certifica de Conclusão</option>
@@ -59,17 +60,17 @@
         </select>
       </fieldset>
       <fieldset class="motivo">
-        <legend>Motivo</legend>
-        <textarea name="motivo" placeholder="Motivo" class="obs" rows="6" cols="50"></textarea>
+        <legend>Motivo:</legend>
+        <textarea name="motivo" placeholder="Motivo" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
       </fieldset>
     <fieldset class="obs">
-      <legend>Observação</legend>
+      <legend>Observação:</legend>
+      <textarea name="obs" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
       <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
-      <textarea name="obs" placeholder="Observações" class="obs" rows="6" cols="50"></textarea>
     </fieldset>
   </div>
   <script type="text/javascript">
-    var matricula = document.getElementById('matricula').value('1');
+    var matricula = document.getElementById('exampleFormControlSelect1').value('1');
 
 
     function menu(){

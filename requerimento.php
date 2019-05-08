@@ -68,6 +68,7 @@
       <textarea name="obs" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
       <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
     </fieldset>
+    <input type="submit" class="btn btn-outline-success">
   </div>
   <script type="text/javascript">
     var matricula = document.getElementById('exampleFormControlSelect1').value('1');

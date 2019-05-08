@@ -12,4 +12,8 @@ conf-git-matheus:
 
 conf-git-juciele:
 	git config --global user.name "jucielefernandes"
-	git config --global user.email "juciele.bol@hotmail.com"
+	git config --global user.email "juciele.bol@gmail.com"
+
+conf-git-gui:
+	git config --global user.name "Gui2800"
+	git config --global user.email "liraguilherme252@gmail.com"

@@ -5,3 +5,7 @@ conf-git-lays:
 conf-git-reni:
 	git config --global user.name "renissonsilva"
 	git config --global user.email "renissonx@gmail.com"
+
+conf-git-matheus:
+	git config --global user.name "gmatheus66"
+	git config --global user.email "gmatheus66@hotmail.com"

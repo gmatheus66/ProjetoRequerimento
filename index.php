@@ -32,19 +32,19 @@
 
     <div class="carousel-inner">
       <div class="item active" style="height: 600px;">
-        <img src="imagens/fatura_eletronica1.jpg">
+        <img src="imagens/fatura_eletronica1.jpg" style="width:100%;height:100%; ">
       </div>
 
       <div class="item" style="height: 600px;">
-        <img src="imagens/fatura-eletr-nica-53963506.jpg">
+        <img src="imagens/fatura-eletr-nica-53963506.jpg" style="width:100%; height:100%;">
       </div>
     
       <div class="item" style="height: 600px;">
-        <img src="imagens/depositphotos_11384206-stock-photo-desktop-computer-screen-tax-form.jpg"></a>
+        <img src="imagens/depositphotos_11384206-stock-photo-desktop-computer-screen-tax-form.jpg" style="width:100%;height:100%;">
       </div>
 
-      <div class="item" style="height: 600px;">
-        <img src="imagens/avaliação-em-linha-do-formulário-na-ilustração-vetor-computador-de-secretária-liso-dos-desenhos-animados-que-mostra-o-110366909.jpg">
+      <div class="item" style="height: 600px; " d="centro" />
+        <img src="imagens/avaliação-em-linha-do-formulário-na-ilustração-vetor-computador-de-secretária-liso-dos-desenhos-animados-que-mostra-o-110366909.jpg" style="width:100%;height:100%;">
       </div>
     </div>
 

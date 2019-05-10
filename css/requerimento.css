@@ -18,3 +18,219 @@
 	margin-left: 25%;
 	margin-top: 2%;
 }
+
+@font-face{
+    font-family: 'OpenSans-Bold';
+    src: url('/fonts/OpenSans-Bold.ttf'); 
+}
+body{
+    /*background-color:white ;*/
+    text-align: center;
+    margin: 0px;
+}
+
+/*Menu top*/
+.banner img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+
+}
+.banner{
+    text-align: left;
+    padding-top: 7%;
+    padding-left: 4.5%;
+}
+.imgBanner{
+    width: 100%;
+}
+
+.topo{
+    width: 100%;
+    height: 7vh;
+    margin: 0%;
+    position: sticky;
+    background-image: linear-gradient(-5deg, #81b277, #bfefa5);
+}
+nav {
+    position: sticky;
+    top: 0;
+    margin-bottom: 5%
+}
+.inp1{
+    margin-top: 10%;
+}
+.baixo{
+    background-color: #18481c;
+    width: 100%;
+    height:20vh; 
+    display:block;
+    position: absolute;
+    bottom:0;
+}
+.inpu{
+    height: 60vh;
+    position: relative;
+}
+
+.a1{
+    text-decoration: none;
+    color:black;
+    font-size: 250%;
+}
+.a2{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 150%;
+    margin-right:2%;
+    font-family: 'OpenSans-Bold';
+
+}
+.explica{
+    text-align: center;
+    font-size: 150%;
+}
+.foto{
+    width: 100%;
+}
+
+.block1{
+    background-color: #78fcaf;
+}
+.teste{
+    font-size: 30px;
+}
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.bgBloco{
+    width: 100%;
+    height: 80vh;
+}
+.txtBloco{
+    position: absolute;
+    font-size: 32px;
+    left:20%;
+    top:50%;
+    font-weight: bold;
+}
+.container {
+  position: relative;
+}
+.slide{
+    margin-top: 1%
+}
+.aMenu{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+    margin-right:2%;
+    font-family: 'OpenSans-Bold';
+
+}
+.aMenu:hover{
+    text-decoration: none;
+    color:#fff;
+    text-shadow: 0.1em 0.1em 0.2em black
+}
+
+.aMenu:after {
+    content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+.aMenu:hover:after {
+  opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+span a {
+  color: #fff;
+  font-size: 1.5vw;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-family: 'Dosis', sans-serif;
+}
+
+.titleBanner{
+	float: left;
+    margin-top: 1.5em;
+    margin-left: 1em;
+}
+
+.titleBanner2{
+    float: right;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5vw;
+    color: #fff;
+    margin: auto;
+    margin-top:3%;
+    margin-right:3%;
+}
+.logoIF{
+    width: 4%;
+    float: left;
+    margin-left: 6em;
+    margin-top: 2em;
+}
+.tilt:hover{
+    text-decoration: none;
+    color:white;
+}
+
+@media screen and (max-width: 600px) {
+    .aMenu{
+        font-size: 10px;
+        bottom: 4px;
+    }
+    .logoIF{
+        margin-left: 2.5em;
+        margin-top: 0.5em;
+    }
+    .titleBanner{
+        margin-top: 1em;
+        margin-left: 1em;
+
+    }
+    .titleBanner2{
+        font-size: 2.2vw;
+    }
+    .tilt{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aMenu{
+        font-size: 7px;
+        bottom: 4px;
+    }
+    .logoIF{
+        margin-left: 2.5em;
+        margin-top: 0.5em;
+    }
+    .titleBanner{
+        margin-top: 0.4em;
+        margin-left: 0.7em;
+
+    }
+    .titleBanner2{
+        font-size: 1.5vw;
+    }
+    .tilt{
+        font-size: 8px;
+    }
+}

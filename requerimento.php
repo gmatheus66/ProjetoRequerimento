@@ -82,6 +82,10 @@
       <textarea name="obs" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
       <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
     </fieldset>
+    <fieldset class="anexo">
+      <legend>Anexo</legend>
+      <input type="file" class="btn btn-outline-warning"/>
+    </fieldset>
     <input type="submit" class="btn btn-outline-success">
   </div>
   <script type="text/javascript">

@@ -5,6 +5,7 @@
     <title>Login</title>
     <!--<link rel="stylesheet" type="text/css" href="css/login.css" />-->
     <link rel="stylesheet" href="css/logintest.css">
+    <link  href="js/validar.js">
 </head>
 <body>
 <div>
@@ -33,8 +34,10 @@
     
     <form action="login.php">
         <div class= "inpu">
-
-        <input type="text" class="inp" style="margin-top: 50px" placeholder="CPF">
+        
+        <input type="text" class="inp" style="margin-top: 50px" placeholder="CPF"
+        name="cpf" onBlur="ValidarCPF(form1.cpf);" 
+        onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
         <br>
         <input type="password"name="pw" class="inp" placeholder="Senha">
         <br>

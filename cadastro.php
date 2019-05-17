@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
+    <title>Cadastro</title>    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
+    <link href="js/validar.js">
+
     <script src="js/jquery-3.4.0.min.js" type="text/javascript"></script>
         <script type="text/javascript">
          function validar() {
@@ -43,7 +45,7 @@
     </form>
 </div>
 <div class= "input">        
-    <form class="form" action="login.php" method="POST">
+    <form class="form" action="login.php" method="POST" name="form1"s>
         <select id="Cadastro inputGroupSelect01" onchange="verif()" class="custom-select">
             <option value="aluno">aluno</option>
             <option value="adm">admistração</option>
@@ -53,25 +55,11 @@
         <label>Nome completo:</label>
         <input type="text" id="input" class="inp" name="nome" placeholder="Nome completo...">
         
-
         <label>Nome do respónsavel:</label>
         <input type="text" class="inp" name="nome_do_respónsavel" placeholder="Nome do respónsavel...">
       
-
         <label>Data de nascimento:</label>
         <input type="Date" class="inp" name="data_de_nascimento"  placeholder="Data de nascimento...">
-
-        <label>Nome:</label>
-        <input type="text" id="input" class="inp" name="nome" placeholder="Nome Completo...">
-        
-
-        <label>Nome do respónsavel:</label>
-        <input type="text" class="inp" name="sobrenome" placeholder="Nome do Respónsavel...">
-      
-
-        <label>Data de nascimento:</label>
-        <input type="date" class="inp" name="data de nascimento"  placeholder="Data de nascimento...">
-
 
         <div class="d-none" id ="adm">
         <label>Cargo:</label>
@@ -88,7 +76,8 @@
         <input type="e-mail" class="inp" name="e-mail" placeholder="E-mail...">
 
          <label>CPF:</label>
-        <input type="number" name="cpf" class="inp" placeholder="Insira seu CPF..."   minlength="11" maxlength="11">
+        <input type="text" class="inp" name="cpf" placeholder="000.000.000-00" onBlur="ValidarCPF(form1.cpf);" 
+            onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
 
         <label>RG:</label>
         <input type="number" name="RG" class="inp" placeholder="Insira seu RG..."  minlength="9" maxlength="9">
@@ -102,8 +91,8 @@
          <button type="submit" class="buuton" onclick="validar()">Enviar</button>
 
     </div>
-
     </form>
+
     <script type="text/javascript">
         var bool       = true;
 

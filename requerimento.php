@@ -32,9 +32,10 @@
         </select>
       </fieldset>
     </form>
+
       <fieldset id="subtopico1" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
-        <select class="slectTop form-control" >
+        <select class="slectTop form-control" name="matricula">
           <option value="1">Ajuste de Matrícula</option>
           <option value="2">Cancelamento de Matrícula</option>
           <option value="3">Complementação de Matrícula</option>
@@ -43,6 +44,7 @@
           <option value="6">Trancamento de MAtrícula</option>
         </select>
       </fieldset>
+
       <fieldset id="subtopico2" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
         <select class="slectTop form-control" >
@@ -54,6 +56,7 @@
           <option value="6">Matriz curricular</option>
         </select>
       </fieldset>
+
       <fieldset id="subtopico3" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
         <select class="slectTop form-control" >
@@ -73,24 +76,34 @@
           <option>Solicitação de Conselho de Classe</option>
         </select>
       </fieldset>
-      <fieldset class="motivo">
-        <legend>Motivo:</legend>
-        <textarea name="motivo" placeholder="Motivo" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
-      </fieldset>
-    <fieldset class="obs">
-      <legend>Observação:</legend>
-      <textarea name="obs" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
-      <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
-    </fieldset>
-    <fieldset class="anexo">
-      <legend>Anexo</legend>
-      <input type="file" class="btn btn-outline-warning"/>
-    </fieldset>
-    <input type="submit" class="btn btn-outline-success">
+
+      <form action="catch_requerimento.php" method="POST">
+        <fieldset class="motivo">
+          <legend>Motivo:</legend>
+          <textarea name="motivo" placeholder="Motivo" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
+        </fieldset>
+      </form>
+
+      <form action="catch_requerimento.php">
+        <fieldset class="obs">
+          <legend>Observação:</legend>
+          <textarea name="obsservacao" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
+          <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
+        </fieldset>
+      </form>
+
+      <form action="catch_requerimento.php">
+        <fieldset class="anexo">
+          <legend>Anexo</legend>
+          <input type="file" class="btn btn-outline-warning"/>
+        </fieldset>
+      </form>
+
+      <input type="submit" class="btn btn-outline-success">
+
   </div>
   <script type="text/javascript">
     var matricula = document.getElementById('exampleFormControlSelect1').value('1');
-
 
     function menu(){
       var item = document.getElementById('test').value;
@@ -108,6 +121,7 @@
         document.getElementById('subtopico1').style.display = "none";
       }
     }
+
   </script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-<?php $topico = $_POST['topico'] ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,7 +93,7 @@
 
       <form action="catch_requerimento.php">
         <fieldset class="anexo">
-          <legend>Anexo</legend>
+          <legend>Anexo:</legend>
           <input type="file" class="btn btn-outline-warning"/>
         </fieldset>
       </form>

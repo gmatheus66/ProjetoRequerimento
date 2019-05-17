@@ -1,6 +1,6 @@
 <?php
 
-username = $_POST['username'];
+$username = $_POST['username'];
 $email = $_POST['email'];
 $name = $_POST['name'];
 $nome_do_responsavel = $_POST['nome do nome_do_responsavel'];
@@ -8,7 +8,7 @@ $cargo = $_POST['cargo'];
 $siape = $_POST['siepe'];
 $matricula = $_POST['matricula'];
 $cpf = $_POST['cpf'];
-$rg = $_POST['rg']
+$rg = $_POST['rg'];
 $pw = $_POST['pw'];
 $pw2 = $_POST['pw2'];
 

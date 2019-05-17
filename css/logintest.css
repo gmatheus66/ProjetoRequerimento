@@ -21,19 +21,11 @@
   }
 
   .titleBanner {
-    float: left;
-    margin-top: 1.7%;
-    margin-left: 1%;
+   display: none;
   }
 
   .titleBanner2 {
-    float: right;
-    font-family: "Dosis", sans-serif;
-    font-size: 1.5vw;
-    color: #fff;
-    margin: auto;
-    margin-top: 3%;
-    margin-right: 3%;
+    display: none;
   }
 
   .banner {
@@ -51,6 +43,11 @@
 
   .imgBanner {
     width: 100%;
+  }
+  
+  .links{
+    margin-left: 21%;
+    margin-top: -2%; 
   }
 
   .aMenu {
@@ -97,6 +94,71 @@
     position: relative;
     font-family: "Dosis", sans-serif;
   }
+
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .uo {
+    color: black;
+    text-decoration: none;
+    margin-left: 27%;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input {
+    display: block;
+    height: 5%;
+    width: 55%;
+    width: 22em;
+  }
+
+  span a {
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "Dosis", sans-serif;
+  }
+
+  .button {
+    background-color: #53A500;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
+    margin-left: 40%;
+  }
+
+  .inp {
+    width: 50%;
+    padding: 10px 10px;
+    margin: 20px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 27%;
+  }
+
+  .inpu {
+    margin-top: 15%;
+  }
+
+  .uo1 {
+    margin-left: 39%;
+  }
+
 }
 /*******************************************************************************************************************************************/
 @media (min-width: 576px) and (max-width: 767.98px) {

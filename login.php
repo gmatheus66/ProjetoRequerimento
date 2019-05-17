@@ -21,11 +21,13 @@
 
 <span class="titleBanner2">Requerimentos</span>
 <div class="banner"> 
-    <img class="imgBanner" src="imagens/banner.png">  
-    <span><a href="index.php" class="aMenu one" > HOME</a></span>
-    <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
-    <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
-    <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
+    <img class="imgBanner" src="imagens/banner.png"> 
+    <div class="links"> 
+        <span><a href="index.php" class="aMenu one" > HOME</a></span>
+        <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
+        <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
+        <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
+    </div>
 </div>
 
     

@@ -83,10 +83,14 @@
         <input type="number" name="RG" class="inp" placeholder="Insira seu RG..."  minlength="9" maxlength="9">
 
         <label>Senha:</label>
-        <input type="password" class="inp" name="pw" placeholder="Senha..."minlength="6" maxlength="10">
+        <input type="password" class="inp" name="pw" placeholder="Senha..."minlength="6" maxlength="10" pattern="[a-zA-Z0-9]+$" >
 
         <label>Confirmar Senha:</label>
-        <input type="password" class="inp" name="pw2" placeholder="Confirmar Senha..."minlength="6" maxlength="10">
+        <input type="password" class="inp" name="pw2" placeholder="Confirmar Senha..."minlength="6" maxlength="10" pattern="[a-zA-Z0-9]+$" s>
+            <?php 
+            $pattern = '[a-zA-Z0-9]';
+            if (preg_match($pattern, $pw)){return true;}
+         ?>
 
          <button type="submit" class="buuton" onclick="validar()">Enviar</button>
 

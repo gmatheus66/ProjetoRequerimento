@@ -26,7 +26,7 @@
     <div class="links"> 
         <span><a href="index.php" class="aMenu one" > HOME</a></span>
         <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
-        <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
+        <span><a href="login.php" class="aMenu"> LOGIN</a></span>
         <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
     </div>
 </div>
@@ -39,7 +39,7 @@
         name="cpf" onBlur="ValidarCPF(form1.cpf);" 
         onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
         <br>
-        <input type="password"name="pw" class="inp" placeholder="Senha">
+        <input type="password"name="pw" class="inp" placeholder="Senha" minlength="6" maxlength="10" pattern="[a-zA-Z0-9]+$">
         <br>
        <button type="submit" class="button">Entrar</button>
         <br>

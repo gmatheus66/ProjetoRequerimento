@@ -21,7 +21,7 @@
 </div>
 
   <div class="fieldset">
-    <form method="POST" onclick="menu()">
+    <form method="POST" action="catch_requerimento.php" onclick="menu()">
       <fieldset class="topico">
         <legend>Tópico:</legend>
         <select id="test" name="topico" class="slectTop form-control">
@@ -30,11 +30,11 @@
           <option value="Outros">Outros</option>
         </select>
       </fieldset>
-    </form>
+    
 
       <fieldset id="subtopico1" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
-        <select class="slectTop form-control" name="matricula">
+        <select class="slectTop form-control" name="subtopico">
           <option value="1">Ajuste de Matrícula</option>
           <option value="2">Cancelamento de Matrícula</option>
           <option value="3">Complementação de Matrícula</option>
@@ -46,7 +46,7 @@
 
       <fieldset id="subtopico2" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
-        <select class="slectTop form-control" >
+        <select class="slectTop form-control" name="subtopico">
           <option value="1">Cancelamento de Disciplina</option>
           <option value="2">Dispensa da prática de Educação Física</option>
           <option value="3">Decalração Tramitação de Diploma</option>
@@ -58,7 +58,7 @@
 
       <fieldset id="subtopico3" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
-        <select class="slectTop form-control" >
+        <select class="slectTop form-control" name="subtopico">
           <option value="1">Admissão por Transferência e Análise Curricular</option>
           <option value="2">Autorização para cursar disciplinas em outras Instituições de Ensino Superior</option>
           <option value="3">Certifica de Conclusão</option>
@@ -76,29 +76,24 @@
         </select>
       </fieldset>
 
-      <form action="catch_requerimento.php" method="POST">
         <fieldset class="motivo">
           <legend>Motivo:</legend>
           <textarea name="motivo" placeholder="Motivo" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
         </fieldset>
-      </form>
 
-      <form action="catch_requerimento.php">
         <fieldset class="obs">
           <legend>Observação:</legend>
           <textarea name="obsservacao" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
           <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
         </fieldset>
-      </form>
 
-      <form action="catch_requerimento.php">
         <fieldset class="anexo">
           <legend>Anexo:</legend>
           <input type="file" class="btn btn-outline-warning"/>
         </fieldset>
-      </form>
 
-      <input type="submit" class="btn btn-outline-success">
+        <input type="submit" class="btn btn-outline-success">
+      </form>
 
   </div>
   <script type="text/javascript">

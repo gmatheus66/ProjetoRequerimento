@@ -1,22 +1,65 @@
 <?php  
 include "init.php";
 
-
 $id;
 $topico = $_POST['topico'];
 $subtopico = $_POST['subtopico'];
-$obsservacao = $_POST['observacao'];
+$observacao = $_POST['observacao'];
 $motivo = $_POST['motivo'];
 
-function verificar($var){
 
+class verificar{
+	// private $id;
+	private $topico;
+	private $subtopico;
+	private $observacao;
+	private $motivo;
+	
+	public function setTopico(){
+
+	}	
+	public function getTopico(){
+
+	}
+	
+	public function setSubtopico(){
+
+	}
+	public function getSubtopico(){
+
+	}
+
+	public function setObservacao(){
+
+	}
+	public function getObersevacao(){
+		
+	}
+
+	public function setMotivo(){
+
+	}
+	public function getMotivo(){
+
+	}
+	
+	public function teste($mot){
+		if($mot == " "){
+			throw new Exception("Não foi possivel passar essa observação.");  
+		} else{
+			
+		}
+	}
 }
 
+$id = new verificar;
 
 try{
-	echo $topico;
-}catch(InputVazioException $ex){
-	$ex;
-	redirect("requerimento.php");
+	echo $id->teste($motivo);
+}catch(Exception $ex){
+	echo 'Exceção capturada: '. $ex->getMessage();
+	// redirect("requerimento.php");
+}finally{
+
 }
 ?>

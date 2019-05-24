@@ -1,11 +1,6 @@
 <?php  
 include "init.php";
 
-$id;
-$topico = $_POST['topico'];
-$subtopico = $_POST['subtopico'];
-$observacao = $_POST['observacao'];
-$motivo = $_POST['motivo'];
 
 
 class verificar{
@@ -15,32 +10,32 @@ class verificar{
 	private $observacao;
 	private $motivo;
 	
-	public function setTopico(){
-
-	}	
-	public function getTopico(){
-
+	protected function setTopico($top){
+		$this->$topico = $top;
+	}
+	protected function getTopico(){
+		return $this->$topico;
 	}
 	
-	public function setSubtopico(){
-
+	protected function setSubtopico($subt){
+		$this->$subtopico = $subt;
 	}
-	public function getSubtopico(){
-
+	protected function getSubtopico(){
+		return $this->$subtopico;
 	}
-
-	public function setObservacao(){
-
+	
+	protected function setObservacao($obs){
+		$this->$observacao =  $obs;	
 	}
-	public function getObersevacao(){
-		
+	protected function getObersevacao(){
+		return $this->$observacao;
 	}
-
-	public function setMotivo(){
-
+	
+	protected function setMotivo($mot){
+		$this->$motivo =  $mot;
 	}
-	public function getMotivo(){
-
+	protected function getMotivo(){
+		return $this->$motivo;
 	}
 	
 	public function teste($mot){
@@ -51,8 +46,18 @@ class verificar{
 		}
 	}
 }
+$id;
+$topico = $_POST['topico'];
+$subtopico = $_POST['subtopico'];
+$observacao = $_POST['observacao'];
+$motivo = $_POST['motivo'];
 
 $id = new verificar;
+
+$id->setTopico($topico);
+$id->setSubtopico($subtopico);
+$id->setMotivo($motivo);
+$id->setObservacao($observacao);
 
 try{
 	echo $id->teste($motivo);

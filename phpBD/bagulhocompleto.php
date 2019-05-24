@@ -81,7 +81,7 @@ class DaoUsuario {
         public function EditarComSenha(PojoUsuario $usuario) {
         try {
             $sql = "UPDATE usuario set
-    nome = :nome,
+                nome = :nome,
                 email = :email,
                 ativo = :ativo,
                 senha = :senha,

@@ -68,7 +68,7 @@ return cpf
     </form>
 </div>
 <div class= "input">        
-    <form class="form" action="login.php" method="POST" name="form1">
+    <form class="form" action="/phpBD/POJO.php" method="POST" name="form1">
         <select id="Cadastro inputGroupSelect01" onchange="verif()" class="custom-select">
             <option value="aluno">aluno</option>
             <option value="adm">admistração</option>
@@ -79,7 +79,7 @@ return cpf
         <input type="text" id="input" class="inp" name="nome" placeholder="Nome completo...">
         
         <label>Nome do respónsavel:</label>
-        <input type="text" class="inp" name="nome_do_respónsavel" placeholder="Nome do respónsavel...">
+        <input type="text" class="inp" name="nome_do_responsavel" placeholder="Nome do responsável...">
       
         <label>Data de nascimento:</label>
         <input type="Date" class="inp" name="data_de_nascimento"  placeholder="Data de nascimento...">

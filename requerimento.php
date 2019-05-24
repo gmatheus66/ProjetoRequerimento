@@ -83,7 +83,7 @@
 
         <fieldset class="obs">
           <legend>Observação:</legend>
-          <textarea name="obsservacao" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
+          <textarea name="observacao" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
           <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
         </fieldset>
 

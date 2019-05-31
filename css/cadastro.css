@@ -9,24 +9,26 @@
 }
 label{
 	position: relative;
-	top: 30px;
+	top: 60px;
 	text-align: left;
-	display: block;
-	margin-left: 19%;
+	display:none;
+	margin-left: 20%;
 	margin-right: 75%;
 }
 
 
 @media (max-width: 1200px){
 	label{
-		font-size: 1.5vw;
+		font-size: 2vw;
 		transition: 0.2s;
+
 	}
 }
+
 	input{
 		min-width: 0;
 		width: 120%;
-		height: 50px;
+		height: 40px;
 	}
 
 	.banner{
@@ -307,4 +309,304 @@ span a {
 .tilt:hover{
     text-decoration: none;
     color:white;
+}
+/**********************************************************************/
+@media (min-width: 350px) and (max-width: 575.98px) {
+	label{
+	position: relative;
+	top: 25px;
+	text-align: left;
+	display: inline;
+	margin-right: 60%;
+  margin: 5%;
+}
+
+label{
+		font-size: 2.8vw;
+		transition: 1s;
+  margin-left: 21%;
+	}
+
+  .banner {
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 120%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 12px;
+    margin-right: 3%;
+    font-family: "OpenSans-Bold";
+  }
+
+  .inp {
+    width: 55%;
+    padding: 10px 10px;
+    margin: 20px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 20%;
+  }
+
+}
+/*************************************************************/
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	label{
+	position: relative;
+	top: 60px;
+	text-align: left;
+	display: none;
+	margin-left: 20%;
+	margin-right: 75%;
+}
+
+label{
+		font-size: 2.3vw;
+		transition: 0.1s;
+
+	}
+
+  .banner {
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 100%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 12px;
+    margin-right: 3%;
+    font-family: "OpenSans-Bold";
+  }
+
+  .inp {
+    width: 55%;
+    padding: 10px 10px;
+    margin: 20px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 32%;
+  }
+
+}
+/*******************************************************/
+@media (min-width: 768px) and (max-width: 991.98px) {
+ 		label{
+	position: relative;
+	top: 60px;
+	text-align: left;
+	display: block;
+	margin-left: 20%;
+	margin-right: 75%;
+}
+
+label{
+		font-size: 1.3vw;
+		transition: 0.1s;
+
+	}
+
+  .banner {
+    text-align: left;
+    padding-top: 6%;
+    padding-left: 4.5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 100%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 16px;
+    margin-right: 3%;
+    font-family: "OpenSans-Bold";
+    padding-top: 3px;
+  }
+
+  .aMenu:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+  }
+
+  .inp {
+    width: 60%;
+    padding: 10px 10px;
+    margin: 15px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 28%;
+  }
+}
+
+/*******************************************************************************************************************************************/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  	label{
+	position: relative;
+	top: 60px;
+	text-align: left;
+	display: block;
+	margin-left: 20%;
+	margin-right: 75%;
+}
+
+label{
+		font-size: 1.5vw;
+		transition: 0.2s;
+
+	}
+
+  .banner {
+    text-align: left;
+    padding-top: 6%;
+    padding-left: 4.5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 100%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 16px;
+    margin-right: 3%;
+    font-family: "OpenSans-Bold";
+    padding-top: 10px;
+  }
+
+  .aMenu:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+  }
+
+
+  .inp {
+    width: 60%;
+    padding: 10px 10px;
+    margin: 15px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 31%;
+  }
+
+}
+/********************************************/
+@media (min-width: 1200px) {
+
+	label{
+	position: relative;
+	top: 60px;
+	text-align: left;
+	display: block;
+	margin-left: 20%;
+	margin-right: 75%;
+}
+
+label{
+		font-size: 1vw;
+		transition: 0.2s;
+
+	}
+ 
+  .banner {
+    text-align: left;
+    padding-top: 7%;
+    padding-left: 4.5%;
+  }
+
+  .banner img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .imgBanner {
+    width: 100%;
+  }
+
+  .aMenu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+    margin-right: 5%;
+    font-family: "OpenSans-Bold";
+  }
+
+  .aMenu:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+  }
+
+  
+  input {
+    display: block;
+    height: 5%;
+    width: 55%;
+    width: 22em;
+  }
+
+  .inp {
+    width: 55%;
+    padding: 10px 10px;
+    margin: 15px;
+    display: inline-block;
+    border: 1px solid #266B29;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 20%;
+  }
 }

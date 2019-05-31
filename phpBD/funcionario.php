@@ -1,118 +1,121 @@
 <?php
 
-//   $username = $_POST['username'];
-// $email = $_POST['email'];
-// $name = $_POST['name'];
-// $nome_do_responsavel = $_POST['nome do nome_do_responsavel'];
-// $cargo = $_POST['cargo'];
-// $siape = $_POST['siepe'];
-// $matricula = $_POST['matricula'];
-// $CPF = $_POST['CPF'];
-// $RG = $_POST['RG'];
-// $pw = $_POST['pw'];
-// $pw2 = $_POST['pw2'];
-// $data_de_nascimento = $_POST['data_de_nascimento'];
+include 'conect.php';
 
-class Funcionario {
-  
-    private $username;
-    private $email;
-    private $name;
-    private $nome_do_responsavel;
+$fnc = new FUNCIONARIO();
+
+$fnc->setCPF($_POST['cpf']);
+$fnc->setNome($_POST['nome']);
+$fnc->setCargo($_POST['cargo']);
+$fnc->setEmail($_POST['email']);
+$fnc->setRG_Numero ($_POST['RG_numero']);
+$fnc->setRG_Estado ($_POST['RG_estado']);
+$fnc->setRG_Orgao_exp ($_POST['RG_Orgao_exp']);
+$fnc->setTelefone($_POST['telefone']);
+$fnc->setPW($_POST['pw']);
+$fnc->setMatricula($_POST['matricula']);
+
+
+$stmt = $con -> prepare("INSERT INTO FUNCIONARIO (FNC_CPF,FNC_NOME,FNC_CARGO,FNC_EMAIL,FNC_RG_NUMERO,FNC_ESTADO,FNC_ORGAO_EXP,FNC_TELEFONE,FNC_PW,FNC_MATRICULA) VALUES(?,?,?,?,?,?,?,?,?,?,?);");
+$stmt -> bindParam(1,$fnc->getCPF());  
+$stmt -> bindParam(2,$fnc->getNome());
+$stmt -> bindParam(3,$fnc->getCargo());
+$stmt -> bindParam(4,$fnc->getEmail());
+$stmt -> bindParam(5,$fnc->getRG_numero());
+$stmt -> bindParam(6,$fnc->getRG_estado());
+$stmt -> bindParam(7,$fnc->getRG_orgao_exp());
+$stmt -> bindParam(8,$fnc->getTelefone());
+$stmt -> bindParam(9,$fnc->getPW());
+$stmt -> bindParam(10,$fnc->getMatricula());
+
+$stmt -> execute();
+
+class FUNCIONARIO {
+
+    private $cpf;
+    private $nome;
     private $cargo;
-    private $siape;
-    private $matricula;
-    private $CPF;
-    private $RG;
+    private $email;
+    private $RG_numero;
+    private $RG_estado;
+    private $RG_Orgao_exp;
+    private $telefone;
     private $pw;
-    private $data_de_nascimento;
+    private $matricula;
   
-    public function getCod_username() {
-        return $this->cod_username;
-    }
-  
-    public function setCod_username($cod_username) {
-        $this->cod_username = $cod_username;
-    }
-  
-    public function getemail() {
-        return $this->email;
-    }
-  
-    public function setemail($email) {
-        $this->email = $email;
-    }
-  
-    public function getname() {
-        return $this->name;
-    }
-  
-    public function setname($name) {
-        $this->name = strtolower($name);
-    }
-  
-    public function getnome_do_responsavel() {
-        return $this->nome_do_responsavel;
-    }
-  
-    public function setnome_do_responsavel($nome_do_responsavel) {
-        $this->nome_do_responsavel = $nome_do_responsavel;
-    }   
 
-    public function getcargo() {
+    public function getCPF() {
+        return $this->cpf;
+    }
+  
+    public function setCPF($cpf) {
+        $this->cpf = $cpf;
+    }
+
+     public function getNome() {
+        return $this->nome;
+    }
+  
+    public function setNome($nome) {
+        $this->name = strtolower($nome);
+    }
+    public function getCargo() {
         return $this->cargo;
     }
   
-    public function setcargo($cargo) {
+    public function setCargo($cargo) {
         $this->cargo = $cargo;
-    } 
-
-     public function getsiape() {
-        return $this->siape;
-    }
-  
-    public function setsiape($siape) {
-        $this->siape = strtolower($siape);
-    }
-     
-    public function getmatricula() {
-        return $this->matricula;
-    }
-  
-    public function setmatricula($matricula) {
-        $this->matricula = strtolower($matricula);
-    }
-     
-    public function getcpf() {
-        return $this->CPF;
-    }
-  
-    public function setcpf($CPF) {
-        $this->CPF = $CPF;
     }
 
-    public function getrg() {
-        return $this->RG;
+    public function getEmail() {
+        return $this->email;
     }
   
-    public function setrg($RG) {
-        $this->RG = $RG;
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+    public function getRG_numero() {
+        return $this->RG_numero;
+    }
+    public function setRG_Numero($RG_numero) {
+        $this->RG_numero = $RG_numero;
     }
   
-    public function getpw() {
+    public function getRG_estado() {
+        return $this->RG_estado;
+    }
+    public function setRG_Estado($RG_estado) {
+        $this->RG_estado = $RG_estado;
+    }
+    public function getRG_orgao_exp() {
+        return $this->RG_Orgao_exp;
+    }
+    public function setRG_Orgao_exp($RG_Orgao_exp) {
+        $this->RG_Orgao_exp = $RG_Orgao_exp;
+    }
+
+    public function getTelefone() {
+        return $this->telefone;
+    }
+  
+    public function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+       
+    public function getPW() {
         return $this->pw;
     }
   
-    public function setpw($pw) {
+    public function setPW($pw) {
         $this->pw = $pw;
     }
-     public function getdata_de_nascimento() {
-        return $this->data_de_nascimento;
+     public function getMatricula() {
+        return $this->matricula;
     }
-  
-    public function setdata_de_nascimento($data_de_nascimento) {
-        $this->data_de_nascimento = $data_de_nascimento;
+    public function setMatricula($matricula) {
+        $this->matricula = $matricula;
     }
+    
 }
   
 ?>

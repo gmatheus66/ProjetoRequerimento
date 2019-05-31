@@ -1,0 +1,9 @@
+body{
+	background: #00FF00;
+}
+.teste{
+	background: radial-gradient(#7CFC00, #7FFFD4);
+	width: 25%;
+	height: 200px;
+	border-radius: 2em;
+}

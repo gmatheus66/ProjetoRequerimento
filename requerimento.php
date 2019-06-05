@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="css/requerimento.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="js/jquery-3.4.0.min.js"></script>
   <title>Requerimento</title>
 </head>
 <body>
@@ -22,31 +23,35 @@
 
   <div class="fieldset">
     <form method="POST" action="catch_requerimento.php" onclick="menu()">
-      <fieldset class="topico">
-        <legend>Tópico:</legend>
-        <select id="test" name="topico" class="slectTop form-control">
-          <option value="Matricula">Matricula</option>
-          <option value="Curso">Curso</option>
-          <option value="Outros">Outros</option>
+
+        <fieldset class="topico" >
+            <legend>Tópico:</legend>
+            <select id="test" name="topico" class="slectTop form-control custom-select">
+                <option selected>Escolha</option>
+                <option value="Matricula">Matricula</option>
+                <option value="Curso">Curso</option>
+                <option value="Outros">Outros</option>
         </select>
       </fieldset>
     
 
       <fieldset id="subtopico1" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
-        <select class="slectTop form-control" name="subtopico">
+        <select class="slectTop form-control custom-select" name="subtopico">
+            <option selected>Escolha</option>
           <option value="1">Ajuste de Matrícula</option>
           <option value="2">Cancelamento de Matrícula</option>
           <option value="3">Complementação de Matrícula</option>
           <option value="4">Declaração de Matrícula ou Matrícula Vínculo</option>
           <option value="5">Reabertura de Matrícula</option>
-          <option value="6">Trancamento de MAtrícula</option>
+          <option value="6">Trancamento de Matrícula</option>
         </select>
       </fieldset>
 
       <fieldset id="subtopico2" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
         <select class="slectTop form-control" name="subtopico">
+            <option selected>Escolha</option>
           <option value="1">Cancelamento de Disciplina</option>
           <option value="2">Dispensa da prática de Educação Física</option>
           <option value="3">Decalração Tramitação de Diploma</option>
@@ -59,7 +64,7 @@
       <fieldset id="subtopico3" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
         <select class="slectTop form-control" name="subtopico">
-          <option value="1">Admissão por Transferência e Análise Curricular</option>
+          <option value="Admissão por Transferência e Análise Curricular"> Admissão por Transferência e Análise Curricular</option>
           <option value="2">Autorização para cursar disciplinas em outras Instituições de Ensino Superior</option>
           <option value="3">Certifica de Conclusão</option>
           <option value="4">Certidão - Autenticidade</option>
@@ -72,18 +77,18 @@
           <option value="11">Justificativa de Falta(s) ou Prova 2° chamada</option>
           <option value="12">Reintegração</option>
           <option value="13">Reintegração para Cursar</option>
-          <option>Solicitação de Conselho de Classe</option>
+          <option value="14">Solicitação de Conselho de Classe</option>
         </select>
       </fieldset>
 
         <fieldset class="motivo">
           <legend>Motivo:</legend>
-          <textarea name="motivo" placeholder="Motivo" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
+          <textarea name="motivo" placeholder="Motivo" class="obs form-control motivo" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
         </fieldset>
 
         <fieldset class="obs">
           <legend>Observação:</legend>
-          <textarea name="observacao" placeholder="Observações" class="obs form-control" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
+          <textarea name="observacao" placeholder="Observações" class="obs form-control observacao" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
           <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
         </fieldset>
 
@@ -92,12 +97,25 @@
           <input type="file" class="btn btn-outline-warning"/>
         </fieldset>
 
-        <input type="submit" class="btn btn-outline-success">
+        <input type="submit" class="btn btn-outline-success btn-lg">
       </form>
 
   </div>
   <script type="text/javascript">
-    var matricula = document.getElementById('exampleFormControlSelect1').value('1');
+    //var matricula = document.getElementById('exampleFormControlSelect1').value('1');
+
+    $('.observacao').on('blur' , ()=>{
+        if($('.observacao').val().length > 0){
+            $('.observacao').addClass('is-valid')
+            console.log($('.observacao').val().length);
+        }
+        else{
+            $('.observacao').addClass('is-invalid');
+            console.log($('.observacao').val().length);
+        }
+    });
+
+
 
     function menu(){
       var item = document.getElementById('test').value;

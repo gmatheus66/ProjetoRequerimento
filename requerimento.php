@@ -27,7 +27,7 @@
         <fieldset class="topico" >
             <legend>Tópico:</legend>
             <select id="test" name="topico" class="slectTop form-control custom-select">
-                <option selected>Escolha</option>
+
                 <option value="Matricula">Matricula</option>
                 <option value="Curso">Curso</option>
                 <option value="Outros">Outros</option>
@@ -38,46 +38,47 @@
       <fieldset id="subtopico1" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
         <select class="slectTop form-control custom-select" name="subtopico">
-            <option selected>Escolha</option>
-          <option value="1">Ajuste de Matrícula</option>
-          <option value="2">Cancelamento de Matrícula</option>
-          <option value="3">Complementação de Matrícula</option>
-          <option value="4">Declaração de Matrícula ou Matrícula Vínculo</option>
-          <option value="5">Reabertura de Matrícula</option>
-          <option value="6">Trancamento de Matrícula</option>
+
+          <option value="Ajuste de Matrícula">Ajuste de Matrícula</option>
+          <option value="Cancelamento de Matrícula">Cancelamento de Matrícula</option>
+          <option value="Complementação de Matrícula">Complementação de Matrícula</option>
+          <option value="Declaração de Matrícula ou Matrícula Vínculo">Declaração de Matrícula ou Matrícula Vínculo</option>
+          <option value="Reabertura de Matrícula">Reabertura de Matrícula</option>
+          <option value="Trancamento de Matrícula">Trancamento de Matrícula</option>
         </select>
       </fieldset>
 
       <fieldset id="subtopico2" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
         <select class="slectTop form-control" name="subtopico">
-            <option selected>Escolha</option>
-          <option value="1">Cancelamento de Disciplina</option>
-          <option value="2">Dispensa da prática de Educação Física</option>
-          <option value="3">Decalração Tramitação de Diploma</option>
-          <option value="4">Histórico Escolar</option>
-          <option value="5">Isenção de disciplinas cursadas</option>
-          <option value="6">Matriz curricular</option>
+
+          <option value="Cancelamento de Disciplina">Cancelamento de Disciplina</option>
+          <option value="Dispensa da prática de Educação Física">Dispensa da prática de Educação Física</option>
+          <option value="Decalração Tramitação de Diploma">Decalração Tramitação de Diploma</option>
+          <option value="Histórico Escolar">Histórico Escolar</option>
+          <option value="Isenção de disciplinas cursadas">Isenção de disciplinas cursadas</option>
+          <option value="Matriz curricular">Matriz curricular</option>
         </select>
       </fieldset>
 
       <fieldset id="subtopico3" class="subtopico" style="display: none;">
         <legend>Subtópico:</legend>
         <select class="slectTop form-control" name="subtopico">
+
           <option value="Admissão por Transferência e Análise Curricular"> Admissão por Transferência e Análise Curricular</option>
-          <option value="2">Autorização para cursar disciplinas em outras Instituições de Ensino Superior</option>
-          <option value="3">Certifica de Conclusão</option>
-          <option value="4">Certidão - Autenticidade</option>
-          <option value="5">Cópia Xerox de Documento</option>
-          <option value="6">Declaração de Colação de grau e Tramitação de Diploma</option>
-          <option value="7">Declaração de Monitoria</option>
-          <option value="8">Declaraço de Estágio</option>
-          <option value="9">Ementa de displina</option>
-          <option value="10">Guia de trsnferência</option>
-          <option value="11">Justificativa de Falta(s) ou Prova 2° chamada</option>
-          <option value="12">Reintegração</option>
-          <option value="13">Reintegração para Cursar</option>
-          <option value="14">Solicitação de Conselho de Classe</option>
+          <option value="Autorização para cursar disciplinas em outras Instituições de Ensino Superior">Autorização para cursar disciplinas em outras Instituições de Ensino Superior</option>
+          <option value="Certifica de Conclusão">Certifica de Conclusão</option>
+          <option value="Certidão - Autenticidade">Certidão - Autenticidade</option>
+          <option value="Cópia Xerox de Documento">Cópia Xerox de Documento</option>
+          <option value="Declaração de Colação de grau e Tramitação de Diploma">Declaração de Colação de grau e Tramitação de Diploma</option>
+          <option value="Declaração de Monitoria">Declaração de Monitoria</option>
+          <option value="Declaraço de Estágio">Declaraço de Estágio</option>
+          <option value="Ementa de displina">Ementa de displina</option>
+          <option value="Guia de trasnferência">Guia de transferência</option>
+          <option value="Justificativa de Falta(s) ou Prova 2° chamada">Justificativa de Falta(s) ou Prova 2° chamada</option>
+          <option value="Reintegração">Reintegração</option>
+          <option value="Reintegração para Cursar">Reintegração para Cursar</option>
+          <option value="Solicitação de Conselho de Classe">Solicitação de Conselho de Classe</option>
         </select>
       </fieldset>
 

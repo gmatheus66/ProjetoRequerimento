@@ -3,9 +3,18 @@
 class Requerimento{
     private $topico;
     private $subtopico;
+    private $subtopico_id;
     private $observacao;
     private $motivo;
     private $anexo;
+
+    public function  getSubtopico_id(){
+        return $this ->subtopico_id;
+    }
+
+    public function setSubTopico_id($sub_id){
+        $this->subtopico_id = $sub_id;
+    }
 
     public function setTopico($top){
         $this->topico = $top;

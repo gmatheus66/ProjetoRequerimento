@@ -369,15 +369,16 @@ label{
 
 	label{
 	position: relative;
-	top: 60px;
+	top: 30px;
 	text-align: left;
-	display: none;
-	margin-left: 20%;
+	display: inline-block;
+  margin-left: 30%;
 	margin-right: 75%;
+
 }
 
 label{
-		font-size: 2.3vw;
+		font-size: 2.0vw;
 		transition: 0.1s;
 
 	}

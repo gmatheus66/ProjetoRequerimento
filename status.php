@@ -1,15 +1,17 @@
 <?php 
 include "phpBD/conect.php";
+
 try{
-    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO FROM heroku_70137967cfc9460.requerimento; ORDER BY SUBTP_ID");
-    $smt -> execute();
-    $req = $smt ->fetchAll();
+   $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO FROM REQUERIMENTO ORDER BY SUBTP_ID;");
+   $smt -> execute();
+   $req = $smt ->fetchAll();
 
 
 }catch(Exception $ex){
 
 }
-?>    
+
+?>x    
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,6 +41,7 @@ try{
     <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
     <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
 </div>
+
 <a href="#" class="btn btn-outline-primary" id="hide">Hide</a>
 <a href="#" class="btn btn-outline-success" id="show">Leia Mais</a>
 <div id="box">
@@ -47,7 +50,19 @@ try{
 <div id="mostrar">
     
 </div>
-  
+
+
+
+<?php foreach(/* $con->query($smt) */ $req as $row): ?>
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body text-success">php
+        <h5 class="card-title">Success card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+        <div class="card-footer bg-transparent border-success"><?= $row['REQ_STATUS']?></div>  
+    </div>
+<?php endforeach;?>
 
 <script>
       // let box = window.document.getElementById('box');

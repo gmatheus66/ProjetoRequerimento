@@ -78,8 +78,8 @@ return cpf
         <label>Nome completo:</label>
         <input type="text" id="input" class="inp" name="nome" placeholder="Nome completo...">
         
-        <label>Nome do respónsavel:</label>
-        <input type="text" class="inp" name="nome_do_responsavel" placeholder="Nome do responsável...">
+<!--         <label>Nome do respónsavel:</label>
+        <input type="text" class="inp" name="nome_do_responsavel" placeholder="Nome do responsável..."> -->
       
         <label>Data de nascimento:</label>
         <input type="Date" class="inp" name="data_de_nascimento"  placeholder="Data de nascimento...">
@@ -101,8 +101,8 @@ return cpf
          <label>CPF:</label>
         <input type="text" class="inp" name="cpf" id="cpf" placeholder="000.000.000-00" onBlur="ValidarCPF(form1.cpf);" maxlength="14" onkeydown="javascript: fMasc( this, mCPF );">
 
-        <label>RG:</label>
-        <input type="number" name="RG" class="inp" placeholder="Insira seu RG..."  minlength="9" maxlength="9">
+        <!-- <label>RG:</label>
+        <input type="number" name="RG" class="inp" placeholder="Insira seu RG..."  minlength="9" maxlength="9"> -->
 
         <label>Senha:</label>
         <input type="password" class="inp" name="pw" id="pw" placeholder="Senha..."minlength="6" maxlength="10" pattern="[a-zA-Z0-9]+$" title="Senha"  >

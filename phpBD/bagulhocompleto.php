@@ -52,14 +52,14 @@ class DaoUsuario {
   
             return $p_sql->execute();
         } catch (Exception $e) {
-            print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+                print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
         }
     }
   
     public function Editar(PojoUsuario $usuario) {
         try {
             $sql = "UPDATE usuario set
-    nome = :nome,
+                nome = :nome,
                 email = :email,
                 ativo = :ativo,
                 cod_perfil = :cod_perfil WHERE cod_usuario = :cod_usuario";

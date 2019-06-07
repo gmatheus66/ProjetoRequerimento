@@ -8,9 +8,29 @@ $motivo = $_POST['motivo']?? " ";
 $observacao =$_POST['observacao']?? " ";
 $subtopico = $_POST['subtopico']?? " ";
 $topico = $_POST['topico']?? " ";
-$alunoemail = $_SESSION['Aln_email'];
-//$alunoemail = "vjhg@bol.com";
+//$alunoemail = $_SESSION['Aln_email'];
+$alunoemail = "vjhg@bol.com";
+$pasta = "upload/";
 
+var_dump($_FILES['anexo']);
+/*
+if(isset($_FILES['anexo'])){
+    $perm_ext = ["png" , "jpeg", "jpg", "pdf"];
+    $extensao = pathinfo($_FILES['anexo']['name'],PATHINFO_EXTENSION);
+
+    if (in_array($extensao,$perm_ext)){
+        $arq_temp = $_FILES['anexo']['tpm_name'];
+        $novo_nome = uniqid().".$extensao";
+        echo $pasta.$novo_nome;
+        if (move_uploaded_file($arq_temp, $pasta.$novo_nome)){
+            echo "upload feito com sucesso";
+        }
+        else{
+            echo "nao subiu nada";
+        }
+    }
+}
+*/
 /*
 if(!logado()){
     redirect("login.php");
@@ -23,52 +43,51 @@ if ($motivo == " " || $observacao == " " || $subtopico == " " || $topico == " ")
 }
 */
 
-
 $id = new Requerimento();
 
 $id->setTopico($topico);
 $id->setSubtopico($subtopico);
 $id->setMotivo($motivo);
 $id->setObservacao($observacao);
+$id->setAnexo("Oh shit, Oh no");
+//$id->setEmail($alunoemail);
 
 
 try {
+
     $smt = $con -> prepare("SELECT SUBTP_ID FROM heroku_70137967cfc9460.subtipo WHERE SUBTP_DESCRICAO = ?;");
-    $smt ->bindParam(1,$subtopico);
+    $smt ->bindParam(1,$id->getSubtopico());
     $smt -> execute();
     $sub = $smt ->fetch();
-    //var_dump($subtopico);
-    //var_dump($sub["SUBTP_ID"]);
+    //var_dump($sub);
+    var_dump($sub["SUBTP_ID"]);
     $id->setSubTopico_id($sub["SUBTP_ID"]);
-/*
-    $sm = $con -> prepare("SELECT ALN_CPF FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = '?';");
+
+    $sm = $con -> prepare("SELECT ALN_CPF FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?;");
     $sm ->bindParam(1,$alunoemail);
     $sm -> execute();
-    $res = $sm ->fetchAll();
+    $res = $sm ->fetch();
+    //var_dump($res["ALN_CPF"]);
+
 
     //print_r($res[0][0]);
-    $stmt = $con -> prepare("INSERT INTO REQUERIMENTO (REQ_TIPO,REQ_OBSERVACAO,REQ_STATUS,ALN_CPF,FNC_CPF,SUBTP_ID,ANX_ID) VALUES(?,?,?,?,?,?);");
-    //$stmt -> bindParam(1,$id->getSubtopico();//tipo
-    $stmt -> bindParam(2,$id->getObersevacao());
-    //$stmt -> bindParam(3,$id->);//status
-    $stmt -> bindParam(4,$res[0][0]);//aln_cpf
-    $stmt -> bindParam(5,$id->getSubtopico_id());//subtipo id
-    $stmt -> bindParam(6,$id-> getAnexo());//anexo
+    $stmt = $con -> prepare("INSERT INTO REQUERIMENTO (REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,REQ_STATUS,ALN_CPF,SUBTP_ID,ANX_ID) VALUES(?,?,?,?,?,?,?);");
+    $stmt -> bindParam(1,$id->getSubtopico());//tipo
+    $stmt -> bindParam(2, $id ->getMotivo());
+    $stmt -> bindParam(3,$id->getObersevacao());
+    $id->setStatus("ABERTO");
+    $stmt -> bindParam(4,$id->getStatus());//status
+    $stmt -> bindParam(5,$res["ALN_CPF"]);//aln_cpf
+    $stmt -> bindParam(6,$id->getSubtopico_id());//subtipo id
+    $stmt -> bindParam(7,$id-> getAnexo());//anexo
     $stmt -> execute();
-*/
+    
 }catch(PDOException $e){
     echo "ERROR";
     print_r($e);
 }
 
-try{
-	//echo $id->teste($id ->getMotivo());
-}catch(Exception $ex){
-	echo 'Exceção capturada: '. $ex->getMessage();
-	// redirect("requerimento.php");
-}finally{
 
-}
 //print_r($id->getTopico());
 //print_r($id->getObersevacao());
 //print_r($id->getMotivo());

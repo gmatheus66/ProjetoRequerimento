@@ -22,7 +22,7 @@
 </div>
 
   <div class="fieldset">
-    <form method="POST" action="catch_requerimento.php" onclick="menu()">
+    <form method="POST" action="catch_requerimento.php" onclick="menu()" enctype="multipart/form-data">
 
         <fieldset class="topico" >
             <legend>Tópico:</legend>
@@ -84,18 +84,18 @@
 
         <fieldset class="motivo">
           <legend>Motivo:</legend>
-          <textarea name="motivo" placeholder="Motivo" class="obs form-control motivo" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
+          <textarea name="motivo" placeholder="Motivo" class="obs form-control motivo mot1" id="exampleFormControlTextarea1" rows="6" cols="50" maxlength="180"></textarea>
         </fieldset>
 
-        <fieldset class="obs">
+        <fieldset class="obs obser">
           <legend>Observação:</legend>
-          <textarea name="observacao" placeholder="Observações" class="obs form-control observacao" id="exampleFormControlTextarea1" rows="6" cols="50"></textarea>
+          <textarea name="observacao" placeholder="Observações" class="obs form-control observacao obs1" id="exampleFormControlTextarea1" rows="6" cols="50" maxlength="180"></textarea>
           <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
         </fieldset>
 
         <fieldset class="anexo">
           <legend>Anexo:</legend>
-          <input type="file" class="btn btn-outline-warning"/>
+          <input type="file" class="btn btn-outline-warning" name="anexo"/>
         </fieldset>
 
         <input type="submit" class="btn btn-outline-success btn-lg">
@@ -105,17 +105,32 @@
   <script type="text/javascript">
     //var matricula = document.getElementById('exampleFormControlSelect1').value('1');
 
-    $('.observacao').on('blur' , ()=>{
-        if($('.observacao').val().length > 0){
-            $('.observacao').addClass('is-valid')
-            console.log($('.observacao').val().length);
+        let mot = $('.mot1');
+        let obs = $('.obs1');
+
+     mot.on('blur' , (evt)=>{
+         console.log($(evt.target).serialize());
+        if(mot.val().length > 0){
+            mot.addClass('is-valid');
+
+            console.log("mot " + mot.val().length);
         }
         else{
-            $('.observacao').addClass('is-invalid');
-            console.log($('.observacao').val().length);
+            mot.addClass('is-invalid');
+            console.log("mot " + mot.val().length);
         }
     });
 
+    obs.on('blur' , function(evt){
+        if(mot.val().length > 0){
+            obs.addClass('is-valid')
+            console.log("obs " + obs.val().length);
+        }
+        else{
+            obs.addClass('is-invalid');
+            console.log("obs " + obs.val().length);
+        }
+    });
 
 
     function menu(){

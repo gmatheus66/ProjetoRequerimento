@@ -7,6 +7,16 @@ class Requerimento{
     private $observacao;
     private $motivo;
     private $anexo;
+    private $status;
+
+
+    public function setStatus($status){
+        $this ->status = $status;
+    }
+
+    public function  getStatus(){
+        return $this ->status;
+    }
 
     public function  getSubtopico_id(){
         return $this ->subtopico_id;
@@ -54,13 +64,7 @@ class Requerimento{
         $this->anexo = $anexo;
     }
 
-    public function teste($mot){
-        if($mot == " "){
-            throw new Exception("Não foi possivel passar essa observação.");
-        } else{
 
-        }
-    }
 }
 
 ?>

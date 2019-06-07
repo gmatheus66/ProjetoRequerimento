@@ -21,7 +21,6 @@ $stmt -> bindParam(4,$fnc->getdata_de_nascimento());
 $stmt -> bindParam(5,$fnc->getCPF());
 $stmt -> bindParam(6,$fnc->getPW());
 
-
 $stmt -> execute();
 
 class ALUNO {

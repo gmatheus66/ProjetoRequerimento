@@ -4,33 +4,6 @@ include "init.php";
 include  "phpBD/class_Requerimento.php";
 include "phpBD/conect.php";
 
-$motivo = $_POST['motivo']?? " ";
-$observacao =$_POST['observacao']?? " ";
-$subtopico = $_POST['subtopico']?? " ";
-$topico = $_POST['topico']?? " ";
-//$alunoemail = $_SESSION['Aln_email'];
-$alunoemail = "vjhg@bol.com";
-$pasta = "upload/";
-
-var_dump($_FILES['anexo']);
-/*
-if(isset($_FILES['anexo'])){
-    $perm_ext = ["png" , "jpeg", "jpg", "pdf"];
-    $extensao = pathinfo($_FILES['anexo']['name'],PATHINFO_EXTENSION);
-
-    if (in_array($extensao,$perm_ext)){
-        $arq_temp = $_FILES['anexo']['tpm_name'];
-        $novo_nome = uniqid().".$extensao";
-        echo $pasta.$novo_nome;
-        if (move_uploaded_file($arq_temp, $pasta.$novo_nome)){
-            echo "upload feito com sucesso";
-        }
-        else{
-            echo "nao subiu nada";
-        }
-    }
-}
-*/
 /*
 if(!logado()){
     redirect("login.php");
@@ -42,6 +15,40 @@ if ($motivo == " " || $observacao == " " || $subtopico == " " || $topico == " ")
     redirect("requerimento.php");
 }
 */
+$motivo = $_POST['motivo']?? " ";
+$observacao =$_POST['observacao']?? " ";
+$subtopico = $_POST['subtopico']?? " ";
+$topico = $_POST['topico']?? " ";
+//$alunoemail = $_SESSION['Aln_email'];
+$alunoemail = "vjhg@bol.com";
+$pasta = 'upload/';
+
+//var_dump($_FILES['anexo']);
+
+if(isset($_FILES['anexo'])){
+    $perm_ext = ["png" , "jpeg", "jpg", "pdf"];
+    $extensao = pathinfo($_FILES['anexo']['name'],PATHINFO_EXTENSION);
+
+    if (in_array($extensao,$perm_ext)){
+        $arq_temp = $_FILES['anexo']['tpm_name'];
+        //echo $_FILES['anexo']['tmp_name'];
+        $novo_nome = uniqid().".$extensao";
+        //echo $pasta.$novo_nome;
+        if (move_uploaded_file($_FILES['anexo']['tmp_name'], $pasta.$novo_nome)){
+            $href = $pasta.$novo_nome;
+
+            $sm = $con ->prepare("INSERT INTO ANEXO (ANX_ID,ANX_HREF) VALUES(?,?);");
+            $sm -> bindParam(1,$novo_nome);
+            $sm -> bindParam(2,$href);
+            $sm -> execute();
+
+        }
+        else{
+            echo "nao subiu nada";
+        }
+    }
+}
+
 
 $id = new Requerimento();
 
@@ -79,9 +86,14 @@ try {
     $stmt -> bindParam(4,$id->getStatus());//status
     $stmt -> bindParam(5,$res["ALN_CPF"]);//aln_cpf
     $stmt -> bindParam(6,$id->getSubtopico_id());//subtipo id
-    $stmt -> bindParam(7,$id-> getAnexo());//anexo
+    if($novo_nome) {
+        $stmt->bindParam(7, $novo_nome);//anexo
+    }else{
+        $stmt ->bindParam(7, $id->setAnexo());
+    }
+
     $stmt -> execute();
-    
+
 }catch(PDOException $e){
     echo "ERROR";
     print_r($e);

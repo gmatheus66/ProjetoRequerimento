@@ -97,6 +97,7 @@ try {
 
     $stmt -> execute();
 
+
 }catch(PDOException $e){
     echo "ERROR";
     print_r($e);
@@ -107,6 +108,6 @@ try {
 //print_r($id->getObersevacao());
 //print_r($id->getMotivo());
 //print_r( $id->getSubtopico());
-
+$id = null;
 redirect("index.php");
 ?>

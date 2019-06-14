@@ -7,6 +7,8 @@ if(!logado()){
     redirect('login.php');
 }
 */
+//$alunoemail = $_SESSION['Aln_email'];
+$alunoemail = "vjhg@bol.com";
 try{
    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_DT_ABERTURA,REQ_MOTIVO,REQ_OBSERVACAO FROM REQUERIMENTO ORDER BY SUBTP_ID;");
    $smt -> execute();
@@ -14,7 +16,7 @@ try{
 
 
 }catch(Exception $ex){
-
+    print_r($ex);
 }
 
 ?>
@@ -55,7 +57,7 @@ try{
 
 <?php foreach($req as $data): ?>
 <?php var_dump($data)?>
-  <div class="card" style="margin-left: 10%; margin-right: 10%;">
+  <div class="card" style="margin-left: 10%; margin-right: 10%; margin-top: 5%;">
       <h5 class="card-header"><?= $data["REQ_TIPO"]?></h5>
       <div class="card-body" id="card">
           <h5 class="card-title"><?= $data["REQ_MOTIVO"]?></h5>
@@ -75,12 +77,18 @@ try{
       // box.onclick = function(){
       //     box.innerText = 'Click';
            //box.style.width = "30%";
-           //box.style.transition = "0.9s"
+       //box.style.transition = "0.9s"
 
+      $(document).ready(function () {
+          $('#show').click(function () {
+              $('#mostrar').fadeToggle("slow","linear");
+          })
+      })
+      /*
 $('#show').on('click', function(){
-    $('#mostrar').show(1000,function(){
+    $('#mostrar').toggle(1000,function(){
         //alert("Também deu certo");
-        $('.card-body').append(`<a href="#" class="btn btn-primary"> Hide </a>`);
+        $('.card-body').append(`<a href="#" class="btn btn-primary" id="hide"> Hide </a>`);
     });
     $('#show').remove();
 });
@@ -90,9 +98,11 @@ $('#hide').on('click', function(){
            //alert('Deu certo');
         $('.card-body').append(`<a href="#" class="btn btn-primary" id="show">VER MAIS</a>`)
     });
-    $('#mostrar').remove();
+    $('#hide').remove();
 
 });
+
+ */
 </script>
 
 </body>

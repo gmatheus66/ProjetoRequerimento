@@ -103,9 +103,9 @@ $('#hide').on('click', function(){
 $('#show').on('click', function(){
     $('#mostrar').show(1000,function(){
         alert("Também deu certo");
+        $('.card-body').append(`<a href="#" class="btn btn-primary"> Hide </a>`);
     });
     $('#show').remove();
-    //$('#card').append();
 });
 
 </script>

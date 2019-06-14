@@ -1,12 +1,10 @@
-body{
-	background: #00FF00;
-}
+
 *{
 	margin: 0;
 
 }
 .teste{
-	background: radial-gradient(#7CFC00, #7FFFD4);
+
 	width: 25%;
 	height: 200px;
 	border-radius: 2em;
@@ -14,4 +12,18 @@ body{
 .cd{
 	margin-left: 25%;
 	margin-right: 25%;
+}
+#mostrar{
+	display: none;
+	width: 2%;
+	margin: 4px;
+
+}
+.card{
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 5%;
+}
+.card-aln{
+	border: 0;
 }

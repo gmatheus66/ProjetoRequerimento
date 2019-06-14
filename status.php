@@ -52,40 +52,21 @@ try{
 </div> -->
 
 
-<?php foreach(/* $con->query($smt) */ $req as $row): ?>
-    <?php if($req > 0):?>
-        <h1>Olá Usuario, esses são seus requerimentos.</h1>
-    <?php else:?>
-        <h1>Você não tem requerimentos no momento.</h1>
-    <?php endif;?>
-    <div class="card border-success mb-3" style="max-width: 18rem;">
-      <div class="card-header"><?=$row['REQ_TIPO']?></div>
-      <div class="card-body text-success">
-        <h5 class="card-title">Descrição</h5>
-        <p class="card-text"><?=$row['REQ_DESCICAO']?></p>
-    </div>
-        <div class="card-footer bg-transparent border-success"><?= $row['REQ_STATUS']?></div>  
-    </div>
 
-
-    <div class="card text-center">
-        <div class="card-header">
-        Featured
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Status</h5>
-            <p class="card-text"><?=$row['REQ_STATUS']?></p>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Descrição</h5>
-            <p class="card-text"><?=$row['REQ_DESCICAO']?></p>
-            <!-- <a href="#" class="btn btn-success">Go somewhere</a> -->
-        </div>
-        <div class="card-footer text-muted">
-            <?= $data["REQ_DT_ABERTURA"]?>
-        </div>
-    </div>
-
+<?php foreach($req as $row): ?>
+  <div class="card" style="margin-left: 10%; margin-right: 10%;">
+      <h5 class="card-header"><?= $row["REQ_TIPO"]?></h5>
+      <div class="card-body" id="card">
+          <h5 class="card-title"><?= $row["REQ_MOTIVO"]?></h5>
+          <p class="card-text"><?= $row["REQ_OBSERVACAO"]?></p>
+          <div id="mostrar"></div>
+          <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
+      </div>
+      <div class="card-footer">
+          <small class="text-muted"><?= $row["REQ_STATUS"]?></small>
+          <small class="text-muted"><?= $row["REQ_DT_ABERTURA"]?></small>
+      </div>
+  </div>
 <?php endforeach;?>
 
 <script>
@@ -95,16 +76,11 @@ try{
            //box.style.width = "30%";
            //box.style.transition = "0.9s"
 
-$('#hide').on('click', function(){
-    $('#mostrar').hide(1500, function(){
-        alert('Deu certo');   
+    $(document).ready(function () {
+        $('#show').click(function () {
+            $('#mostrar').fadeToggle("slow","linear");
+        });
     });
-});
-$('#show').on('click', function(){
-    $('#mostrar').show(1000,function(){
-        alert("Também deu certo");
-    });
-});
 
 </script>
 

@@ -11,7 +11,7 @@ try{
 
 }
 
-?>x    
+?>    
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -66,6 +66,22 @@ try{
     </div>
         <div class="card-footer bg-transparent border-success"><?= $row['REQ_STATUS']?></div>  
     </div>
+
+
+    <div class="card text-center">
+        <div class="card-header">
+        Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-success">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
+
 <?php endforeach;?>
 
 <script>

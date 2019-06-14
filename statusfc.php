@@ -50,23 +50,7 @@ try{
 
 <!--<a href="#" class="btn btn-outline-primary" id="hide">Hide</a>
 <a href="#" class="btn btn-outline-success" id="show">Leia Mais</a>-->
-<div id="box">
-    Events
-</div>
 
-
-
-
-<?php foreach(/* $con->query($smt) */ $req as $row): ?>
-    <div class="card border-success mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body text-success">php
-        <h5 class="card-title">Success card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-        <div class="card-footer bg-transparent border-success"><?= $row['REQ_STATUS']?></div>  
-    </div>
-<?php endforeach;?>
 
 
 <?php foreach($req as $data): ?>
@@ -93,21 +77,22 @@ try{
            //box.style.width = "30%";
            //box.style.transition = "0.9s"
 
-$('#hide').on('click', function(){
-    $('#mostrar').hide(1500, function(){
-        alert('Deu certo');
-
-    });
-
-});
 $('#show').on('click', function(){
     $('#mostrar').show(1000,function(){
-        alert("Também deu certo");
+        //alert("Também deu certo");
         $('.card-body').append(`<a href="#" class="btn btn-primary"> Hide </a>`);
     });
     $('#show').remove();
 });
 
+$('#hide').on('click', function(){
+    $('#mostrar').hide(1500, function(){
+           //alert('Deu certo');
+        $('.card-body').append(`<a href="#" class="btn btn-primary" id="show">VER MAIS</a>`)
+    });
+    $('#mostrar').remove();
+
+});
 </script>
 
 </body>

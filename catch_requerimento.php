@@ -22,7 +22,8 @@ $topico = $_POST['topico']?? " ";
 //$alunoemail = $_SESSION['Aln_email'];
 $alunoemail = "vjhg@bol.com";
 $pasta = 'upload/';
-
+ echo $topico;
+ echo $subtopico;
 //var_dump($_FILES['anexo']);
 
 if(isset($_FILES['anexo'])){
@@ -58,6 +59,8 @@ $id->setMotivo($motivo);
 $id->setObservacao($observacao);
 $id->setAnexo("Oh shit, Oh no");
 //$id->setEmail($alunoemail);
+print_r($id ->getTopico());
+print_r($id->getSubtopico());
 
 
 try {
@@ -89,7 +92,7 @@ try {
     if($novo_nome) {
         $stmt->bindParam(7, $novo_nome);//anexo
     }else{
-        $stmt ->bindParam(7, $id->setAnexo());
+        $stmt ->bindParam(7, $id->getAnexo());
     }
 
     $stmt -> execute();
@@ -105,4 +108,5 @@ try {
 //print_r($id->getMotivo());
 //print_r( $id->getSubtopico());
 
+redirect("index.php");
 ?>

@@ -2,10 +2,10 @@
 include "phpBD/conect.php";
 
 try{
-   $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO FROM REQUERIMENTO ORDER BY SUBTP_ID;");
-   $smt -> execute();
-   $req = $smt ->fetchAll();
-
+    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO FROM REQUERIMENTO ORDER BY SUBTP_ID;");
+    $smt -> execute();
+    $req = $smt ->fetchAll();
+    // $user = $con -> prepare("SELECT ALN_NOME FROM ALUNO WHERE ");
 
 }catch(Exception $ex){
 
@@ -20,7 +20,7 @@ try{
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/status.css">
-    <!--<script src="jquery-3.4.1.min.js"></script>-->
+    <script src="jquery-3.4.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
@@ -42,23 +42,27 @@ try{
     <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
 </div>
 
-<a href="#" class="btn btn-outline-primary" id="hide">Hide</a>
+<!-- <a href="#" class="btn btn-outline-primary" id="hide">Hide</a>
 <a href="#" class="btn btn-outline-success" id="show">Leia Mais</a>
 <div id="box">
     Events
 </div>
 <div id="mostrar">
     
-</div>
-
+</div> -->
 
 
 <?php foreach(/* $con->query($smt) */ $req as $row): ?>
+    <?php if($req > 0):?>
+        <h1>Olá Usuario, esses são seus requerimentos.</h1>
+    <?php else:?>
+        <h1>Você não tem requerimentos no momento.</h1>
+    <?php endif;?>
     <div class="card border-success mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body text-success">php
-        <h5 class="card-title">Success card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="card-header"><?=$row['REQ_TIPO']?></div>
+      <div class="card-body text-success">
+        <h5 class="card-title">Descrição</h5>
+        <p class="card-text"><?=$row['REQ_DESCICAO']?></p>
     </div>
         <div class="card-footer bg-transparent border-success"><?= $row['REQ_STATUS']?></div>  
     </div>

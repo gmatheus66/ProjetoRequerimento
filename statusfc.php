@@ -116,6 +116,7 @@ function mtr($alncpf){
       <div class="card-footer">
           <small class="text-muted"><?= $data["REQ_STATUS"]?></small>
       </div>
+      <a href="func_edicao.php/?$protocolo=<?=$data['REQ_PROTOCOLO']?>" class="btn btn-primary">EDITAR</a>
   </div>
 <?php endforeach;?>
 

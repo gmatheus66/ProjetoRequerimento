@@ -4,7 +4,7 @@
     <body>
         <header>
           <!--Navbar-->
-          <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
               <a class="navbar-brand" href="#"><strong>e-REQ</strong></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,72 +76,5 @@
         </main>
         <!--Main Layout-->
 
-<<<<<<< HEAD
+
     </body>
-=======
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <meta charset="UTF-8">
-    <title>Inicial</title>
-
-</head>
-<body>
-<div>
-  <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
-  <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
-</div>
-<span class="titleBanner2">Requerimentos</span>
-<div class="banner"> 
-    <img class="imgBanner" src="imagens/banner.png">  
-    <span><a href="index.php" class="aMenu" > HOME</a></span>
-    <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
-    <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
-    <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
-</div>
-
-
-<div class="container slide" style="width: 100%; height:600px; padding: 0%;background-color: #0e772c; padding-top: 13px"> 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-    <div class="carousel-inner">
-      <div class="item active" style="height: 60vh;">
-        <img src="imagens/img1.jpg" style="width:100%;height:100%; ">
-      </div>
-
-      <div class="item" style="height: 60vh;">
-        <img src="imagens/img2.jpg" style="width:100%; height:100%;">
-      </div>
-    
-      <div class="item" style="height: 60vh;">
-        <img src="imagens/img3.jpg" style="width:100%;height:100%;">
-      </div>
-
-      <div class="item" style="height: 60vh; " d="centro" />
-        <img src="imagens/img4.jpg" style="width:100%;height:100%;">
-      </div>
-    </div>
-
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1" ></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-  </div>
-</div>
-
-</div>
-</body>
->>>>>>> f0b09a5b913669948a42033a272ed6dd78f4676e
-</html>

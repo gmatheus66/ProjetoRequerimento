@@ -27,24 +27,24 @@
 </div>
 
 
-<div class="container slide" style="width: 100%; height:600px; padding: 0%;background-color: #6e9e70;"> 
+<div class="container slide" style="width: 100%; height:600px; padding: 0%;background-color: #0e772c; padding-top: 13px"> 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
     <div class="carousel-inner">
-      <div class="item active" style="height: 600px;">
-        <img src="imagens/fatura_eletronica1.jpg" style="width:100%;height:100%; ">
+      <div class="item active" style="height: 60vh;">
+        <img src="imagens/img1.jpg" style="width:100%;height:100%; ">
       </div>
 
-      <div class="item" style="height: 600px;">
-        <img src="imagens/fatura-eletr-nica-53963506.jpg" style="width:100%; height:100%;">
+      <div class="item" style="height: 60vh;">
+        <img src="imagens/img2.jpg" style="width:100%; height:100%;">
       </div>
     
-      <div class="item" style="height: 600px;">
-        <img src="imagens/depositphotos_11384206-stock-photo-desktop-computer-screen-tax-form.jpg" style="width:100%;height:100%;">
+      <div class="item" style="height: 60vh;">
+        <img src="imagens/img3.jpg" style="width:100%;height:100%;">
       </div>
 
-      <div class="item" style="height: 600px; " d="centro" />
-        <img src="imagens/avaliação-em-linha-do-formulário-na-ilustração-vetor-computador-de-secretária-liso-dos-desenhos-animados-que-mostra-o-110366909.jpg" style="width:100%;height:100%;">
+      <div class="item" style="height: 60vh; " d="centro" />
+        <img src="imagens/img4.jpg" style="width:100%;height:100%;">
       </div>
     </div>
 
@@ -60,6 +60,7 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1" ></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
   </div>
 </div>

@@ -69,7 +69,7 @@
         
         <input type="text" name="cpf" class="inp" style="margin-top: 50px" placeholder="CPF"
         name="cpf" id="cpf" onBlur="ValidarCPF(form1.cpf);" 
-        onkeydown="javascript: fMasc( this, mCPF );"maxlength="11" >
+        onkeydown="javascript: fMasc( this, mCPF );"maxlength="14" >
         <br>
         <input type="password"name="pw" class="inp" placeholder="Senha" minlength="6" maxlength="10" pattern="[a-zA-Z0-9]+$">
         <br>

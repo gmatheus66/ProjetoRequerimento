@@ -19,7 +19,7 @@ $motivo = $_POST['motivo']?? " ";
 $observacao =$_POST['observacao']?? " ";
 $subtopico = $_POST['subtopico']?? " ";
 $topico = $_POST['topico']?? " ";
-//$alunoemail = $_SESSION['Aln_email'];
+//$alunoemail = $_SESSION['email'];
 $alunoemail = "vjhg@bol.com";
 $pasta = 'upload/';
  echo $topico;

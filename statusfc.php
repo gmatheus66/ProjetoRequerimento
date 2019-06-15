@@ -9,27 +9,27 @@ if(!logado()){
 }
 */
 //$alunoemail = $_SESSION['Aln_email'];
-$alunoemail = "vjhg@bol.com";
+$email = "vjhg@bol.com";
+//$usuario = $_SESSION['usuario'];
+$usuario = "aluno";
 try{
-   $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO ORDER BY SUBTP_ID;");
+   $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_MOTIVO,REQ_OBSERVACAO,ALN_CPF,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO ORDER BY SUBTP_ID;");
    $smt -> execute();
    $req = $smt ->fetchAll();
    $req = array_reverse($req);
 
 //var_dump($req);
 
-   $stmt = $con -> prepare("SELECT ALN_CPF,ALN_NOME FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?");
-   $stmt -> bindParam(1,$alunoemail);
-   $stmt -> execute();
-   $aln = $stmt ->fetch();
-   //var_dump($aln);
 
-   $st = $con ->prepare("SELECT MTR_ID,MTR_SEMESTRE FROM heroku_70137967cfc9460.MATRICULA  WHERE ALN_CPF = ?");
-   $st ->bindParam(1,$aln["ALN_CPF"]);
-   $st -> execute();
-   $mat = $st -> fetch();
-   //var_dump($mat);
-
+function mtr($alncpf){
+    global $con;
+    $st = $con->prepare("SELECT MTR_ID,MTR_SEMESTRE FROM heroku_70137967cfc9460.MATRICULA  WHERE ALN_CPF = ?");
+    $st->bindParam(1, $alncpf);
+    $st->execute();
+    $mat = $st->fetch();
+    //var_dump($mat);
+    return $mat;
+}
 }catch(Exception $ex){
     print_r($ex);
 }
@@ -45,7 +45,6 @@ try{
     <link rel="stylesheet" href="css/status.css">
     <link rel="stylesheet" href="css/statusfc.css">
     <script src="js/jquery-3.4.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -57,15 +56,34 @@ try{
   <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
   <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
 </div>
-<span class="titleBanner2">Requerimentos</span>
+
 <div class="banner"> 
     <img class="imgBanner" src="imagens/banner.png">  
     <span><a href="index.php" class="aMenu" > HOME</a></span>
     <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
     <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
-    <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
-</div>
 
+    <?php if (false): //colocar funcao !logado() ?>
+        <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
+    <?php else: ?>
+        <div class="img1">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="imagens/user.png" class="img-circle" alt="Avatar" style="width:120px;height:120px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <?if ($usuario == "aluno"):?>
+                            <h1><?= aluno_nome($email) ?></h1>
+                            <?else:?>
+                            <h1><?= func_nome($email) ?></h1>
+                        <?endif; ?>
+                        <a href="logout.php"><img src="imagens/logout.png" class="img2" alt="logout"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php endif; ?>
 <!--<a href="#" class="btn btn-outline-primary" id="hide">Hide</a>
 <a href="#" class="btn btn-outline-success" id="show">Leia Mais</a>-->
 
@@ -81,8 +99,8 @@ try{
           <div id="mostrar">
               <div class="card card-aln" style="width: 18rem;">
                   <div class="card-body">
-                      <h5 class="card-title">Aluno : <?= $aln["ALN_NOME"] ?></h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Matricula : <?= $mat["MTR_ID"] ?></h6>
+                      <h5 class="card-title">Aluno : <?= aluno_nome_cpf($data["ALN_CPF"])["ALN_NOME"] ?></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Matricula : <?= mtr($data["ALN_CPF"])["MTR_ID"] ?></h6>
                       <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $data["DATA"] ?></h6>
                       <h6 class="card-subtitle mb-2 text-muted">Status : <?= $data["REQ_STATUS"]?></h6>
 
@@ -108,12 +126,15 @@ try{
            //box.style.width = "30%";
        //box.style.transition = "0.9s"
 
+
       $(document).ready(function () {
           $('#show').click(function () {
               $('#mostrar').fadeToggle("slow","linear");
           })
+
       })
-      /*
+/*
+
 $('#show').on('click', function(){
     $('#mostrar').toggle(1000,function(){
         //alert("Também deu certo");

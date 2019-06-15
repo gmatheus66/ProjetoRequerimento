@@ -22,20 +22,20 @@ try{
 	$oson -> execute();
 	$fnc = $oson -> fetch();
 
-  $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
-  $smt -> bindParam(1, $protocolo);
-  $smt -> execute();
-  $req = $smt ->fetch();
+    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
+    $smt -> bindParam(1, $protocolo);
+    $smt -> execute();
+    $req = $smt ->fetch();
 
-  $stmt = $con -> prepare("SELECT ALN_CPF,ALN_NOME FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?");
-  $stmt -> bindParam(1,$alunoemail);
-  $stmt -> execute();
-  $aln = $stmt ->fetch();
+    $stmt = $con -> prepare("SELECT ALN_CPF,ALN_NOME FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?");
+    $stmt -> bindParam(1,$alunoemail);
+    $stmt -> execute();
+    $aln = $stmt ->fetch();
 
-  $st = $con ->prepare("SELECT MTR_ID,MTR_SEMESTRE FROM heroku_70137967cfc9460.MATRICULA  WHERE ALN_CPF = ?");
-  $st ->bindParam(1,$aln["ALN_CPF"]);
-  $st -> execute();
-  $mat = $st -> fetch();
+    $st = $con ->prepare("SELECT MTR_ID,MTR_SEMESTRE FROM heroku_70137967cfc9460.MATRICULA  WHERE ALN_CPF = ?");
+    $st ->bindParam(1,$aln["ALN_CPF"]);
+    $st -> execute();
+    $mat = $st -> fetch();
 
 }catch(Exception $e){
 	print("Você não é um Funcionario.");	
@@ -73,7 +73,7 @@ try{
                           <select name="status">
                               <option value="0">ABERTO</option>
                               <option value="1">FECHADO</option>
-                              <option value="2">ANALISE</option>
+                              <option value="2">ANÁLISE</option>
                           </select>
                           <input type="submit">
                       </form>

@@ -23,7 +23,7 @@ try{
 
 function mtr($alncpf){
     global $con;
-    $st = $con->prepare("SELECT MTR_ID,MTR_SEMESTRE FROM heroku_70137967cfc9460.MATRICULA  WHERE ALN_CPF = ?");
+    $st = $con->prepare("SELECT MTR_ID,MTR_SEMESTRE FROM MATRICULA  WHERE ALN_CPF = ?");
     $st->bindParam(1, $alncpf);
     $st->execute();
     $mat = $st->fetch();

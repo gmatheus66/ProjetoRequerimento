@@ -66,7 +66,7 @@ try{
                       <?php if ($data["ANX_ID"]!= "Oh shit, Oh no"): ?>
                         <a href="file://///<?= select_anx($data["ANX_ID"]); ?>" target="_blank" class="card-link">ANEXO</a>
                       <?php endif; ?>
-                      <form action="atua_req.php" method="POST">
+                      <form action="nova_situ.php/?protocolo=<?=$protocolo?>" method="POST">
                       	<!-- <input type="text" name="sit_antiga">
                       	<input type="text" name="sit_nova"> -->
                       	<input type="text" name="obs">

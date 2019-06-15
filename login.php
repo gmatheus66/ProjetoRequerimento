@@ -59,18 +59,17 @@
     <div class="links"> 
         <span><a href="index.php" class="aMenu one" > HOME</a></span>
         <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
-        <span><a href="login.php" class="aMenu"> LOGIN</a></span>
         <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
     </div>
 </div>
 
     
-    <form action="login.php">
+    <form action="auth.php" method="POST">
         <div class= "inpu">
         
-        <input type="text" class="inp" style="margin-top: 50px" placeholder="CPF"
+        <input type="text" name="cpf" class="inp" style="margin-top: 50px" placeholder="CPF"
         name="cpf" id="cpf" onBlur="ValidarCPF(form1.cpf);" 
-        onkeydown="javascript: fMasc( this, mCPF );"maxlength="11">
+        onkeydown="javascript: fMasc( this, mCPF );"maxlength="11" >
         <br>
         <input type="password"name="pw" class="inp" placeholder="Senha" minlength="6" maxlength="10" pattern="[a-zA-Z0-9]+$">
         <br>

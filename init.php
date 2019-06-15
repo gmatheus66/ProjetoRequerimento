@@ -6,4 +6,8 @@ function redirect($url){
 function logado(){
     return $_SESSION['logado'] ?? false;
 }
+
+function logout(){
+    return session_destroy();
+}
 ?>

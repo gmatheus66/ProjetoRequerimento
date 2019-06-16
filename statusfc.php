@@ -12,14 +12,14 @@ if(!logado()){
 //$email = "vjhg@bol.com";
 $email = $_SESSION['email'];
 $usuario = $_SESSION['usuario'];
-$protocolo = $data['REQ_PROTOCOLO'];
 //$usuario = "aluno";
 try{
-   $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_MOTIVO,REQ_OBSERVACAO,ALN_CPF,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO ORDER BY SUBTP_ID;");
-   $smt -> execute();
-   $req = $smt ->fetchAll();
-   $req = array_reverse($req);
+    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_MOTIVO,REQ_OBSERVACAO,ALN_CPF,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO ORDER BY SUBTP_ID;");
+    $smt -> execute();
+    $req = $smt ->fetchAll();
+    $req = array_reverse($req);
 
+    $protocolo = $req['REQ_PROTOCOLO'];
 //var_dump($req);
 
 
@@ -116,11 +116,8 @@ function mtr($alncpf){
           </div>
           <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
       </div>
-      <div class="card-footer">
-          <small class="text-muted"><?= $data["REQ_STATUS"]?></small>
-      </div>
       <form action="func_edicao.php/?protocolo=<?=$protocolo?>">
-         <a href="func_edicao.php/?$protocolo=<?=$protocolo?>" class="btn btn-primary">EDITAR</a>
+         <a href="#" class="btn btn-primary">EDITAR</a>
         <input type="submit" name="EDITAR">
       </form>
   </div>

@@ -1,16 +1,35 @@
 <?php
 
-$username = $_POST['username'];
-$email = $_POST['email'];
-$name = $_POST['name'];
-$nome_do_responsavel = $_POST['nome do nome_do_responsavel'];
-$cargo = $_POST['cargo'];
-$siape = $_POST['siepe'];
-$matricula = $_POST['matricula'];
-$cpf = $_POST['cpf'];
-$rg = $_POST['rg'];
-$pw = $_POST['pw'];
-$pw2 = $_POST['pw2'];
+include "init.php";
+$usuario = $_POST['usuario'];
+
+
+if($usuario == "aluno"){
+
+    $matricula = $_POST['matricula'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $dt_nsc = $_POST['dt_nasc'];
+    $cpf = $_POST['cpf'];
+    $pw = $_POST['pw'];
+    $pw2 = $_POST['pw2'];
+}
+else if ($usuario == "funcionario"){
+
+    $matricula = $_POST['matricula'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $tel = $_POST['telefone'];
+    $cpf = $_POST['cpf'];
+    $pw = $_POST['pw'];
+    $pw2 = $_POST['pw2'];
+    $rg = $_POST['rg'];
+    $rg_orgao = $_POST['rg_orgao'];
+    $rg_estado = $_POST['rg_estado'];
+}
+else{
+    redirect('index.php');
+}
 
 if ($pw != $pw2) {
     redirect('cadastro.php?mr=Senhas não conferem');
@@ -22,7 +41,7 @@ if ($pw == '') {
 if (email_exists($email)) {
     redirect('cadastro.php?mr=E-mail já registrado');
 }
-add_user($username, $email, $pw, $name);
-redirect('cadastro.php?mr=Usuário cadastrado com sucesso');
+
+redirect('index.php?mr=Usuário cadastrado com sucesso');
 
 ?>

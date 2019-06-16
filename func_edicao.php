@@ -23,25 +23,25 @@ try{
 
     return $func;
   }
-	$oson = $con -> prepare("SELECT FNC_CPF,FNC_NOME FROM heroku_70137967cfc9460.FUNCIONARIO WHERE FNC_EMAIL = ?"); 
-	$oson -> bindParam(1, $Fnc_email);
-	$oson -> execute();
-	$fnc = $oson -> fetch();
+  $oson = $con -> prepare("SELECT FNC_CPF,FNC_NOME FROM heroku_70137967cfc9460.FUNCIONARIO WHERE FNC_EMAIL = ?"); 
+  $oson -> bindParam(1, $Fnc_email);
+  $oson -> execute();
+  $fnc = $oson -> fetch();
 
-    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
-    $smt -> bindParam(1, $protocolo);
-    $smt -> execute();
-    $req = $smt ->fetch();
+  $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
+  $smt -> bindParam(1, $protocolo);
+  $smt -> execute();
+  $req = $smt ->fetch();
 
-    $stmt = $con -> prepare("SELECT ALN_CPF,ALN_NOME FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?");
-    $stmt -> bindParam(1,$alunoemail);
-    $stmt -> execute();
-    $aln = $stmt ->fetch();
+  $stmt = $con -> prepare("SELECT ALN_CPF,ALN_NOME,ALN_MATRICULA FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?");
+  $stmt -> bindParam(1, $email);
+  $stmt -> execute();
+  $aln = $stmt ->fetch();
 
-    $st = $con ->prepare("SELECT MTR_ID,MTR_SEMESTRE FROM heroku_70137967cfc9460.MATRICULA  WHERE ALN_CPF = ?");
-    $st ->bindParam(1,$aln["ALN_CPF"]);
-    $st -> execute();
-    $mat = $st -> fetch();
+    // $st = $con ->prepare("SELECT MTR_ID,MTR_SEMESTRE FROM heroku_70137967cfc9460.MATRICULA  WHERE ALN_CPF = ?");
+    // $st ->bindParam(1,$aln["ALN_CPF"]);
+    // $st -> execute();
+    // $mat = $st -> fetch();
 
 }catch(Exception $e){
 	print("Você não é um Funcionario.");	
@@ -84,8 +84,8 @@ try{
               <div class="card card-aln" style="width: 18rem;">
                   <div class="card-body">
                       <h5 class="card-title">Aluno : <?= $aln["ALN_NOME"] ?></h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Matricula : <?= $mat["MTR_ID"] ?></h6>
-                      <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $req["DATA"] ?></h6>
+                      <h6 class="card-subtitle mb-2 text-muted">Matricula : <?= $aln["ALN_MATRICULA"] ?></h6>
+                      <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $req["REQ_DT_ABERTURA"] ?></h6>
                       <h6 class="card-subtitle mb-2 text-muted">Status : <?= $req["REQ_STATUS"]?></h6>
                   	  <h5 class="card-title">Alterar o Status do requerimento:</h5>
                       <?php if ($req["ANX_ID"]!= "Oh shit, Oh no"): ?>
@@ -106,9 +106,6 @@ try{
               </div>
           </div>
           <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
-      </div>
-      <div class="card-footer">
-          <small class="text-muted"><?= $req["REQ_STATUS"]?></small>
       </div>
   </div>
 </body>

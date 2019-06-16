@@ -42,11 +42,11 @@
 </head>
 <body>
 <div>
-    <form action="auth.php" method="POST">
+
         <?php if ($_GET['ml'] ?? false !== false ): ?>
                 <span class="message"><?= $_GET['ml'] ?></span>
-            <?php endif ?>
-    </form>
+        <?php endif ?>
+
 </div>
 <div>
   <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>

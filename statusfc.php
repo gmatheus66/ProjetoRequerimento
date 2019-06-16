@@ -9,9 +9,10 @@ if(!logado()){
 }
 */
 //$alunoemail = $_SESSION['Aln_email'];
-$email = "vjhg@bol.com";
-//$usuario = $_SESSION['usuario'];
-$usuario = "aluno";
+//$email = "vjhg@bol.com";
+$email = $_SESSION['email'];
+$usuario = $_SESSION['usuario'];
+//$usuario = "aluno";
 try{
    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_MOTIVO,REQ_OBSERVACAO,ALN_CPF,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO ORDER BY SUBTP_ID;");
    $smt -> execute();
@@ -78,6 +79,7 @@ function mtr($alncpf){
                             <?else:?>
                             <h1><?= func_nome($email) ?></h1>
                         <?endif; ?>
+
                         <a href="logout.php"><img src="imagens/logout.png" class="img2" alt="logout"></a>
                     </div>
                 </div>

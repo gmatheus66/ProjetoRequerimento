@@ -38,4 +38,14 @@ function aluno_nome_cpf($cpf){
     //var_dump($aln);
     return $aln;
 }
+
+function func_nome_cpf($cpf){
+    global $con;
+    $stmt = $con -> prepare("SELECT FNC_CPF,FNC_NOME FROM FUNCIONARIO WHERE FNC_CPF = ?");
+    $stmt ->bindParam(1,$cpf);
+    $stmt -> execute();
+    $fnc = $stmt -> fetch();
+    return $fnc;
+}
+
 ?>

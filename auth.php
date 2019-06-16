@@ -8,10 +8,10 @@ $cpf = $_POST["cpf"]?? "";
 $pw = $_POST["pw"]?? "";
 
 if($cpf == null || $cpf == " "){
-    redirect("index.php/?ml=Senha ou Cpf estão incorretos");
+    redirect('login.php/?ml=Senha ou Cpf estão incorretos');
 }
 if ($pw == null || $pw == " "){
-    redirect("index.php/?ml=Senha ou Cpf estão incorretos");
+    redirect('login.php/?ml=Senha ou Cpf estão incorretos');
 }
 
 
@@ -25,12 +25,12 @@ if(aluno_nome_cpf($cpf) != null){
     if($pw == $aln["ALN_SENHA"] && $cpf == $aln["ALN_CPF"]){
 
         login($aln["ALN_EMAIL"], "aluno");
-        redirect("status.php");
+        redirect('status.php');
         //echo "logado aluno";
     }
     else{
         //echo"login errado aluno";
-        redirect("index.php/?ml=Senha ou Cpf estão incorretos");
+        redirect('login.php/?ml=Senha ou Cpf estão incorretos');
     }
 }
 else if (func_nome_cpf($cpf) != null){
@@ -42,13 +42,15 @@ else if (func_nome_cpf($cpf) != null){
     if($pw == $fc["FNC_SENHA"] && $cpf == $fc["FNC_CPF"]){
 
         login($fc["FNC_EMAIL"], "funcionario");
-        redirect("statusfc.php");
+        redirect('statusfc.php');
         //echo "logado funcionario";
     }else{
         //echo "login errado func";
-        redirect("index.php/?ml=Senha ou Cpf estão incorretos");
+        redirect('login.php/?ml=Senha ou Cpf estão incorretos');
     }
 }
-
+else{
+    redirect('login.php/?ml=Senha ou Cpf estão incorretos');
+}
 
 ?>

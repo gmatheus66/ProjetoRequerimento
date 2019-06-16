@@ -4,7 +4,7 @@ include "init.php";
 include  "phpBD/class_Requerimento.php";
 include "phpBD/conect.php";
 
-/*
+
 if(!logado()){
     redirect("login.php");
 }
@@ -14,13 +14,13 @@ if ($motivo == null || $observacao == null || $subtopico == null || $topico == n
 if ($motivo == " " || $observacao == " " || $subtopico == " " || $topico == " "){
     redirect("requerimento.php");
 }
-*/
+
 $motivo = $_POST['motivo']?? " ";
 $observacao =$_POST['observacao']?? " ";
 $subtopico = $_POST['subtopico']?? " ";
 $topico = $_POST['topico']?? " ";
 //$alunoemail = $_SESSION['email'];
-$alunoemail = "vjhg@bol.com";
+//$alunoemail = "vjhg@bol.com";
 $pasta = 'upload/';
  echo $topico;
  echo $subtopico;

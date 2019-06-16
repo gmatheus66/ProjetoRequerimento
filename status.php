@@ -1,17 +1,38 @@
 <?php 
 include "phpBD/conect.php";
+include  "init.php";
 
+$email = $_SESSION['email'];
+$usuario = $_SESSION['usuario'];
+
+if($usuario != "aluno"){
+    redirect('index.php');
+}
+if(!logado()){
+    redirect('index.php');
+}
 try{
-    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO FROM REQUERIMENTO ORDER BY SUBTP_ID;");
+
+    $stmt = $con -> prepare("SELECT ALN_CPF FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?");
+    $stmt -> bindParam(1,$email);
+    $stmt -> execute();
+    $aln = $stmt ->fetch();
+
+
+    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_MOTIVO,REQ_OBSERVACAO,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO  WHERE  ALN_CPF = ?;");
+    $smt -> bindParam(1 , $aln["ALN_CPF"]);
     $smt -> execute();
     $req = $smt ->fetchAll();
+    $req = array_reverse($req);
+    //var_dump($req);
     // $user = $con -> prepare("SELECT ALN_NOME FROM ALUNO WHERE ");
+
 
 }catch(Exception $ex){
 
 }
 
-?>    
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,7 +41,7 @@ try{
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/status.css">
-    <script src="jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-3.4.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
@@ -54,12 +75,16 @@ try{
 
 
 <?php foreach($req as $row): ?>
+
   <div class="card" style="margin-left: 10%; margin-right: 10%;">
       <h5 class="card-header"><?= $row["REQ_TIPO"]?></h5>
       <div class="card-body" id="card">
           <h5 class="card-title"><?= $row["REQ_MOTIVO"]?></h5>
           <p class="card-text"><?= $row["REQ_OBSERVACAO"]?></p>
-          <div id="mostrar"></div>
+          <div id="mostrar">
+              <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $row["DATA"] ?></h6>
+              <h6 class="card-subtitle mb-2 text-muted">Status : <?= $row["REQ_STATUS"]?></h6>
+          </div>
           <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
       </div>
       <div class="card-footer">

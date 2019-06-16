@@ -730,13 +730,14 @@
     line-height: 200px;
     color: white;
 }
-/*
+
 #mostrar{
-    background: radial-gradient(green, blue);
-    width: 25%;
-    height: 200px;
-    margin: 4px;
+
     display: none;
 }
 
- */
+
+
+.card{
+  margin-top: 5%;
+}

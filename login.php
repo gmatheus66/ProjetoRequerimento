@@ -6,7 +6,7 @@
     <!--<link rel="stylesheet" type="text/css" href="css/login.css" />-->
     <link rel="stylesheet" href="css/logintest.css">
     <link  href="js/validar.js">
-    <script  type="text/javascript" src="javascrito.js" ></script>
+
     <script>
                
     function ValidaCPF(){   
@@ -41,13 +41,7 @@
     </script>
 </head>
 <body>
-<div>
 
-        <?php if ($_GET['ml'] ?? false !== false ): ?>
-                <span class="message"><?= $_GET['ml'] ?></span>
-        <?php endif ?>
-
-</div>
 <div>
   <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
   <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
@@ -62,7 +56,13 @@
         <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
     </div>
 </div>
+<div>
 
+    <?php if ($_GET['ml'] ?? false !== false ): ?>
+        <span class="message"><?= $_GET['ml'] ?></span>
+    <?php endif ?>
+
+</div>
     
     <form action="auth.php" method="POST">
         <div class= "inpu">

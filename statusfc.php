@@ -19,8 +19,8 @@ try{
     $req = $smt ->fetchAll();
     $req = array_reverse($req);
 
-    $protocolo = $req['REQ_PROTOCOLO'];
-    var_dump($protocolo);
+    //$protocolo = $req['REQ_PROTOCOLO'];
+    //var_dump($protocolo);
 
 
 function mtr($alncpf){

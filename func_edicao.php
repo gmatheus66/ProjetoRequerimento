@@ -98,8 +98,8 @@ try{
                       	 <input type="text" name="obs">
                           <select name="status">
                               <option value="0">ABERTO</option>
-                              <option value="1">FECHADO</option>
                               <option value="2">ANÁLISE</option>
+                              <option value="1">FECHADO</option>
                           </select>
                           <input type="submit">
                       </form>

@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet"  type="text/css" href="css/style.css">
+ <script src="js/jquery-3.4.0.min.js"></script>
     <body>
         <header>
           <!--Navbar-->
@@ -40,57 +42,43 @@
                 <div class="row mt-5">
                   <!--Grid column-->
                   <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left"">
-                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s" style="margin-top: 200px;">Cadastre-se agora.</h1>
+                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s" style="margin-top: 15%; margin-bottom: 15%;">Cadastre-se agora.</h1>
                     <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" style="text-shadow: ">
                     <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s" >Tenha mais praticidade na hora de pedir seu requerimento, com nossa plataforma online você poupa o tempo que levaria preenchendo a papelada, além disso vocẽ pode acompanhar o status do mesmo na nossa plataforma, mais agilidade na hora de pedir seu requerimento tudo isso no conforto da sua casa, e na tela do seu smartphone ou computador.</h6>
                     <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s"></a>
                   </div>
                   <!--Grid column-->
                   <!--Grid column-->
-                  <div class="col-md-6 col-xl-5 mb-4" style="margin-top: 200px;">
+                  <div class="col-md-6 col-xl-5 mb-4" style="margin-top: 6%; margin-left: 7%;">
                     <!--Form-->
-                    <div class="card wow fadeInRight" data-wow-delay="0.3s" style="opacity: 0.5;>
+                      <form action="register.php" method="POST">
+                    <div class="card wow fadeInRight" data-wow-delay="0.3s" style="opacity: 0.9";>
                       <div class="card-body">
                         <!--Header-->
                         <div class="text-center" >
                           <h3 class="white-text">
                             <i class="fas fa-user white-text"></i> Cadastro:</h3>
                           <hr class="hr-light">
+
+                            <select name="usuario" id="select" class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                <option selected>Escolha</option>
+                                <option value="aluno">Aluno</option>
+                                <option value="funcionario">Funcionario</option>
+                            </select>
                         </div>
                         <!--Body-->
-                        <div class="md-form">
-                          <i class="fas fa-user prefix white-text active"></i>
-                          <input type="text" id="form3" class="white-text form-control">
-                          <label for="form3" class="active">Your name</label>
-                        </div>
-                        <div class="md-form">
-                          <i class="fas fa-envelope prefix white-text active"></i>
-                          <input type="email" id="form2" class="white-text form-control">
-                          <label for="form2" class="active">Your email</label>
-                        </div>
-                        <div class="md-form">
-                          <i class="fas fa-lock prefix white-text active"></i>
-                          <input type="password" id="form4" class="white-text form-control">
-                          <label for="form4">Your password</label>
+                        <div id="show">
+
                         </div>
                         <div class="text-center mt-4">
                           <button class="btn btn-indigo">Sign up</button>
-                          <hr class="hr-light mb-3 mt-4">
-                          <div class="inline-ul text-center">
-                            <a class="p-2 m-2 tw-ic">
-                              <i class="fab fa-twitter white-text"></i>
-                            </a>
-                            <a class="p-2 m-2 li-ic">
-                              <i class="fab fa-linkedin-in white-text"> </i>
-                            </a>
-                            <a class="p-2 m-2 ins-ic">
-                              <i class="fas fa-instagram white-text"> </i>
-                            </a>
+
                           </div>
                         </div>
                       </div>
                     </div>
                     <!--/.Form-->
+                </form>
                   </div>
                   <!--Grid column-->
                 </div>
@@ -98,7 +86,7 @@
               </div>
               <!-- Content -->
             </div>
-<!--                     <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+                    <!--<hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
                     <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Photography & design</strong></h5>
                     <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">portfolio</a>
                     <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">About me</a> -->
@@ -116,6 +104,150 @@
         <!-- Main navigation -->
         <!--Main Layout-->
 
+        <script>
 
+
+            let slc = $('#select');
+            let show = $('#show');
+
+            
+            slc.on('click', function (evt) {
+
+                //console.log($(evt.target).val());
+
+                if($(evt.target).val() == "aluno"){
+
+                    show.find('.md-form').remove().end();
+
+                        $('#show').show(2000, function () {
+                            $('<div class="md-form mat">\n' +
+                                ' <i class="fas fa-user prefix white-text active"></i>\n' +
+                                ' <label for="form2" class="active">Matricula</label>\n' +
+                                ' <input type="text" name="matricula" id="form3" class="white-text form-control mtr">\n' +
+                                ' </div>\n' +
+                                ' <div class="md-form">\n' +
+                                ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                                ' <label for="form4" class="active">Nome Completo</label>\n' +
+                                ' <input type="text" name="name" id="form5" class="white-text form-control">\n' +
+                                ' </div>\n' +
+                                '<div class="md-form">\n' +
+                                '<i class="fas fa-lock prefix white-text active"></i>\n' +
+                                '<label for="form6">Email</label>\n' +
+                                '<input type="email" name="email" id="form7" class="white-text form-control">\n' +
+                                '</div>'+
+                            ' <div class="md-form">\n' +
+                            ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                            ' <label for="form8" class="active">Data de Nascimento</label>\n' +
+                            ' <input type="date" name="dt_nasc" id="form9" class="white-text form-control">\n' +
+                            ' </div>'+
+                            ' <div class="md-form">\n' +
+                            ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                            ' <label for="form10" class="active">CPF</label>\n' +
+                            ' <input type="text" name="cpf" id="form11" class="white-text form-control">\n' +
+                            ' </div>' +
+                            ' <div class="md-form">\n' +
+                            ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                            ' <label for="form12" class="active">Senha</label>\n' +
+                            ' <input type="password" name="pw" id="form13" class="white-text form-control">\n' +
+                            ' </div>' +
+                            ' <div class="md-form">\n' +
+                            ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                            ' <label for="form14" class="active">Confirmação Senha</label>\n' +
+                            ' <input type="password" name="pw2" id="form15" class="white-text form-control">\n' +
+                            ' </div>').appendTo(show);
+
+                        })
+
+
+
+
+                    }
+                    else if($(evt.target).val() == "funcionario"){
+
+                        show.find('.md-form').remove().end();
+
+                        $('#show').show(1000, function () {
+                        })
+                    $('<div class="md-form">\n' +
+                        ' <i class="fas fa-user prefix white-text active"></i>\n' +
+                        ' <label for="form2" class="active">Matricula</label>\n' +
+                        ' <input type="text"  name="matricula" id="form3" class="white-text form-control">\n' +
+                        ' </div>\n' +
+                        ' <div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form4" class="active">Nome Completo</label>\n' +
+                        ' <input type="text" name="name" id="form5" class="white-text form-control">\n' +
+                        ' </div>\n' +
+                        '<div class="md-form">\n' +
+                        '<i class="fas fa-lock prefix white-text active"></i>\n' +
+                        '<label for="form6">Email</label>\n' +
+                        '<input type="email" name="email" id="form7" class="white-text form-control">\n' +
+                        '</div>'+
+                        ' <div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form8" class="active">Telefone</label>\n' +
+                        ' <input type="tel" name="telefone" id="form9" class="white-text form-control">\n' +
+                        ' </div>'+
+                        '<div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form10" class="active">RG</label>\n' +
+                        ' <input type="text" name="rg" id="form11" class="white-text form-control">\n' +
+                        ' </div>'+
+                        '<div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form12" class="active">RG Orgao expeditor</label>\n' +
+                        ' <input type="text" name="rg_orgao" id="form13" class="white-text form-control">\n' +
+                        ' </div>'+
+                        '<div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form14" class="active">RG Estado</label>\n' +
+                        ' <input type="text" name="rg_estado" id="form15" class="white-text form-control">\n' +
+                        ' </div>'+
+                        ' <div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form16" class="active">CPF</label>\n' +
+                        ' <input type="text" name="cpf" id="form17" class="white-text form-control">\n' +
+                        ' </div>' +
+                        ' <div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form18" class="active">Senha</label>\n' +
+                        ' <input type="password"  name="pw" id="form19" class="white-text form-control">\n' +
+                        ' </div>'+
+                        ' <div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form20" class="active">Confirmação Senha</label>\n' +
+                        ' <input type="password"  name="pw2" id="form21" class="white-text form-control">\n' +
+                        ' </div>').appendTo(show);
+
+                    }
+                    else{
+                    show.find('.md-form').remove().end();
+                    }
+
+            })
+ /*
+            show.find('.mat').on('blur',function (evt) {
+                console.log($(evt.target).length);
+                if($(evt.target).val().length > 0){
+                    $('<div class="md-form">\n' +
+                        ' <i class="fas fa-user prefix white-text active"></i>\n' +
+                        ' <label for="form2" class="active">Matricula</label>\n' +
+                        ' <input type="text" name="matricula" id="form3" class="white-text form-control mtr">\n' +
+                        ' </div>\n' +
+                        ' <div class="md-form">\n' +
+                        ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
+                        ' <label for="form4" class="active">Nome Completo</label>\n' +
+                        ' <input type="text" id="form5" class="white-text form-control">\n' +
+                        ' </div>\n' +
+                        '<div class="md-form">\n' +
+                        '<i class="fas fa-lock prefix white-text active"></i>\n' +
+                        '<label for="form6">Email</label>\n' +
+                        '<input type="email" id="form7" class="white-text form-control">\n' +
+                        '</div>').appendTo('.mat');
+                }
+            })
+*/
+        </script>
 
     </body>
+</html>

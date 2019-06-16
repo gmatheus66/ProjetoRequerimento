@@ -100,36 +100,36 @@ include  "phpBD/conect.php";
     });
 
 
-    function menu(){
-        /*
-var item = document.getElementById('test').value;
-if (item == "Matricula") {
+      function menu(){
+    /*
+      var item = document.getElementById('test').value;
+      if (item == "Matricula") {
 
 
 
-document.getElementById('subtopico1').style.display = "block";
-$('#subtopico2').remove();
-document.getElementById('subtopico2').style.display = "none";
-$('#subtopico3').remove();
-document.getElementById('subtopico3').style.display = "none";
+      document.getElementById('subtopico1').style.display = "block";
+      $('#subtopico2').remove();
+      document.getElementById('subtopico2').style.display = "none";
+      $('#subtopico3').remove();
+      document.getElementById('subtopico3').style.display = "none";
 
-}else if (item == "Curso") {
+      }else if (item == "Curso") {
 
-document.getElementById('subtopico2').style.display = "block";
-$('#subtopico1').remove();
-document.getElementById('subtopico1').style.display = "none";
-$('#subtopico3').remove();
-document.getElementById('subtopico3').style.display = "none";
+      document.getElementById('subtopico2').style.display = "block";
+      $('#subtopico1').remove();
+      document.getElementById('subtopico1').style.display = "none";
+      $('#subtopico3').remove();
+      document.getElementById('subtopico3').style.display = "none";
 
-}else if (item == "Outros") {
+      }else if (item == "Outros") {
 
-document.getElementById('subtopico3').style.display = "block";
-$('#subtopico2').remove();
-document.getElementById('subtopico2').style.display = "none";
-$('#subtopico1').remove();
-document.getElementById('subtopico1').style.display = "none";
-}
-*/
+      document.getElementById('subtopico3').style.display = "block";
+      $('#subtopico2').remove();
+      document.getElementById('subtopico2').style.display = "none";
+      $('#subtopico1').remove();
+      document.getElementById('subtopico1').style.display = "none";
+      }
+      */
 
     }
     $('#test').on('click', function(evt) {

@@ -2,10 +2,13 @@
 include "phpBD/conect.php";
 include "init.php";
 include  "phpBD/func.php";
+$user = $_SESSION['usuario'];
+if ($user == "aluno") {
+  redirect("index.html");
+}
 
 // $tipo_de_user = $_SESSION['user'];
 // $Fnc_eamil = $_SESSION['Fnc_email'];
-$Aln_email = $_SESSION['Aln_email'];
 $protocolo = $_GET['protocolo'];
 
 try{
@@ -13,6 +16,7 @@ try{
 		
 	// }
   function hist(){
+    global $con;
   	$smtt = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM heroku_70137967cfc9460.HISTORICO_SITUACAO");
   	$smtt -> execute();
   	$func = $smtt -> fecth();
@@ -51,27 +55,26 @@ try{
 	<title>Edição</title>
 </head>
 <body>
-	<?php foreach($req as $data): ?>
   <div class="card">
-      <h5 class="card-header"><?= $data["REQ_TIPO"]?></h5>
+      <h5 class="card-header"><?= $req["REQ_TIPO"]?></h5>
       <div class="card-body" id="card">
-          <h5 class="card-title"><?= $data["REQ_MOTIVO"]?></h5>
-          <p class="card-text"><?= $data["REQ_OBSERVACAO"]?></p>
+          <h5 class="card-title"><?= $req["REQ_MOTIVO"]?></h5>
+          <p class="card-text"><?= $req["REQ_OBSERVACAO"]?></p>
           <div id="mostrar">
               <div class="card card-aln" style="width: 18rem;">
                   <div class="card-body">
                       <h5 class="card-title">Aluno : <?= $aln["ALN_NOME"] ?></h5>
                       <h6 class="card-subtitle mb-2 text-muted">Matricula : <?= $mat["MTR_ID"] ?></h6>
-                      <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $data["DATA"] ?></h6>
-                      <h6 class="card-subtitle mb-2 text-muted">Status : <?= $data["REQ_STATUS"]?></h6>
+                      <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $req["DATA"] ?></h6>
+                      <h6 class="card-subtitle mb-2 text-muted">Status : <?= $req["REQ_STATUS"]?></h6>
                   	  <h5 class="card-title">Alterar o Status do requerimento:</h5>
-                      <?php if ($data["ANX_ID"]!= "Oh shit, Oh no"): ?>
-                        <a href="file://///<?= select_anx($data["ANX_ID"]); ?>" target="_blank" class="card-link">ANEXO</a>
+                      <?php if ($req["ANX_ID"]!= "Oh shit, Oh no"): ?>
+                        <a href="file://///<?= select_anx($req["ANX_ID"]); ?>" target="_blank" class="card-link">ANEXO</a>
                       <?php endif; ?>
-                      <form action="nova_situ.php/?protocolo=<?=$protocolo?>" method="POST">
+                      <form action="nova_situ.php/?protocolo=<?=$protocolo?>">
                       	<!-- <input type="text" name="sit_antiga">
                       	<input type="text" name="sit_nova"> -->
-                      	<input type="text" name="obs">
+                      	 <input type="text" name="obs">
                           <select name="status">
                               <option value="0">ABERTO</option>
                               <option value="1">FECHADO</option>
@@ -85,9 +88,8 @@ try{
           <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
       </div>
       <div class="card-footer">
-          <small class="text-muted"><?= $data["REQ_STATUS"]?></small>
+          <small class="text-muted"><?= $req["REQ_STATUS"]?></small>
       </div>
   </div>
-<?php endforeach;?>
 </body>
 </html>

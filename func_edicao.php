@@ -12,11 +12,13 @@ try{
 	// if ($tipo_de_user == "aluno") {
 		
 	// }
+  function hist(){
+  	$smtt = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM heroku_70137967cfc9460.HISTORICO_SITUACAO");
+  	$smtt -> execute();
+  	$func = $smtt -> fecth();
 
-	$smtt = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM heroku_70137967cfc9460.HISTORICO_SITUACAO");
-	$smtt -> execute();
-	$func = $smtt -> fecth();
-
+    return $func;
+  }
 	$oson = $con -> prepare("SELECT FNC_CPF,FNC_NOME FROM heroku_70137967cfc9460.FUNCIONARIO WHERE FNC_EMAIL = ?"); 
 	$oson -> bindParam(1, $Fnc_email);
 	$oson -> execute();

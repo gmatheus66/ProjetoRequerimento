@@ -12,6 +12,7 @@ if(!logado()){
 //$email = "vjhg@bol.com";
 $email = $_SESSION['email'];
 $usuario = $_SESSION['usuario'];
+$protocolo = $data['REQ_PROTOCOLO'];
 //$usuario = "aluno";
 try{
    $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_MOTIVO,REQ_OBSERVACAO,ALN_CPF,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO ORDER BY SUBTP_ID;");
@@ -118,7 +119,10 @@ function mtr($alncpf){
       <div class="card-footer">
           <small class="text-muted"><?= $data["REQ_STATUS"]?></small>
       </div>
-      <a href="func_edicao.php/?$protocolo=<?=$data['REQ_PROTOCOLO']?>" class="btn btn-primary">EDITAR</a>
+      <form action="func_edicao.php/?protocolo=<?=$protocolo?>">
+        <!-- <a href="func_edicao.php/?$protocolo=<?=/*$protocolo*/?>" class="btn btn-primary">EDITAR</a> -->
+        <input type="submit" name="EDITAR">
+      </form>
   </div>
 <?php endforeach;?>
 

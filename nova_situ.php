@@ -25,8 +25,9 @@ try{
 	$fnc -> bindParam(1, $email);
 	$fnc -> execute();
 	$fnc_email = $fnc -> fetch();
+	$cpf_func = $fnc_email['FNC_CFP'];
 
-	$hist_sit = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM /*heroku_70137967cfc9460.*/HISTORICO_SITUACAO");
+	$hist_sit = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM heroku_70137967cfc9460.HISTORICO_SITUACAO");
 	$hist_sit -> execute();
 	$oson = $hist_sit -> fecth(); 
 	$sit_ant = $oson['HTS_ID_SIT_ANTERIOR']; 
@@ -37,16 +38,16 @@ try{
 	$func = $smtt->fecth();
 
 	$add_st = $con->prepare("UPDATE REQUERIMENTO SET REQ_STATUS = ? WHERE REQ_REQUERIMENTO = ?;");
-	$add_st -> bindParam(1, $status_nome);
-	$add_st -> bindParam(2, $protocolo);
+	$add_st -> bindParam(1, $status_nome, PDO::PARAM_STR);
+	$add_st -> bindParam(2, $protocolo, PDO::PARAM_INT);
 	$add_st->execute();
 
 	$add_si = $con-> prepare("INSERT INTO HISTORICO_SITUACAO(HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, REQ_PROTOCOLO, FNC_CPF) VALUES(?, ?, ?, ?) WHERE REQ_REQUERIMENTO = ?;");
-	$add_si -> bindParam(1, $sit_ant);
-	$add_si -> bindParam(2, $status);
-	$add_si -> bindParam(3, $protocolo);
-	$add_si -> bindParam(4, $status);
-	$add_si -> bindParam(5, $protocolo);
+	$add_si -> bindParam(1, $sit_ant, PDO::PARAM_INT);
+	$add_si -> bindParam(2, $status, PDO::PARAM_INT);
+	$add_si -> bindParam(3, $protocolo, PDO::PARAM_INT);
+	$add_si -> bindParam(4, $cpf_func, PDO::PARAM_STR);
+	$add_si -> bindParam(5, $protocolo, PDO::PARAM_INT);
 	$add_si->execute();
 
 }catch(Exception $e){

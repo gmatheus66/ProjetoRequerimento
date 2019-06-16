@@ -4,6 +4,7 @@ include "init.php";
 include  "phpBD/func.php";
 include "init.php";
 
+$email = $_SESSION['email'];
 $status = $_POST['status.php'];
 $obs = $_POST['obs'];
 $protocolo = $_GET['protocolo'];
@@ -20,12 +21,17 @@ try{
 		$status_nome = "ANÁLISE";
 	}
 
-	$hist_sit = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM heroku_70137967cfc9460.HISTORICO_SITUACAO");
+	$fnc = $con -> prepare("SELECT FNC_CPF FROM FUNCIONARIO WHERE FNC_EMAIL = ?;");
+	$fnc -> bindParam(1, $email);
+	$fnc -> execute();
+	$fnc_email = $fnc -> fetch();
+
+	$hist_sit = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM /*heroku_70137967cfc9460.*/HISTORICO_SITUACAO");
 	$hist_sit -> execute();
 	$oson = $hist_sit -> fecth(); 
 
 	foreach ($oson as $data ) {
-		$sit_ant = $data[' HTS_ID_SIT_ANTERIOR']; 
+		$sit_ant = $data['HTS_ID_SIT_ANTERIOR']; 
 	}
 
 	$smtt = $con->prepare("SELECT REQ_STATUS, REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
@@ -49,6 +55,5 @@ try{
 }catch(Exception $e){
 
 }
-
 redirect("statusfc.php");
 ?>

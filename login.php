@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+include "init.php";
+
+
+if (logado()){
+    redirect('index.php');
+}
+
+?>
 <head>
     <meta charset="UTF-8">
     <title>Login</title>

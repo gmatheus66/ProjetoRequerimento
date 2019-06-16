@@ -1,3 +1,9 @@
+<?php
+
+include 'init.php';
+$usuario = $_SESSION['usuario'];
+
+?>
 <html lang="en">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
  <link rel="stylesheet" href="css/style.css">
@@ -15,15 +21,26 @@
                   <li class="nav-item active">
                     <a class="nav-link" href="#">Início<span class="sr-only">(current)</span></a>
                   </li>
+                    <?php if (!logado()): ?>
                   <li class="nav-item">
                     <a class="nav-link" href="cadastro.php">Cadastro</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="login.php">Entrar</a>
                   </li>
+                    <?php endif; ?>
+                    <?php if ($usuario == "aluno"): ?>
                   <li class="nav-item">
                     <a class="nav-link" href="requerimento.php">Requerimento</a>
                   </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="status.php">Meus Requerimentos</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="statusfc.php">Requerimentos</a>
+                        </li>
+                    <?php endif;?>
                 </ul>
                 
               </div>

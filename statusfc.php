@@ -120,7 +120,7 @@ function mtr($alncpf){
           <small class="text-muted"><?= $data["REQ_STATUS"]?></small>
       </div>
       <form action="func_edicao.php/?protocolo=<?=$protocolo?>">
-        <!-- <a href="func_edicao.php/?$protocolo=<?=/*$protocolo*/?>" class="btn btn-primary">EDITAR</a> -->
+         <a href="func_edicao.php/?$protocolo=<?=$protocolo?>" class="btn btn-primary">EDITAR</a>
         <input type="submit" name="EDITAR">
       </form>
   </div>

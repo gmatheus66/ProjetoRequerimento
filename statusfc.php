@@ -20,7 +20,7 @@ try{
     $req = array_reverse($req);
 
     $protocolo = $req['REQ_PROTOCOLO'];
-//var_dump($req);
+    var_dump($protocolo);
 
 
 function mtr($alncpf){
@@ -116,8 +116,8 @@ function mtr($alncpf){
           </div>
           <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
       </div>
-      <!-- <form action="func_edicao.php/?protocolo=<?=/*$protocolo*/?>"> -->
-         <a href="func_edicao.php/?protocolo=<?=$protocolo?>" class="btn btn-primary">EDITAR</a>
+
+         <a href="func_edicao.php/?protocolo=<?=$data["REQ_PROTOCOLO"]?>" class="btn btn-primary">EDITAR</a>
          <!-- <input type="submit" name="EDITAR"> -->
       <!-- </form> -->
   </div>

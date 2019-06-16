@@ -8,14 +8,9 @@ if ($user == "aluno") {
   redirect("index.html");
 }
 
-// $tipo_de_user = $_SESSION['user'];
-// $Fnc_eamil = $_SESSION['Fnc_email'];
 $protocolo = $_GET['protocolo'];
 
 try{
-	// if ($tipo_de_user == "aluno") {
-		
-	// }
   function hist(){
     global $con;
   	$smtt = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM heroku_70137967cfc9460.HISTORICO_SITUACAO");
@@ -92,10 +87,8 @@ try{
                       <?php if ($req["ANX_ID"]!= "Oh shit, Oh no"): ?>
                         <a href="file://///<?= select_anx($req["ANX_ID"]); ?>" target="_blank" class="card-link">ANEXO</a>
                       <?php endif; ?>
-                      <form action="nova_situ.php/?protocolo=<?=$protocolo?>">
-                      	<!-- <input type="text" name="sit_antiga">
-                      	<input type="text" name="sit_nova"> -->
-                      	 <input type="text" name="obs">
+                      <form action="nova_situ.php/?protocolo=<?=$protocolo?>" method="POST">
+                      	  <input type="text" name="obs">
                           <select name="status">
                               <option value="0">ABERTO</option>
                               <option value="1">FECHADO</option>

@@ -49,6 +49,7 @@ try{
 	$add_si -> bindParam(4, $cpf_func, PDO::PARAM_STR);
 	$add_si -> bindParam(5, $protocolo, PDO::PARAM_INT);
 	$add_si->execute();
+	$teste = $add_si -> fecth();
 
 }catch(Exception $e){
 

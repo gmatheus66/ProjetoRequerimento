@@ -52,9 +52,29 @@ try{
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/status.css">
+  <link rel="stylesheet" href="css/statusfc.css">
+  <script src="js/jquery-3.4.0.min.js"></script>
 	<title>Edição</title>
 </head>
 <body>
+   <div>
+    <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
+    <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
+  </div>
+
+  <div class="banner"> 
+    <img class="imgBanner" src="imagens/banner.png">  
+    <span><a href="index.php" class="aMenu" > HOME</a></span>
+    <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
+    <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
+  </div>
+
+
   <div class="card">
       <h5 class="card-header"><?= $req["REQ_TIPO"]?></h5>
       <div class="card-body" id="card">

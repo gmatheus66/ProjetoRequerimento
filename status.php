@@ -110,7 +110,8 @@ try{
       <div class="card-footer">
           <small class="text-muted"><?= $row["REQ_STATUS"]?></small>
           <small class="text-muted"><?= $row["REQ_DT_ABERTURA"]?></small>
-          <small class="text-muted"><?= $histoisco["HST_DE"]?></small>
+          <small class="text-muted">Situação anterior: <?= $stat_hist["HTS_ID_SIT_ANTERIOR"]?></small>
+          <small class="text-muted">Situação nova:<?= $stat_hist["HTS_ID_SIT_NOVO"]?></small>
       </div>
   </div>
 <?php endforeach;?>

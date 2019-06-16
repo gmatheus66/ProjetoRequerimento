@@ -27,7 +27,7 @@ try{
 	$fnc_email = $fnc -> fetch();
 	$cpf_func = $fnc_email['FNC_CFP'];
 
-	$hist_sit = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM heroku_70137967cfc9460.HISTORICO_SITUACAO");
+	$hist_sit = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM heroku_70137967cfc9460.HISTORICO_SITUACAO;");
 	$hist_sit -> execute();
 	$oson = $hist_sit -> fecth(); 
 	$sit_ant = $oson['HTS_ID_SIT_ANTERIOR']; 

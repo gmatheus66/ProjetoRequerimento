@@ -3,6 +3,7 @@ include "phpBD/conect.php";
 include "init.php";
 include  "phpBD/func.php";
 $user = $_SESSION['usuario'];
+
 if ($user == "aluno") {
   redirect("index.html");
 }

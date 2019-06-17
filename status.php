@@ -12,6 +12,12 @@ if(!logado()){
     redirect('index.php');
 }
 try{
+    $stmt = $con -> prepare("SELECT ALN_CPF FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?;");
+    $stmt -> bindParam(1, $email);
+    $stmt -> execute();
+    $aln = $stmt ->fetch();
+
+
     $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO, REQ_PROTOCOLO,REQ_MOTIVO,REQ_OBSERVACAO,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO  WHERE  ALN_CPF = ?;");
     $smt -> bindParam(1 , $aln["ALN_CPF"]);
     $smt -> execute();
@@ -20,18 +26,15 @@ try{
     //var_dump($req);
     // $user = $con -> prepare("SELECT ALN_NOME FROM ALUNO WHERE ");
 
-    $stmt = $con -> prepare("SELECT ALN_CPF FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?;");
-    $stmt -> bindParam(1, $email);
-    $stmt -> execute();
-    $aln = $stmt ->fetch();
+/*
 
-
-    $aln_situ = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID, REQ_PROTOCOLO FROM heroku_70137967cfc9460.HISTORICO_SITUACAO WHERE REQ_PROTOCOLO =?;");
+    $aln_situ = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID, REQ_PROTOCOLO FROM heroku_70137967cfc9460.HISTORICO_SITUACAO WHERE REQ_PROTOCOLO = ?;");
     $aln_situ = bindParam(1, $req["REQ_PROTOCOLO"]);
     $aln_situ = execute();
     $historico = $aln_situ -> fetch();
     $stat_hist;
 
+*/
     if ($historico["HTS_ID_SIT_NOVA"] == 0){
         $stat_hist = "ABERTO";
     }else if($historico["HTS_ID_SIT_NOVA"] == 1){
@@ -40,13 +43,6 @@ try{
         $stat_hist = "ANÁLISE";
     }
 
-    if ($historico["HTS_ID_SIT_ANTERIOR"] == 0) {
-        $stat_hist = "ABERTO";
-    }else if($historico["HTS_ID_SIT_ANTERIOR"] == 1){
-        $stat_hist = "FECHADO";
-    }else{
-        $stat_hist = "ANÁLISE";
-    }
 
 }catch(Exception $ex){
 

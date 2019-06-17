@@ -48,4 +48,42 @@ function func_nome_cpf($cpf){
     return $fnc;
 }
 
+function email_exists($email, $usuario){
+
+
+    if ($usuario == "funcionario"){
+        try {
+            global $con;
+            $stmt = $con->prepare("SELECT FNC_EMAIL FROM FUNCIONARIO WHERE FNC_EMAIL = ?");
+            $stmt->bindParam(1, $email);
+            $stmt->execute();
+            $fnc = $stmt->fetch();
+        }catch (Exception $ex){
+            return false;
+        }
+        if ($fnc["FNC_EMAIL"] == $email){
+            return true;
+        }
+        return false;
+    }
+    if ($usuario == "aluno"){
+        global $con;
+        try {
+            $stmt = $con->prepare("SELECT ALN_EMAIL FROM ALUNO WHERE ALN_EMAIL = ?");
+            $stmt->bindParam(1, $email);
+            $stmt->execute();
+            $aln = $stmt->fetch();
+        }
+        catch (Exception $ex){
+            return false;
+        }
+        //var_dump($aln);
+        if ($aln["ALN_EMAIL"] == $email){
+            return true;
+        }
+        return false;
+    }
+
+}
+
 ?>

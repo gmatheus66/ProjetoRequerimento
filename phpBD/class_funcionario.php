@@ -1,34 +1,5 @@
-        <?php
+<?php
 
-include 'conect.php';
-
-$fnc = new FUNCIONARIO();
-
-$fnc->setCPF($_POST['cpf']);
-$fnc->setNome($_POST['nome']);
-$fnc->setCargo($_POST['cargo']);
-$fnc->setEmail($_POST['email']);
-$fnc->setRG_Numero ($_POST['RG_numero']);
-$fnc->setRG_Estado ($_POST['RG_estado']);
-$fnc->setRG_Orgao_exp ($_POST['RG_Orgao_exp']);
-$fnc->setTelefone($_POST['telefone']);
-$fnc->setPW($_POST['pw']);
-$fnc->setMatricula($_POST['matricula']);
-
-
-$stmt = $con -> prepare("INSERT INTO FUNCIONARIO (FNC_CPF,FNC_NOME,FNC_CARGO,FNC_EMAIL,FNC_RG_NUMERO,FNC_ESTADO,FNC_ORGAO_EXP,FNC_TELEFONE,FNC_PW,FNC_MATRICULA) VALUES(?,?,?,?,?,?,?,?,?,?,?);");
-$stmt -> bindParam(1,$fnc->getCPF());  
-$stmt -> bindParam(2,$fnc->getNome());
-$stmt -> bindParam(3,$fnc->getCargo());
-$stmt -> bindParam(4,$fnc->getEmail());
-$stmt -> bindParam(5,$fnc->getRG_numero());
-$stmt -> bindParam(6,$fnc->getRG_estado());
-$stmt -> bindParam(7,$fnc->getRG_orgao_exp());
-$stmt -> bindParam(8,$fnc->getTelefone());
-$stmt -> bindParam(9,$fnc->getPW());
-$stmt -> bindParam(10,$fnc->getMatricula());
-
-$stmt -> execute();
 
 class FUNCIONARIO {
 

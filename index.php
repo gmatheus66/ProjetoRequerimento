@@ -6,6 +6,9 @@ $usuario = $_SESSION['usuario'];
 ?>
 <html lang="en">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="css/style.css">
     <body>
         <header>
@@ -42,49 +45,39 @@ $usuario = $_SESSION['usuario'];
         <!--Main Layout-->
         <main>
 
-            <!--Grid row-->
+          <div class="flex">
+        <div class="text-center">
+          <h2 class="card-title titleFuncionalidades">Vantagens</h2>
+          <hr style="width:30%;height:4px; border:none; color:#78ad41; background-color:#78ad41; margin-top: 40px; margin-bottom: 0px;"/>
+        </div>
 
-              <!--Grid column-->
-<div class="d-flex justify-content-center bd-highlight mb-3">
+      </div>
+    <div class="d-flex justify-content-center bd-highlight mb-3">
 
-
-    <div class="card bg-light mb-3" style="margin: 5%;height: 400px; width: 30%; ">
+    <div class="card bg-light mb-3" style="margin: 5%;height: 400px; width: 30%;">
   <div class="card-body">
     <h5 class="card-title">Facilidade</h5>
-    <img src="imagens/facilidade.svg" class="img-Divs-Home">
-    <p class="card-text">Através do e-REQ você consegue bla bla Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <img src="imagens/facilidade.png" class="img-Divs-Home">
+    <p class="card-text">Atravéz do e-REQ você consegue pedir seu requerimento de uma forma mais rápida e sem papel. Com nossa plataforma online você consegue ter mais praticidade na hora de pedir seu requerimento. Sem toda a chatisse de preencher papel e com muito mais facilidade.</p>
   </div>
-</div><div class="card bg-light mb-3" style="margin: 5%;height: 400px;width: 30%; ">
+</div>
+
+<div class="card bg-light mb-3" style="margin: 5%;height: 400px;width: 30%; ">
   <div class="card-body">
     <h5 class="card-title">Status</h5>
-    <img src="imagens/feedback.svg" class="img-Divs-Home">
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <img src="imagens/feedback.png" class="img-Divs-Home">
+    <p class="card-text">Fica fácil acompanhar o status do seu requerimento na nossa tela de acompanhamento, nela você consegue verificar se ele foi aceito ou recusado, caso seja recusado poderá verificar a razão e refazer o requerimento caso necessário.</p>
   </div>
 </div><div class="card bg-light mb-3" style="margin: 5%;height: 400px;width: 30%; ">
   <div class="card-body">
     <h5 class="card-title">Sem papel</h5>
-    <img src="imagens/papel.svg" class="img-Divs-Home">
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <img src="imagens/papel.png" class="img-Divs-Home">
+    <p class="card-text">Além de toda a praticidade e funcionalidade ainda estará contribuindo para o meio ambiente, pois nossa plataforma diminuirá o consumo de papel já que toda o processo é feito online.</p>
   </div>
 </div>
   </div>
 </div>
-           
+          </div> 
               <!--Grid column-->
 
         </main>

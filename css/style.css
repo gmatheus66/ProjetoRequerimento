@@ -119,7 +119,7 @@ transform: scaleX(1);
     color: #137082;
    }
    body{
-    background-color: #e0e0e0;
+    background-color: #8BC84C;
    }
    .img-Divs-Home{
       width: 100px;
@@ -127,7 +127,30 @@ transform: scaleX(1);
     margin-left: auto;
     margin-right: auto
    }
-
   .card-title{
     text-align: center;
+    color: #437a0b;
+    font-family: 'Nunito', sans-serif; 
+    font-size: 22px;
+    font-weight: bold;
+  }
+   .titleFuncionalidades{
+      font-family: 'Saira Semi Condensed', sans-serif;
+      font-size: 50px;
+   }
+  .card-text{
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+  }
+  .card{
+    border-color: #78ad41;
+    border-width: 3px;
+    opacity: 0.9;
+  }
+  .card-body{
+    background-color: #fff;
+
   }

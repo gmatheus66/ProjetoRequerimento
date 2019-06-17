@@ -1,26 +1,5 @@
 <?php
 
-include 'conect.php';
-
-$aln = new ALUNO();
-
-$aln->setNome($_POST['nome']);
-$aln->setEmail($_POST['e-mail']);
-$aln->setMatricula($_POST['matricula']);
-$aln->setCPF($_POST['cpf']);
-$aln->setPW($_POST['pw']);
-$aln->setDt_Nascimento($_POST['data_de_nascimento']);
-
-
-
-$stmt = $con -> prepare("INSERT INTO ALUNO (ALN_MATRICULA,ALN_NOME,ALN_EMAIL, ALN_DT_NASC, ALN_SENHA, ALN_CPF)");
-$stmt -> bindParam(1,$aln->getMatricula());
-$stmt -> bindParam(2,$aln->getNome());
-$stmt -> bindParam(3,$aln->getEmail());
-$stmt -> bindParam(4,$aln->getDt_Nascimento());
-$stmt -> bindParam(5,$aln->getPW());
-$stmt -> bindParam(6,$aln->getCPF());
-$stmt -> execute();
 
 class ALUNO {
 

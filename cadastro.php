@@ -183,10 +183,15 @@
                         '<label for="form6">Email</label>\n' +
                         '<input type="email" name="email" id="form7" class="white-text form-control">\n' +
                         '</div>'+
+                        '<div class="md-form">\n' +
+                        '<i class="fas fa-lock prefix white-text active"></i>\n' +
+                        '<label for="form6">Cargo</label>\n' +
+                        '<input type="text" name="cargo" id="form7" class="white-text form-control">\n' +
+                        '</div>'+
                         ' <div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                         ' <label for="form8" class="active">Telefone</label>\n' +
-                        ' <input type="tel" name="telefone" id="form9" class="white-text form-control">\n' +
+                        ' <input type="number" name="telefone" id="form9" class="white-text form-control">\n' +
                         ' </div>'+
                         '<div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +

@@ -30,11 +30,13 @@ $usuario = $_SESSION['usuario'];
                         <li class="nav-item">
                             <a class="nav-link" href="status.php">Meus Requerimentos</a>
                         </li>
-                    <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="statusfc.php">Requerimentos</a>
-                        </li>
+
                     <?php endif;?>
+                    <?php if ($usuario == "funcionario"): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statusfc.php">Requerimentos</a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
                 
               </div>

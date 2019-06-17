@@ -61,6 +61,9 @@ if (logado()){
           <div class="view" style="background-image: url('imagens/bg-login.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
                 <div class="containerr">
                   <div class="box" style="opacity: 0.9;">
+                      <div>
+                          <h3><?= $_GET['ml'] ?></h3>
+                      </div>
             
                         <form action="auth.php" method="POST">
                     <div class="card wow fadeInRight" data-wow-delay="0.3s" style="border-radius: 7%;height: auto;padding: 20px;">

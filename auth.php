@@ -18,7 +18,7 @@ if ($pw == null || $pw == " "){
 
 
 if(aluno_nome_cpf($cpf) != null){
-    $smt = $con ->prepare("SELECT ALN_CPF,ALN_SENHA,ALN_EMAIL FROM heroku_70137967cfc9460.ALUNO WHERE ALN_CPF = ?");
+    $smt = $con ->prepare("SELECT ALN_CPF,ALN_SENHA,ALN_EMAIL FROM ALUNO WHERE ALN_CPF = ?");
     $smt -> bindParam(1, $cpf);
     $smt ->execute();
     $aln = $smt -> fetch();

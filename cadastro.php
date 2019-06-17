@@ -56,6 +56,9 @@ return cpf
               <div class="container">
                 <!--Grid row-->
                 <div class="row mt-5">
+                    <div>
+                        <h5><?=$_GET["mr"] ?></h5>
+                    </div>
                   <!--Grid column-->
                   <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
                     <h1 class="h1-responsive font-weight-bold wow fadeInLeft txtCadastro" data-wow-delay="0.3s" style="margin-top: 25%; margin-bottom: 5%;font-size: 40px;">Cadastre-se agora.</h1>

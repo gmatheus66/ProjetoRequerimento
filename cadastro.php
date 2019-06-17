@@ -42,14 +42,14 @@
                 <div class="row mt-5">
                   <!--Grid column-->
                   <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
-                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft txtCadastro" data-wow-delay="0.3s" style="margin-top: 15%; margin-bottom: 15%;">Cadastre-se agora.</h1>
+                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft txtCadastro" data-wow-delay="0.3s" style="margin-top: 25%; margin-bottom: 5%;font-size: 40px;">Cadastre-se agora.</h1>
                     <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" style="text-shadow: ">
                     <h6 class="mb-3 wow fadeInLeft txtCadastro" data-wow-delay="0.3s" >Tenha mais praticidade na hora de pedir seu requerimento, com nossa plataforma online você poupa o tempo que levaria preenchendo a papelada, além disso vocẽ pode acompanhar o status do mesmo na nossa plataforma, mais agilidade na hora de pedir seu requerimento tudo isso no conforto da sua casa, e na tela do seu smartphone ou computador.</h6>
                     <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s"></a>
                   </div>
                   <!--Grid column-->
                   <!--Grid column-->
-                  <div class="col-md-6 col-xl-5 mb-4" style="margin-top: 6%; margin-left: 7%;">
+                  <div class="col-md-6 col-xl-5 mb-4" style="margin-top: 5%; margin-left: 7%;">
                     <!--Form-->
                       <form action="register.php" method="POST">
                     <div class="card wow fadeInRight" data-wow-delay="0.3s" style="opacity: 0.9";>
@@ -71,7 +71,7 @@
 
                         </div>
                         <div class="text-center mt-4">
-                          <button class="btn btn-indigo">Sign up</button>
+                          <button class="btn btn-indigo">Próximo</button>
 
                           </div>
                         </div>

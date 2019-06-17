@@ -13,8 +13,10 @@ if (logado()){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--<link rel="stylesheet" type="text/css" href="css/login.css" />-->
-    <link rel="stylesheet" href="css/logintest.css">
+    <!-- <link rel="stylesheet" href="css/logintest.css"> -->
+     <link rel="stylesheet" href="css/style.css">
     <link  href="js/validar.js">
 
     <script>
@@ -47,26 +49,81 @@ if (logado()){
         return cpf
     }
        
-
     </script>
 </head>
 <body>
+<?php include 'nav.php' ?>
+        <header>
+          <!--Navbar-->
+            <?php include 'nav.php' ?>
+          <!-- Navbar -->
+          <!-- Full Page Intro -->
+          <div class="view" style="background-image: url('imagens/bg-login.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                <div class="containerr">
+                  <div class="box" style="opacity: 0.9;">
+            
+                        <form action="auth.php" method="POST">
+                    <div class="card wow fadeInRight" data-wow-delay="0.3s" style="border-radius: 7%;height: auto;padding: 20px;">
+                      <div class="card-body">
+                        <!--Header-->
+                        <div class="text-center" >
+                          <h3 class="white-text">
+                            <i class="fas fa-user white-text"></i> Entrar</h3>
 
-<div>
-  <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
-  <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
-</div>
+    
+                                <input type="text" name="cpf" class="white-text form-control" style="margin-top: 50px" placeholder="CPF"
+                                name="cpf" id="cpf" onBlur="ValidarCPF(form1.cpf);" 
+                                onkeydown="javascript: fMasc( this, mCPF );"maxlength="14" >
+                                <br>
 
-<span class="titleBanner2">Requerimentos</span>
-<div class="banner"> 
-    <img class="imgBanner" src="imagens/banner.png"> 
-    <div class="links"> 
-        <span><a href="index.php" class="aMenu one" > HOME</a></span>
-        <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
-        <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
-    </div>
-</div>
-<div>
+                                <input type="password"name="pw" class="white-text form-control" placeholder="Senha" minlength="6" maxlength="10" pattern="[a-zA-Z0-9]+$">
+                                <br>
+
+                               <button  type="submit" value="Validar" onclick="ValidaCPF();" class="btn btn-info" style="width:50%;">Entrar</button>
+                                <br>
+                                <br>
+
+                                 <a href="cadastro.php" class="link-login">Ainda não é cadastrado? Cadastre-se!</a>
+                                <br> 
+
+                                <a href="recuperar.php" class="link-login">Esqueceu a senha?</a>
+
+                        </div>
+                        </div>
+                        <!--Body-->
+                        <div id="show">
+
+                        </div>
+                        
+                        </div>
+                      </div>
+                    </div>
+                    <!--/.Form-->
+                </form>
+                  </div>
+                  <!--Grid column-->
+                </div>
+                <!--Grid row-->
+              </div>
+              <!-- Content -->
+            </div>
+                    <!--<hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+                    <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Photography & design</strong></h5>
+                    <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">portfolio</a>
+                    <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">About me</a> -->
+                  </div>
+                  <!--Grid column-->
+                </div>
+                <!--Grid row-->
+              </div>
+              <!-- Content -->
+            </div>
+            <!-- Mask & flexbox options-->
+          </div>
+          <!-- Full Page Intro -->
+        </header>
+
+<!-- <div>
 
     <?php if ($_GET['ml'] ?? false !== false ): ?>
         <span class="message"><?= $_GET['ml'] ?></span>
@@ -90,7 +147,7 @@ if (logado()){
         <br> 
         <a href="recuperar.php" class="uo uo1">Esqueceu a senha?</a>
         </div> 
-   </form>
+   </form> -->
 
 
 </body>

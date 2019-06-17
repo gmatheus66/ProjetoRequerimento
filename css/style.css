@@ -103,3 +103,31 @@ transform: scaleX(1);
     text-shadow: .1em .1em .1em rgba(0, 0, 0, 50);
     font-size: 25px;
   }
+
+  .containerr {
+        margin-top: 15%;
+        display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         border-radius: 10%;
+     }
+   .link-login{
+    color: #1c96ad;
+   }
+   .link-login:hover{
+    color: #137082;
+   }
+   body{
+    background-color: #e0e0e0;
+   }
+   .img-Divs-Home{
+      width: 100px;
+      display: block;
+    margin-left: auto;
+    margin-right: auto
+   }
+
+  .card-title{
+    text-align: center;
+  }

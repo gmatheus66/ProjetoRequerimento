@@ -1,36 +1,52 @@
+<?php include 'init.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
  <link rel="stylesheet"  type="text/css" href="css/style.css">
  <script src="js/jquery-3.4.0.min.js"></script>
+ <link href="js/validar.js">
+ <script>
+    function validaSenha (input){ 
+    if (input.value != document.getElementById('pw').value) {
+    input.setCustomValidity('As senhas não conferem');
+  } else {
+    input.setCustomValidity('');
+  }
+} 
+</script> 
+
+    <script>
+ 
+function ValidaCPF(){   
+    var cpf=document.getElementById("cpf").value; 
+    var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;     
+    if (cpfValido.test(cpf) == true)    { 
+    console.log("CPF Válido");  
+    } else  {    
+    console.log("CPF Inválido");    
+    }
+    }
+  function fMasc(objeto,mascara) {
+obj=objeto
+masc=mascara
+setTimeout("fMascEx()",1)
+}
+  function fMascEx() {
+obj.value=masc(obj.value)
+}
+   function mCPF(cpf){
+cpf=cpf.replace(/\D/g,"")
+cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+return cpf
+}
+    </script>
     <body>
         <header>
           <!--Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-            <div class="container">
-              <a class="navbar-brand" href="index.php"><strong>e-REQ</strong></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.php">Início<span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="cadastro.php">Cadastro</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="login.php">Entrar</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="requerimento.php">Requerimento</a>
-                  </li>
-                </ul>
-                
-              </div>
-            </div>
-          </nav>
+            <?php include 'nav.php' ?>
           <!-- Navbar -->
           <!-- Full Page Intro -->
           <div class="view" style="background-image: url('imagens/bg1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
@@ -57,7 +73,7 @@
                         <!--Header-->
                         <div class="text-center" >
                           <h3 class="white-text">
-                            <i class="fas fa-user white-text"></i> Cadastro:</h3>
+                            <i class="fas fa-user white-text"></i> Cadastro</h3>
                           <hr class="hr-light">
 
                             <select name="usuario" id="select" class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
@@ -248,6 +264,18 @@
             })
 */
         </script>
-
+<script type="text/javascript">
+        var bool       = true;
+        function verif(){
+            var adm        = document.getElementById('adm');
+            var opt = document.getElementById('Cadastro').value;
+            console.log(opt);
+            if (opt == "adm") {
+                adm.className = "";
+            } else if (opt == "aluno") {
+                adm.className = "d-none";
+            }
+        }
+    </script>
     </body>
 </html>

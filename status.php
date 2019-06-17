@@ -12,7 +12,7 @@ if(!logado()){
     redirect('index.php');
 }
 try{
-    $stmt = $con -> prepare("SELECT ALN_CPF FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?;");
+    $stmt = $con -> prepare("SELECT ALN_CPF FROM ALUNO WHERE ALN_EMAIL = ?;");
     $stmt -> bindParam(1, $email);
     $stmt -> execute();
     $aln = $stmt ->fetch();

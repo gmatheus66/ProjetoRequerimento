@@ -65,7 +65,7 @@ function mtr($alncpf){
     <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
     <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
 
-    <?php if (false): //colocar funcao !logado() ?>
+    <?php if (!logado()): //colocar funcao !logado() ?>
         <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
     <?php else: ?>
         <div class="img1">

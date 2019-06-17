@@ -3,6 +3,7 @@ include "phpBD/conect.php";
 include "init.php";
 include  "phpBD/func.php";
 $user = $_SESSION['usuario'];
+$email = $_SESSION['email'];
 
 if ($user == "aluno") {
   redirect("index.html");
@@ -20,17 +21,17 @@ try{
     return $func;
   }
   $oson = $con -> prepare("SELECT FNC_CPF,FNC_NOME FROM FUNCIONARIO WHERE FNC_EMAIL = ?"); 
-  $oson -> bindParam(1, $Fnc_email);
+  $oson -> bindParam(1, $email);
   $oson -> execute();
   $fnc = $oson -> fetch();
 
-  $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
+  $smt = $con -> prepare("SELECT REQ_STATUS, REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,ALN_CPF,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
   $smt -> bindParam(1, $protocolo);
   $smt -> execute();
   $req = $smt ->fetch();
 
-  $stmt = $con -> prepare("SELECT ALN_CPF,ALN_NOME,ALN_MATRICULA FROM ALUNO WHERE ALN_EMAIL = ?");
-  $stmt -> bindParam(1, $email);
+  $stmt = $con -> prepare("SELECT ALN_CPF,ALN_NOME,ALN_MATRICULA FROM ALUNO WHERE ALN_CPF = ?");
+  $stmt -> bindParam(1, $req["ALN_CPF"]);
   $stmt -> execute();
   $aln = $stmt ->fetch();
 
@@ -52,7 +53,7 @@ try{
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/status.css">
+  <link rel="stylesheet"   href="css/status.css">
   <link rel="stylesheet" href="css/statusfc.css">
   <script src="js/jquery-3.4.0.min.js"></script>
 	<title>Edição</title>

@@ -50,7 +50,7 @@ if($usuario == "aluno"){
         $smt->bindParam(1, $aln->getMatricula());
         $smt->bindParam(2, $aln->getNome());
         $smt->bindParam(3, $aln->getEmail());
-        $smt->bindParam(4, $aln->getDt_Nascimento());
+        $smt->bindParam(4, date("Y-m-d H:i:s",$aln->getDt_Nascimento()));
         $smt->bindParam(5, $aln->getPW());
         $smt->bindParam(6, $aln->getCPF());
         $smt->execute();

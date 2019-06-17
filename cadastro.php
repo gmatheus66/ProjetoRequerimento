@@ -8,14 +8,14 @@
           <!--Navbar-->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
-              <a class="navbar-brand" href="#"><strong>e-REQ</strong></a>
+              <a class="navbar-brand" href="index.php"><strong>e-REQ</strong></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Início<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Início<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
                     <a class="nav-link" href="cadastro.php">Cadastro</a>
@@ -41,10 +41,10 @@
                 <!--Grid row-->
                 <div class="row mt-5">
                   <!--Grid column-->
-                  <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left"">
-                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s" style="margin-top: 15%; margin-bottom: 15%;">Cadastre-se agora.</h1>
+                  <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
+                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft txtCadastro" data-wow-delay="0.3s" style="margin-top: 15%; margin-bottom: 15%;">Cadastre-se agora.</h1>
                     <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" style="text-shadow: ">
-                    <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s" >Tenha mais praticidade na hora de pedir seu requerimento, com nossa plataforma online você poupa o tempo que levaria preenchendo a papelada, além disso vocẽ pode acompanhar o status do mesmo na nossa plataforma, mais agilidade na hora de pedir seu requerimento tudo isso no conforto da sua casa, e na tela do seu smartphone ou computador.</h6>
+                    <h6 class="mb-3 wow fadeInLeft txtCadastro" data-wow-delay="0.3s" >Tenha mais praticidade na hora de pedir seu requerimento, com nossa plataforma online você poupa o tempo que levaria preenchendo a papelada, além disso vocẽ pode acompanhar o status do mesmo na nossa plataforma, mais agilidade na hora de pedir seu requerimento tudo isso no conforto da sua casa, e na tela do seu smartphone ou computador.</h6>
                     <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s"></a>
                   </div>
                   <!--Grid column-->

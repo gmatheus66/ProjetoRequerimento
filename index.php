@@ -19,7 +19,7 @@ $usuario = $_SESSION['usuario'];
               <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Início<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Início<span class="sr-only">(current)</span></a>
                   </li>
                     <?php if (!logado()): ?>
                   <li class="nav-item">
@@ -48,7 +48,7 @@ $usuario = $_SESSION['usuario'];
           </nav>
           <!-- Navbar -->
           <!-- Full Page Intro -->
-          <div class="view" style="background-image: url('imagens/bg2.jpg'); background-repeat: no-repeat;  background-position: center center; max-width: 100%;height: 800px;">
+          <div class="view" style="background-image: url('imagens/bg2.jpg'); background-repeat: no-repeat;  background-position: center center; width: 100%;height: 1000px;">
             <!-- Mask & flexbox options-->
             <div class="mask rgba-black-light align-items-center">
               <!-- Content -->

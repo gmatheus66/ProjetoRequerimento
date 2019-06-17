@@ -8,23 +8,25 @@ include "phpBD/conect.php";
 if(!logado()){
     redirect("login.php");
 }
-if ($motivo == null || $observacao == null || $subtopico == null || $topico == null){
-    redirect("requerimento.php");
-}
-if ($motivo == " " || $observacao == " " || $subtopico == " " || $topico == " "){
-    redirect("requerimento.php");
-}
 
 $motivo = $_POST['motivo']?? " ";
 $observacao =$_POST['observacao']?? " ";
 $subtopico = $_POST['subtopico']?? " ";
 $topico = $_POST['topico']?? " ";
 $alunoemail = $_SESSION['email'];
-//$alunoemail = "vjhg@bol.com";
+//$alunoemail = "toinho157@gmail.com";
 $pasta = 'upload/';
- echo $topico;
- echo $subtopico;
+//echo $topico;
+//echo $subtopico;
+//echo $motivo;
 //var_dump($_FILES['anexo']);
+
+if ($motivo == null || $observacao == null || $subtopico == null || $topico == null){
+    redirect("requerimento.php");
+}
+if ($motivo == " " || $observacao == " " || $subtopico == " " || $topico == " "){
+    redirect("requerimento.php");
+}
 
 if(isset($_FILES['anexo'])){
     $perm_ext = ["png" , "jpeg", "jpg", "pdf"];
@@ -48,6 +50,7 @@ if(isset($_FILES['anexo'])){
             echo "nao subiu nada";
         }
     }
+
 }
 
 
@@ -59,25 +62,36 @@ $id->setMotivo($motivo);
 $id->setObservacao($observacao);
 $id->setAnexo("Oh shit, Oh no");
 //$id->setEmail($alunoemail);
-print_r($id ->getTopico());
-print_r($id->getSubtopico());
+//print_r($id ->getTopico());
+//var_dump(trim($id->getSubtopico()));
 
 
 try {
 
-    $smt = $con -> prepare("SELECT SUBTP_ID FROM heroku_70137967cfc9460.subtipo WHERE SUBTP_DESCRICAO = ?;");
-    $smt ->bindParam(1,$id->getSubtopico());
+    $smt = $con -> prepare("SELECT * FROM SUBTIPO WHERE SUBTP_DESCRICAO = ?;");
+    $smt -> bindParam(1, $id->getSubtopico());
     $smt -> execute();
     $sub = $smt ->fetch();
-    //var_dump($sub);
-    var_dump($sub["SUBTP_ID"]);
     $id->setSubTopico_id($sub["SUBTP_ID"]);
+    //var_dump($sub);
+    /*
+    foreach ( $sub as $id => $suba){
 
-    $sm = $con -> prepare("SELECT ALN_CPF FROM heroku_70137967cfc9460.ALUNO WHERE ALN_EMAIL = ?;");
+        if($suba[1] === $subtopico ){
+            echo "weeeee";
+            $id->setSubTopico_id($suba["SUBTP_ID"]);
+            var_dump($suba["SUBTP_DESCRICAO"]);
+
+        }
+    }*/
+    //var_dump($sub);
+    //print_r($id->getSubtopico());
+
+    $sm = $con -> prepare("SELECT ALN_CPF FROM ALUNO WHERE ALN_EMAIL = ?;");
     $sm ->bindParam(1,$alunoemail);
     $sm -> execute();
     $res = $sm ->fetch();
-    //var_dump($res["ALN_CPF"]);
+    //var_dump($res);
 
 
     //print_r($res[0][0]);

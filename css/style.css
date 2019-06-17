@@ -96,14 +96,6 @@ visibility: visible;
 -webkit-transform: scaleX(1);
 transform: scaleX(1);
 }
-
-.txtCadastro {
-    color: #fff;
-    letter-spacing: .1em;
-    text-shadow: .1em .1em .1em rgba(0, 0, 0, 50);
-    font-size: 25px;
-  }
-
   .containerr {
         margin-top: 15%;
         display: flex;
@@ -112,12 +104,6 @@ transform: scaleX(1);
          align-items: center;
          border-radius: 10%;
      }
-   .link-login{
-    color: #1c96ad;
-   }
-   .link-login:hover{
-    color: #137082;
-   }
    body{
     background-color: #8BC84C;
    }

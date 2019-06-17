@@ -1,5 +1,6 @@
 <?php 
 include "phpBD/conect.php";
+include "phpBD/func.php";
 include  "init.php";
 
 $email = $_SESSION['email'];
@@ -35,14 +36,6 @@ try{
     $stat_hist;
 
 */
-    if ($historico["HTS_ID_SIT_NOVA"] == 0){
-        $stat_hist = "ABERTO";
-    }else if($historico["HTS_ID_SIT_NOVA"] == 1){
-        $stat_hist = "FECHADO";
-    }else{
-        $stat_hist = "ANÁLISE";
-    }
-
 
 }catch(Exception $ex){
 
@@ -104,10 +97,22 @@ try{
           <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
       </div>
       <div class="card-footer">
-          <small class="text-muted"><?= $row["REQ_STATUS"]?></small>
-          <small class="text-muted"><?= $row["REQ_DT_ABERTURA"]?></small>
-          <small class="text-muted">Situação anterior: <?= $stat_hist["HTS_ID_SIT_ANTERIOR"]?></small>
-          <small class="text-muted">Situação nova:<?= $stat_hist["HTS_ID_SIT_NOVO"]?></small>
+        <?php
+
+        if ($historico["HTS_ID_SIT_NOVA"] == 0){
+            $stat_hist = "ABERTO";
+        }else if($historico["HTS_ID_SIT_NOVA"] == 1){
+            $stat_hist = "FECHADO";
+        }else{
+            $stat_hist = "ANÁLISE";
+        }
+        ?>
+        <small class="text-muted"><?= $row["REQ_STATUS"]?></small>
+        <small class="text-muted"><?= $row["REQ_DT_ABERTURA"]?></small>
+        <?php if(req_exists($aln["ALN_CPF"], $row["REQ_PROTOCOLO"])):?>
+            <small class="text-muted">Situação anterior: <?= $stat_hist?></small>
+            <small class="text-muted">Situação nova:<?= $stat_hist?></small>
+        <?php endif;?>
       </div>
   </div>
 <?php endforeach;?>

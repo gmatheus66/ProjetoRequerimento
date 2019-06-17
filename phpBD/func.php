@@ -86,4 +86,40 @@ function email_exists($email, $usuario){
 
 }
 
+function req_exists($cpf_aln, $protocolo){
+    $verify;
+
+    try{
+        global $con;
+        $oson = $con -> prepare("SELECT ALN_CPF FROM ALUNO WHERE ALN_CPF = ?;");
+        $oson -> bindParam(1, $cpf_aln);
+        $oson -> execute();
+        $oqfm = $oson -> fecth();
+
+        if ($oqfm["ALN_CPF"] != null) {
+            $verify = true;
+        }else{
+            $verify = false; 
+        }
+    }catch(Exception $ex){
+        return false;
+    }
+
+
+    if ($verify == true){
+        try {
+            global $con;
+            $stmt = $con->prepare("SELECT REQ_PROTOCOLO FROM HISTORICO_SITUACAO WHERE REQ_PROTOCOLO = ?");
+            $stmt->bindParam(1, $protocolo);
+            $stmt->execute();
+            $aln = $stmt->fetch();
+        }catch (Exception $ex){
+            return false;
+        }
+        if ($aln["REQ_PROTOCOLO"] != null){
+            return true;
+        }
+        return false;
+    }
+}
 ?>

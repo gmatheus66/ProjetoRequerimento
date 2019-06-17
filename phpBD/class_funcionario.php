@@ -28,7 +28,7 @@ class FUNCIONARIO {
     }
   
     public function setNome($nome) {
-        $this->name = strtolower($nome);
+        $this->name = $nome;
     }
     public function getCargo() {
         return $this->cargo;

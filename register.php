@@ -20,20 +20,20 @@ if($usuario == "aluno"){
     $pw2 = $_POST['pw2']?? " ";
 
     if ($pw != $pw2) {
-        //redirect('cadastro.php?mr=Senhas não conferem');
-        echo "senha diferente";
+        redirect('cadastro.php?mr=Senhas não conferem');
+        //echo "senha diferente";
     }
     if ($pw == '' || $pw2 == " " || $pw2 =='' || $pw2 == null || $pw == null ) {
-        //redirect('cadastro.php?mr=Senha não pode estar em branco ou nulo');
-        echo "senhas nulas ou vazias";
+        redirect('cadastro.php?mr=Senha não pode estar em branco ou nulo');
+        //echo "senhas nulas ou vazias";
     }
-    if ($matricula == null || $nome == null || $email == null  || $dt_nsc == null|| $cpf == null) {
-        //redirect('cadastro.php?mr=Senha não pode estar em branco ou nulo');
-        echo "campos vazios";
+    if ($matricula == null || $name == null || $email == null  || $dt_nsc == null|| $cpf == null) {
+        redirect('cadastro.php?mr=Senha não pode estar em branco ou nulo');
+        //echo "campos vazios";
     }
     if (email_exists($email,$usuario)) {
-        //redirect('cadastro.php?mr=E-mail já registrado');
-        echo "email ja existe";
+        redirect('cadastro.php?mr=E-mail já registrado');
+        //echo "email ja existe";
     }
 
     $aln  = new ALUNO();
@@ -50,7 +50,7 @@ if($usuario == "aluno"){
         $smt->bindParam(1, $aln->getMatricula());
         $smt->bindParam(2, $aln->getNome());
         $smt->bindParam(3, $aln->getEmail());
-        $smt->bindParam(4, date("Y-m-d H:i:s",$aln->getDt_Nascimento()));
+        $smt->bindParam(4, date("Y-m-d",$aln->getDt_Nascimento()));
         $smt->bindParam(5, $aln->getPW());
         $smt->bindParam(6, $aln->getCPF());
         $smt->execute();
@@ -72,36 +72,37 @@ else if ($usuario == "funcionario"){
     $rg = $_POST['rg']?? " ";
     $rg_orgao = $_POST['rg_orgao']?? " ";
     $rg_estado = $_POST['rg_estado']?? " ";
-    var_dump($matricula);
-    var_dump($name);
-    var_dump($email);
-    var_dump($tel,$cpf,$cargo,$pw);
-    var_dump($pw2, $rg,$rg_orgao,$rg_estado);
+
+    //var_dump($matricula);
+    //var_dump($name);
+    //var_dump($email);
+    //var_dump($tel,$cpf,$cargo,$pw);
+    //var_dump($pw2, $rg,$rg_orgao,$rg_estado);
 
 
     if ($pw != $pw2) {
-        //redirect('cadastro.php?mr=Senhas não conferem');
-        echo "senha diferente";
+        redirect('cadastro.php?mr=Senhas não conferem');
+        //echo "senha diferente";
     }
     if ($pw == '' || $pw2 == " " || $pw2 =='' || $pw == " " || $pw2 == null || $pw == null ) {
-        //redirect('cadastro.php?mr=Senha não pode estar em branco ou nulo');
-        echo "senhas vazias ou nulas";
+        redirect('cadastro.php?mr=Senha não pode estar em branco ou nulo');
+        //echo "senhas vazias ou nulas";
     }
-    if ($matricula == null || $nome == null || $email == null  || $rg == null || $rg_estado == null  || $rg_orgao == null || $cargo == null || $cpf == null) {
-        //redirect('cadastro.php?mr=Senha não pode estar em branco ou nulo');
-        echo "campos nulos";
+    if ($matricula == null || $name == null || $email == null  || $rg == null || $rg_estado == null  || $rg_orgao == null || $cargo == null || $cpf == null) {
+        redirect('cadastro.php?mr=Senha não pode estar em branco ou nulo');
+        //echo "campos nulos";
     }
 
     if (email_exists($email,$usuario)) {
-        //redirect('cadastro.php?mr=E-mail já registrado');
-        echo "email ja existe";
+        redirect('cadastro.php?mr=E-mail já registrado');
+        //echo "email ja existe";
     }
 
 
     $fnc = new FUNCIONARIO();
 
-    $fnc->setCPF($cpf);
     $fnc->setNome($name);
+    $fnc->setCPF($cpf);
     $fnc->setCargo($cargo);
     $fnc->setEmail($email);
     $fnc->setRG_Numero ($rg);
@@ -110,11 +111,12 @@ else if ($usuario == "funcionario"){
     $fnc->setTelefone($tel);
     $fnc->setPW($matricula);
     $fnc->setMatricula($matricula);
-
+    var_dump($name);
+    var_dump($fnc->getNome());
     try {
-        $stmt = $con->prepare("INSERT INTO FUNCIONARIO (FNC_CPF,FNC_NOME,FNC_CARGO,FNC_EMAIL,FNC_RG_NUMERO,FNC_ESTADO,FNC_ORGAO_EXP,FNC_TELEFONE,FNC_PW,FNC_MATRICULA) VALUES(?,?,?,?,?,?,?,?,?,?,?);");
+        $stmt = $con->prepare("INSERT INTO FUNCIONARIO (FNC_CPF,FNC_NOME,FNC_CARGO,FNC_EMAIL,FNC_RG_NUMERO,FNC_RG_ESTADO,FNC_RG_ORGAO_EXP,FNC_TELEFONE,FNC_SENHA,FNC_MATRICULA) VALUES(?,?,?,?,?,?,?,?,?,?);");
         $stmt->bindParam(1, $fnc->getCPF());
-        $stmt->bindParam(2, $fnc->getNome());
+        $stmt->bindParam(2, $name);
         $stmt->bindParam(3, $fnc->getCargo());
         $stmt->bindParam(4, $fnc->getEmail());
         $stmt->bindParam(5, $fnc->getRG_numero());
@@ -133,8 +135,8 @@ else if ($usuario == "funcionario"){
 
 }
 else{
-    //redirect('index.php');
+    redirect('index.php');
 }
 
-//redirect('index.php?mr=Usuário cadastrado com sucesso');
+redirect('index.php?mr=Usuário cadastrado com sucesso');
 ?>

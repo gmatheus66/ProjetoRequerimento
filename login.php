@@ -61,7 +61,7 @@ if (logado()){
           <div class="view" style="background-image: url('imagens/bg-login.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
                 <div class="containerr">
                   <div class="box" style="opacity: 0.9;">
-                      <div>
+                      <div class="alert alert-dark" role="alert" style="position:absolute; top: 20%;right: 39%;">
                           <h3><?= $_GET['ml'] ?></h3>
                       </div>
             
@@ -128,9 +128,7 @@ if (logado()){
 
 <!-- <div>
 
-    <?php if ($_GET['ml'] ?? false !== false ): ?>
-        <span class="message"><?= $_GET['ml'] ?></span>
-    <?php endif ?>
+
 
 </div>
     

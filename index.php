@@ -30,7 +30,7 @@ $usuario = $_SESSION['usuario'];
           <div class="flex">
         <div class="text-center">
           <h2 class="card-title titleFuncionalidades">Vantagens</h2>
-          <hr style="width:30%;height:4px; border:none; color:#78ad41; background-color:#78ad41; margin-top: 40px; margin-bottom: 0px;"/>
+          <hr style="width:30%;height:4px; border:none; color:#000; background-color:#000; margin-top: 40px; margin-bottom: 0px;opacity: 0.5;"/>
         </div>
 
       </div>

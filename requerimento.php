@@ -6,8 +6,8 @@ include  "phpBD/conect.php";
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="css/requerimento.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/requerimento.css">
     <script src="js/jquery-3.4.0.min.js"></script>
   <title>Requerimento</title>
 </head>
@@ -15,10 +15,13 @@ include  "phpBD/conect.php";
 
 <header>
 <?php include 'nav.php' ?>
-<div class="view" style="background-image: url('imagens/bg2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-</header>
-
-  <div class="fieldset">
+<div class="view" style="background-image: url('imagens/bg-requerimento.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+<div class="fieldset containerr" >
+  <div class="flex">
+        <div class="text-center">
+          <h2 class="card-title title-req">Preencha os campos abaixo para solicitar o requerimento.</h2>
+          <hr style="width:30%;height:4px; border:none; color:#78ad41; background-color:#78ad41; margin-top: 40px; margin-bottom: 0px;"/>
+        </div>
     <form method="POST" action="catch_requerimento.php" enctype="multipart/form-data">
 
         <fieldset class="topico" >
@@ -42,25 +45,29 @@ include  "phpBD/conect.php";
 
 
 
-        <fieldset class="motivo">
+        <fieldset>
           <legend>Motivo:</legend>
           <textarea name="motivo" placeholder="Motivo" class="obs form-control motivo mot1" id="exampleFormControlTextarea1" rows="6" cols="50" maxlength="180"></textarea>
         </fieldset>
 
-        <fieldset class="obs obser">
+        <fieldset>
           <legend>Observação:</legend>
           <textarea name="observacao" placeholder="Observações" class="obs form-control observacao obs1" id="exampleFormControlTextarea1" rows="6" cols="50" maxlength="180"></textarea>
         </fieldset>
 
-        <fieldset class="anexo">
+        <fieldset class="bbb">
           <legend>Anexo:</legend>
-          <input type="file" class="btn btn-outline-warning" name="anexo"/>
+          <center><input type="file" class="btn btn-success" name="anexo"/></center>
         </fieldset>
 
-        <input type="submit" class="btn btn-outline-success btn-lg">
+        <center><input type="submit" class="btn btn-success subm"></center>
       </form>
 
   </div>
+</header>
+
+
+
   <script type="text/javascript">
 
         let mot = $('.mot1');
@@ -142,7 +149,6 @@ include  "phpBD/conect.php";
     });
 
   </script>
-
 
 </body>
 </html>

@@ -124,20 +124,13 @@ return cpf
         <!--Main Layout-->
 
         <script>
-
-
             let slc = $('#select');
             let show = $('#show');
-
             
             slc.on('click', function (evt) {
-
                 //console.log($(evt.target).val());
-
                 if($(evt.target).val() == "aluno"){
-
                     show.find('.md-form').remove().end();
-
                         $('#show').show(2000, function () {
                             $('<div class="md-form mat">\n' +
                                 ' <i class="fas fa-user prefix white-text active"></i>\n' +
@@ -174,17 +167,10 @@ return cpf
                             ' <label for="form14" class="active">Confirmação Senha</label>\n' +
                             ' <input type="password" name="pw2" id="form15" class="white-text form-control">\n' +
                             ' </div>').appendTo(show);
-
                         })
-
-
-
-
                     }
                     else if($(evt.target).val() == "funcionario"){
-
                         show.find('.md-form').remove().end();
-
                         $('#show').show(1000, function () {
                         })
                     $('<div class="md-form">\n' +
@@ -242,12 +228,10 @@ return cpf
                         ' <label for="form20" class="active">Confirmação Senha</label>\n' +
                         ' <input type="password"  name="pw2" id="form21" class="white-text form-control">\n' +
                         ' </div>').appendTo(show);
-
                     }
                     else{
                     show.find('.md-form').remove().end();
                     }
-
             })
  /*
             show.find('.mat').on('blur',function (evt) {

@@ -10,6 +10,24 @@ $usuario = $_SESSION['usuario'];
 <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="css/style.css">
+ <style>
+   .word{
+     opacity: 0;
+     transform: translateY(50px);
+     animation: shown 1s linear forwards;
+     animation-delay: 1.5s;
+   }
+   @keyframes shown{
+     0%{
+       opacity: 0;
+       transform: translateY(50px);
+     }
+     100%{
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+ </style>
     <body>
         <header>
           <?php include 'nav.php' ?>
@@ -18,7 +36,7 @@ $usuario = $_SESSION['usuario'];
               <div class="container">
                 <div class="row">
                   <div class="col-md-12 mb-4 white-text text-center">
-                    <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown titulo" data-wow-delay="0.3s"><strong>IFPE - Requerimentos Online</strong></h1>
+                    <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown titulo word" data-wow-delay="0.3s"><strong>IFPE - Requerimentos Online</strong></h1>
                   </div>
                 </div>
               </div>

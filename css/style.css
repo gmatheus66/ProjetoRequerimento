@@ -36,6 +36,9 @@ h5 {
   letter-spacing: 3px;
 }
 
+h2{
+  margin top:40px;
+}
 .hr-light {
   border-top: 3px solid #fff;
   width: 80px;
@@ -124,6 +127,7 @@ transform: scaleX(1);
    .titleFuncionalidades{
       font-family: 'Saira Semi Condensed', sans-serif;
       font-size: 50px;
+      margin: 50px;
    }
   .card-text{
     font-family: 'Nunito', sans-serif;
@@ -137,4 +141,6 @@ transform: scaleX(1);
   }
   .card-body{
     background-color: #fff;
+    /*margin top: 30px;*/
+
   }

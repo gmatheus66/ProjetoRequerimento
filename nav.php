@@ -3,24 +3,55 @@
 $usuario = $_SESSION['usuario'];
 
 ?>
-
+<style>
+  /*a.navbar-brand{
+    opacity: 0;
+    animation: mostrartoo 0.9s linear forwards;
+    animation-delay: 1.2s;
+  }
+  @keyframes mostrartoo{
+    0%{
+      opacity: 0;
+      transform: translateX(140px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }*/
+  a.ani{
+    opacity: 0;
+    /*transform: translateX(140px);*/
+    animation: mostrar 0.9s linear forwards;
+    animation-delay: 1s;
+  }
+@keyframes mostrar{
+  0%{
+    opacity: 0;
+    transform: translateX(140px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
-              <a class="navbar-brand" href="index.php"><strong>e-REQ</strong></a>
+              <a class="navbar-brand nav-link ani" href="index.php"><strong>e-REQ</strong></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Início<span class="sr-only"></span></a>
                   </li>
                     <?php if (!logado()): ?>
                   <li class="nav-item">
-                    <a class="nav-link" href="cadastro.php">Cadastro</a>
+                    <a class="nav-link ani" href="cadastro.php">Cadastro</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="login.php">Entrar</a>
+                    <a class="nav-link ani" href="login.php">Entrar</a>
                   </li>
                     <?php endif; ?>
                     <?php if ($usuario == "aluno"): ?>

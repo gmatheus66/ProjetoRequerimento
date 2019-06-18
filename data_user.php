@@ -9,7 +9,7 @@ $usuario = $_SESSION['usuario'];
 if ($usuario == "aluno") {
   try {
     $stmt = $con->prepare("SELECT ALN_NOME, ALN_EMAIL, ALN_MATRICULA, ALN_CPF FROM ALUNO WHERE ALN_EMAIL = ?;");
-    $stmt->bindParm(1, $email);
+    $stmt->bindParam(1, $email);
     $stmt->execute();
     $data = $stmt->fetch();
   } catch (Exception $ex) {
@@ -18,7 +18,7 @@ if ($usuario == "aluno") {
 
   try {
     $oson = $con->prepare("SELECT COUNT(REQ_PROTOCOLO) FROM REQUERIMENTO WHERE ALN_CPF = ?;");
-    $oson->bindParm(1, $data["ALN_CPF"]);
+    $oson->bindParam(1, $data["ALN_CPF"]);
     $oson->execute();
     $data_req = $oson->fetch();
   } catch (Exception $ex) {
@@ -27,7 +27,7 @@ if ($usuario == "aluno") {
 } elseif ($usuario == "funcionario") {
   try {
     $stm = $con->prepare("SELECT FNC_NOME, FNC_EMAIL, FNC_MATRICULA, FNC_TELEFONE, FNC_CARGO, FNC_CPF, FNC_RG_ORGAO_EXP, FNC_RG_ESTADO FROM FUNCIONARIO WHERE FNC_EMAIL = ?;");
-    $stm->bindParm(1, $email);
+    $stm->bindParam(1, $email);
     $stm->execute();
     $data = $stm->fetch();
   } catch (Exception $ex) {

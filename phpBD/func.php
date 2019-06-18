@@ -4,11 +4,11 @@ include "phpBD/conect.php";
 
 function select_anx($anx_id){
     global $con;
-    $smt = $con -> prepare("SELECT ANX_HREF FROM ANEXO  WHERE ANX_ID = ?");
+    $smt = $con -> prepare("SELECT ANX_HREF,ANX_ID FROM ANEXO  WHERE ANX_ID = ?");
     $smt -> bindParam(1,$anx_id);
     $smt -> execute();
     $anx = $smt -> fetch();
-    return $anx["ANX_HREF"];
+    return $anx;
 }
 
 function aluno_nome($email){
@@ -87,7 +87,7 @@ function email_exists($email, $usuario){
 }
 
 function req_exists($cpf_aln, $protocolo){
-    $verify;
+    $verify = false;
 
     try{
         global $con;
@@ -122,4 +122,27 @@ function req_exists($cpf_aln, $protocolo){
         return false;
     }
 }
+function req_historico($protocolo){
+    global $con;
+    try{
+        $smtt = $con->prepare("SELECT COUNT()  FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
+        $smtt -> bindParam(1, $protocolo);
+        $smtt->execute();
+        $func = $smtt -> fecthAll();
+        //var_dump($func);
+        if($func != 0){
+            return true;
+        }else{
+            return false;
+        }
+
+
+    }catch (Exception $ex){
+        return false;
+    }
+}
+
+
+
+
 ?>

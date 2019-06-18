@@ -6,24 +6,17 @@
 	<link rel="stylesheet" type="text/css" href="css/recuperar.css"/>
 </head>
 <body>
-<div class="topo">
-<img class="foto" src="imagens/logoifpe.png">
-<a class="a1">Recuperação de senha</a>
+<div class="view" style="background-image: url('imagens/recuperar.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
-</div>
 
-<br>
-<br>
-<a class="r1">Informe o login do usuário que deseja </a>
-<br>
-<a class= "r2">recuperar a senha</a>
+<a class="r1">Recuperar a Senha</a>
+
+<a class= "r1">Informe o login do usuário que deseja</a>
 
 
 	<form action="recuperar.php">
 	<div class="inpu">
 
-
-  <br>
 	<input type="text" placeholder="Login">
 	<br>
 	<button type="submit" class="buuton" onclick="alert('Enviado!') ">Enviar</button>

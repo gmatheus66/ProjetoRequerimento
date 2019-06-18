@@ -2,17 +2,21 @@
 include "phpBD/conect.php";
 include "init.php";
 include  "phpBD/func.php";
-include "init.php";
+
+
 
 $email = $_SESSION['email'];
-$status = $_POST['status.php'];
+$status = $_POST['status'];
 $obs = $_POST['obs'];
-$protocolo = $_GET['protocolo'];
+$protocolo = $_POST['protocolo'];
 
-$status_nome;
-$sit_ant;
+//var_dump($status);
+//var_dump($obs);
+var_dump($protocolo);
+
 
 try{
+
 	if($status == 0){
 		$status_nome = "ABERTO";
 	}else if($status == 1){
@@ -25,34 +29,35 @@ try{
 	$fnc -> bindParam(1, $email);
 	$fnc -> execute();
 	$fnc_email = $fnc -> fetch();
+	//var_dump($fnc_email['FNC_CPF']);
 	$cpf_func = $fnc_email['FNC_CFP'];
 
-	$hist_sit = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM HISTORICO_SITUACAO;");
-	$hist_sit -> execute();
-	$oson = $hist_sit -> fecth(); 
-	$sit_ant = $oson['HTS_ID_SIT_ANTERIOR']; 
+	if(req_historico($protocolo)) {
+        $hist_sit = $con->prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID FROM HISTORICO_SITUACAO;");
+        $hist_sit->execute();
+        $oson = $hist_sit->fecth();
+        //var_dump($oson);
+        $sit_ant = $oson['HTS_ID_SIT_ANTERIOR'];
+    }else{
+	    $sit_ant = 0;
+    }
 
-	$smtt = $con->prepare("SELECT REQ_STATUS, REQ_TIPO,REQ_MOTIVO,REQ_OBSERVACAO,ANX_ID,DATE_FORMAT(REQ_DT_ABERTURA,\"%d/%m/%Y\") AS DATA FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
-	$smtt -> bindParam(1, $protocolo); 
-	$smtt->execute();
-	$func = $smtt->fecth();
+    //var_dump($sit_ant);
 
-	$add_st = $con->prepare("UPDATE REQUERIMENTO SET REQ_STATUS = ? WHERE REQ_REQUERIMENTO = ?;");
+	$add_st = $con->prepare("UPDATE REQUERIMENTO SET REQ_STATUS = ? WHERE REQ_PROTOCOLO = ?;");
 	$add_st -> bindParam(1, $status_nome, PDO::PARAM_STR);
 	$add_st -> bindParam(2, $protocolo, PDO::PARAM_INT);
 	$add_st->execute();
 
-	$add_si = $con-> prepare("INSERT INTO HISTORICO_SITUACAO(HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, REQ_PROTOCOLO, FNC_CPF) VALUES(?, ?, ?, ?) WHERE REQ_REQUERIMENTO = ?;");
+	$add_si = $con-> prepare("INSERT INTO HISTORICO_SITUACAO(HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, REQ_PROTOCOLO, FNC_CPF) VALUES(?, ?, ?, ?);");
 	$add_si -> bindParam(1, $sit_ant, PDO::PARAM_INT);
 	$add_si -> bindParam(2, $status, PDO::PARAM_INT);
 	$add_si -> bindParam(3, $protocolo, PDO::PARAM_INT);
-	$add_si -> bindParam(4, $cpf_func, PDO::PARAM_STR);
-	$add_si -> bindParam(5, $protocolo, PDO::PARAM_INT);
+	$add_si -> bindParam(4, $fnc_email['FNC_CPF']);
 	$add_si->execute();
-	$teste = $add_si -> fecth();
 
 }catch(Exception $e){
-
+    print_r($e);
 }
-redirect("statusfc.php");
-?>
+redirect("statusfc.php");?>
+

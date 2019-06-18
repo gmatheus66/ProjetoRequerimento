@@ -2,14 +2,14 @@
 include "phpBD/conect.php";
 include "init.php";
 include  "phpBD/func.php";
+$protocolo = $_GET['protocolo'];
 $user = $_SESSION['usuario'];
 $email = $_SESSION['email'];
 
 if ($user == "aluno") {
-  redirect("index.html");
+    redirect("index.html");
 }
 
-$protocolo = $_GET['protocolo'];
 
 try{
   function hist(){
@@ -41,7 +41,8 @@ try{
     // $mat = $st -> fetch();
 
 }catch(Exception $e){
-	print("Você não é um Funcionario.");	
+	print("Você não é um Funcionario.");
+	print_r($ex);
 }
 
 
@@ -49,59 +50,71 @@ try{
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet"   href="css/status.css">
-  <link rel="stylesheet" href="css/statusfc.css">
-  <script src="js/jquery-3.4.0.min.js"></script>
-	<title>Edição</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css"  href="/css/status.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/func_edicao.css">
+    <script src="/js/jquery-3.4.0.min.js"></script>
+    <title>Edicao</title>
 </head>
 <body>
-   <div>
-    <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
-    <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
-  </div>
 
-  <div class="banner"> 
-    <img class="imgBanner" src="imagens/banner.png">  
-    <span><a href="index.php" class="aMenu" > HOME</a></span>
-    <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
-    <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
-  </div>
+<header>
+    <?php include 'nav.php' ?>
+    <div class="view" style="background-image: url('/imagens/bg2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
+</header>
+<body>
 
-
-  <div class="card">
+<div class="oson">
+  <div  class="card" style="margin: 0;">
       <h5 class="card-header"><?= $req["REQ_TIPO"]?></h5>
-      <div class="card-body" id="card">
-          <h5 class="card-title"><?= $req["REQ_MOTIVO"]?></h5>
-          <p class="card-text"><?= $req["REQ_OBSERVACAO"]?></p>
+      <div class="card wow fadeInRight" data-wow-delay="0.3s" style="opacity: 0.9;">
+          <div class="card-body" id="card">
+              <h5 class="card-title"> Motivo: <?= $req["REQ_MOTIVO"]?></h5>
+              <p class="card-text">Observação: <?= $req["REQ_OBSERVACAO"]?></p>
           <div id="mostrar">
-              <div class="card card-aln" style="width: 18rem;">
+              <div class="card card-aln" style="width: 64rem;">
                   <div class="card-body">
                       <h5 class="card-title">Aluno : <?= $aln["ALN_NOME"] ?></h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Matricula : <?= $aln["ALN_MATRICULA"] ?></h6>
-                      <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $req["REQ_DT_ABERTURA"] ?></h6>
+                      <h6 class="card-subtitle mb-2 text-muted white-text">Matricula : <?= $aln["ALN_MATRICULA"] ?></h6>
+                      <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $req["DATA"] ?></h6>
                       <h6 class="card-subtitle mb-2 text-muted">Status : <?= $req["REQ_STATUS"]?></h6>
-                  	  <h5 class="card-title">Alterar o Status do requerimento:</h5>
                       <?php if ($req["ANX_ID"]!= "Oh shit, Oh no"): ?>
-                        <a href="file://///<?= select_anx($req["ANX_ID"]); ?>" target="_blank" class="card-link">ANEXO</a>
+                          <a href="file:///upload\<?= select_anx($req["ANX_ID"])["ANX_ID"]; ?>" target="_blank" class="card-link">ANEXO</a>
                       <?php endif; ?>
-                      <form action="nova_situ.php/?protocolo=<?=$protocolo?>" method="POST">
-                      	  <input type="text" name="obs">
-                          <select name="status">
+                      <h5 class="card-title t1">Alterar o Status do requerimento:</h5>
+                      <form action="/nova_situ.php" method="POST">
+                          <input type="hidden" name="protocolo" value="<?= $protocolo ?>" />
+                          <div class="input-group mb-3">
+                              <input type="text" class="form-control " name="obs" placeholder="Observação" aria-label="Recipient's username" aria-describedby="button-addon2">
+                          </div>
+                          <select class="custom-select" id="inputGroupSelect01" name="status">
+                              <option selected>Escolha</option>
                               <option value="0">ABERTO</option>
-                              <option value="1">FECHADO</option>
                               <option value="2">ANÁLISE</option>
+                              <option value="1">FECHADO</option>
                           </select>
-                          <input type="submit">
+                          <input type="submit" class="btn btn-outline-success btn1">
                       </form>
                   </div>
               </div>
           </div>
           <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
+        </div>
+
       </div>
   </div>
+</div>
+
+   <script>
+       $(document).ready(function () {
+           $('#show').click(function () {
+               console.log("entrou");
+               $('#mostrar').fadeToggle("slow","linear");
+           })
+
+       })
+   </script>
 </body>
 </html>

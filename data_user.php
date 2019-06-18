@@ -34,9 +34,6 @@ if ($usuario == "aluno") {
     print($ex);
   }
 }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

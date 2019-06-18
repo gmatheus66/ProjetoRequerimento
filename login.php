@@ -86,10 +86,10 @@ if (logado()){
                                 <br>
                                 <br>
 
-                                 <a href="cadastro.php" class="link-login">Ainda não é cadastrado? Cadastre-se!</a>
+                                 <a href="cadastro.php" class="link-cadastro">Ainda não é cadastrado? Cadastre-se!</a>
                                 <br> 
 
-                                <a href="recuperar.php" class="link-login">Esqueceu a senha?</a>
+                                <a href="recuperar.php" class="link-recuperar">Esqueceu a senha?</a>
 
                         </div>
                         </div>

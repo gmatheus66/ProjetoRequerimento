@@ -8,6 +8,15 @@ $usuario = $_SESSION['usuario'];
 
 if ($usuario == "aluno") {
     try{
+      $oson = $con -> prepare("SELECT FNC_NOME, FNC_EMAIL, FNC_MATRICULA, FNC_TELEFONE FROM REQUERIMENTO WHERE FNC_EMAIL");
+      $oson -> bindParm(1, $email);
+      $oson -> execute();
+      $data = $oson -> fetch();
+    }catch(Exception $ex){
+      print($ex);
+    }
+
+    try{
         $stmt = $con -> prepare("SELECT ALN_NOME, ALN_EMAIL, ALN_MATRICULA FROM ALUNO WHERE ALN_EMAIL");
         $stmt -> bindParm(1, $email);
         $stmt -> execute();
@@ -15,8 +24,7 @@ if ($usuario == "aluno") {
     }catch(Exception $ex){
         print($ex);
     }
-}
-if ($usuario == "funcionario") {
+}elseif ($usuario == "funcionario") {
     try{
         $stm = $con -> prepare("SELECT FNC_NOME, FNC_EMAIL, FNC_MATRICULA, FNC_TELEFONE FROM FUNCIONARIO WHERE FNC_EMAIL");
         $stm -> bindParm(1, $email);
@@ -26,6 +34,9 @@ if ($usuario == "funcionario") {
         print($ex);
     }
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,26 +56,31 @@ if ($usuario == "funcionario") {
     <div class="card" style="margin-left: 10%; margin-right: 10%;">
       <?php if ($usuario == "aluno"): ?>
         <h5 class="card-header">Dados do <?=$usuario?> <?= $data["ALN_NOME"]?></h5>
+        <div class="card-body" id="card">
+            <h5 class="card-title"><?= $row["REQ_MOTIVO"]?></h5>
+            <div id="mostrar">
+                <h6 class="card-subtitle mb-2 text-muted">Nome do <?=$usuario?>: <?= $data["ALN_NOME"]?></h6>
+                <h6 class="card-subtitle mb-2 text-muted">Matrícula : <?= $data["ALN_MATRICULA"]?></h6>
+                <h6 class="card-subtitle mb-2 text-muted">Email : <?= $data["ALN_EMAIL"]?></h6>
+            </div>
+        </div>
       <?php else if (condition): ?>
         <h5 class="card-header">Dados do <?=$usuario?> <?= $data["FNC_NOME"]?></h5>
+        <div class="card-body" id="card">
+            <h5 class="card-title"><?= $row["REQ_MOTIVO"]?></h5>
+            <div id="mostrar">
+                <h6 class="card-subtitle mb-2 text-muted">Nome do <?=$usuario?>: <?= $data["FNC_NOME"]?></h6>
+                <h6 class="card-subtitle mb-2 text-muted">Matrícula : <?= $data["FNC_MATRICULA"]?></h6>
+                <h6 class="card-subtitle mb-2 text-muted">Email : <?= $data["FNC_EMAIL"]?></h6>
+            </div>
+        </div>
       <?php endif ?>    
-      <div class="card-body" id="card">
-          <h5 class="card-title"><?= $row["REQ_MOTIVO"]?></h5>
-          <p class="card-text"><?= $row["REQ_OBSERVACAO"]?></p>
-          <div id="mostrar">
-              <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $row["DATA"] ?></h6>
-              <h6 class="card-subtitle mb-2 text-muted">Status : <?= $row["REQ_STATUS"]?></h6>
-          </div>
-          <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted"><?= $row["REQ_STATUS"]?></small>
-        <small class="text-muted"><?= $row["REQ_DT_ABERTURA"]?></small>
-        <?php if(req_exists($aln["ALN_CPF"], $row["REQ_PROTOCOLO"])):?>
-            <small class="text-muted">Situação anterior: <?= $stat_hist?></small>
-            <small class="text-muted">Situação nova:<?= $stat_hist?></small>
-        <?php endif;?>
-      </div>
+      <?php if ($usuario == "aluno"): ?>
+        <div class="card-footer">
+          <small class="text-muted"><?= $row["REQ_STATUS"]?></small>
+          <small class="text-muted"><?= $row["REQ_DT_ABERTURA"]?></small>
+        </div>
+      <?php endif ?>
   </div>
 </body>
 </html>

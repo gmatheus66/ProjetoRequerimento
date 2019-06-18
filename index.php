@@ -12,37 +12,19 @@ $usuario = $_SESSION['usuario'];
  <link rel="stylesheet" href="css/style.css">
     <body>
         <header>
-          <!--Navbar-->
           <?php include 'nav.php' ?>
-          <!-- Navbar -->
-          <!-- Full Page Intro -->
           <div class="view" style="background-image: url('imagens/bg2.jpg'); background-repeat: no-repeat;  background-position: center center; width: 100%;height: 1000px;">
-            <!-- Mask & flexbox options-->
             <div class="mask rgba-black-light align-items-center">
-              <!-- Content -->
               <div class="container">
-                <!--Grid row-->
                 <div class="row">
-                  <!--Grid column-->
                   <div class="col-md-12 mb-4 white-text text-center">
                     <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown titulo" data-wow-delay="0.3s"><strong>IFPE - Requerimentos Online</strong></h1>
-<!--                     <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
-                    <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Photography & design</strong></h5>
-                    <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">portfolio</a>
-                    <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">About me</a> -->
                   </div>
-                  <!--Grid column-->
                 </div>
-                <!--Grid row-->
               </div>
-              <!-- Content -->
             </div>
-            <!-- Mask & flexbox options-->
           </div>
-          <!-- Full Page Intro -->
         </header>
-        <!-- Main navigation -->
-        <!--Main Layout-->
         <main>
 
           <div class="flex">
@@ -77,11 +59,8 @@ $usuario = $_SESSION['usuario'];
 </div>
   </div>
 </div>
-          </div> 
-              <!--Grid column-->
+</div> 
 
-        </main>
-        <!--Main Layout-->
-
-    </body>
+</main>
+</body>
 </html>

@@ -24,17 +24,23 @@ $usuario = $_SESSION['usuario'];
                   </li>
                     <?php endif; ?>
                     <?php if ($usuario == "aluno"): ?>
-                  <li class="nav-item">
-                    <a class="nav-link" href="requerimento.php">Requerimento</a>
-                  </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="status.php">Meus Requerimentos</a>
-                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="requerimento.php">Requerimento</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="status.php">Meus Requerimentos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Sair</a>
+                      </li>
 
                     <?php endif;?>
                     <?php if ($usuario == "funcionario"): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="statusfc.php">Requerimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Sair</a>
                     </li>
                     <?php endif; ?>
                 </ul>

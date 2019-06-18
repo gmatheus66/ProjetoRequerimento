@@ -82,7 +82,7 @@ if (logado()){
                                 <input type="password"name="pw" class="white-text form-control" placeholder="Senha" minlength="6" maxlength="10" pattern="[a-zA-Z0-9]+$">
                                 <br>
 
-                               <button  type="submit" value="Validar" onclick="ValidaCPF();" class="btn btn-info" style="width:50%;">Entrar</button>
+                               <button  type="submit" value="Validar" onclick="ValidaCPF();" class="btn btn-success" style="width:50%;">Entrar</button>
                                 <br>
                                 <br>
 

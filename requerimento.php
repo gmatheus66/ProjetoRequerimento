@@ -1,7 +1,8 @@
 <?php
+include 'init.php';
 include  "phpBD/conect.php";
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,18 +13,10 @@ include  "phpBD/conect.php";
 </head>
 <body>
 
-<div>
-  <a class="tilt" href="index.php"><img class="logoIF" src="imagens/logoIF.png"></a>
-  <span class="titleBanner"><a class="tilt" href="index.php"> Instituto Federal de Pernambuco</a></span>
-</div>
-<span class="titleBanner2">Requerimentos</span>
-<div class="banner"> 
-    <img class="imgBanner" src="imagens/banner.png">  
-    <span><a href="index.php" class="aMenu" > HOME</a></span>
-    <span><a href="cadastro.php" class="aMenu"> CADASTRO</a></span>
-    <span><a href="login.php" class="aMenu"> ENTRAR</a></span>
-    <span><a href="requerimento.php" class="aMenu"> REQUERIMENTO</a></span>
-</div>
+<header>
+<?php include 'nav.php' ?>
+<div class="view" style="background-image: url('imagens/bg2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+</header>
 
   <div class="fieldset">
     <form method="POST" action="catch_requerimento.php" enctype="multipart/form-data">
@@ -57,7 +50,6 @@ include  "phpBD/conect.php";
         <fieldset class="obs obser">
           <legend>Observação:</legend>
           <textarea name="observacao" placeholder="Observações" class="obs form-control observacao obs1" id="exampleFormControlTextarea1" rows="6" cols="50" maxlength="180"></textarea>
-          <!-- <input type="text" name="obs" placeholder="Observações" class="obs"> -->
         </fieldset>
 
         <fieldset class="anexo">
@@ -70,7 +62,6 @@ include  "phpBD/conect.php";
 
   </div>
   <script type="text/javascript">
-    //var matricula = document.getElementById('exampleFormControlSelect1').value('1');
 
         let mot = $('.mot1');
         let obs = $('.obs1');
@@ -99,39 +90,6 @@ include  "phpBD/conect.php";
         }
     });
 
-
-      function menu(){
-    /*
-      var item = document.getElementById('test').value;
-      if (item == "Matricula") {
-
-
-
-      document.getElementById('subtopico1').style.display = "block";
-      $('#subtopico2').remove();
-      document.getElementById('subtopico2').style.display = "none";
-      $('#subtopico3').remove();
-      document.getElementById('subtopico3').style.display = "none";
-
-      }else if (item == "Curso") {
-
-      document.getElementById('subtopico2').style.display = "block";
-      $('#subtopico1').remove();
-      document.getElementById('subtopico1').style.display = "none";
-      $('#subtopico3').remove();
-      document.getElementById('subtopico3').style.display = "none";
-
-      }else if (item == "Outros") {
-
-      document.getElementById('subtopico3').style.display = "block";
-      $('#subtopico2').remove();
-      document.getElementById('subtopico2').style.display = "none";
-      $('#subtopico1').remove();
-      document.getElementById('subtopico1').style.display = "none";
-      }
-      */
-
-    }
     $('#test').on('click', function(evt) {
         
         if ($(evt.target).val() == "Matricula"){

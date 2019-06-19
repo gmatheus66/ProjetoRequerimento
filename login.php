@@ -61,9 +61,12 @@ if (logado()){
           <div class="view" style="background-image: url('imagens/bg-login.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
                 <div class="containerr">
                   <div class="box" style="opacity: 0.9;">
-                      <div class="alert alert-dark" role="alert" style="display:none; position:absolute; top: 20%;right: 39%;">
+                      <?php if($_GET['ml']): ?>
+
+                      <div class="alert alert-dark" role="alert">
                           <h3><?= $_GET['ml'] ?></h3>
                       </div>
+                      <?php endif; ?>
             
                         <form action="auth.php" method="POST">
                     <div class="card wow fadeInRight" data-wow-delay="0.3s" style="border-radius: 7%;height: auto;padding: 20px;">

@@ -99,4 +99,7 @@ transform: scaleX(1);
     letter-spacing: .1em;
     text-shadow: .1em .1em .1em rgba(0, 0, 0, 50);
     font-size: 25px;
+    font-family: 'Bree Serif', serif;
+
+    font-weight: bold;
   }

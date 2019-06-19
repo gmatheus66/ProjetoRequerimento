@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
  <link rel="stylesheet"  type="text/css" href="css/cadastro.css">
  <script src="js/jquery-3.4.0.min.js"></script>
  <link href="js/validar.js">
@@ -49,7 +50,7 @@ return cpf
             <?php include 'nav.php' ?>
           <!-- Navbar -->
           <!-- Full Page Intro -->
-          <div class="view" style="background-image: url('imagens/bg1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+          <div class="view" style="background-image: url('imagens/bg-3.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
             <!-- Mask & flexbox options-->
 <div class="mask rgba-gradient align-items-center">
               <!-- Content -->

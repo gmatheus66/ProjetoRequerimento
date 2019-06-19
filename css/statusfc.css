@@ -1,81 +1,129 @@
-
-*{
-	margin: 0;
-
-}
-.teste{
-
-	width: 25%;
-	height: 200px;
-	border-radius: 2em;
-}
-.cd{
-	margin-left: 25%;
-	margin-right: 25%;
-}
-#mostrar{
-	display: none;
-	width: 2%;
-	margin: 4px;
-
-}
-.card{
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 5%;
-}
-.card-aln{
-	border: 0;
+html,
+body,
+header,
+.view {
+  height: 100%;
 }
 
-.img1{
-	position: absolute;
-	top: 0.5%;
-	left: 75%;
-}
-.flip-card {
-	margin-left: 70%;
-	margin-top: 1%;
-	background-color: transparent;
-	width: 200px;
-	height: 200px;
-	border: 0px solid #f1f1f1;
-	perspective: 1000px;
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
+  }
 }
 
-.flip-card-inner {
-	position: relative;
-	width: 85%;
-	height: 89%;
-	text-align: center;
-	transition: transform 0.8s;
-	transform-style: preserve-3d;
+.top-nav-collapse {
+  background-color: #78909c !important;
 }
 
-.flip-card:hover .flip-card-inner {
-	transform: rotateY(180deg);
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
 }
 
-.flip-card-front, .flip-card-back {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #78909c !important;
+  }
 }
 
-
-.flip-card-front {
-	color: black;
+h1 {
+  letter-spacing: 8px;
 }
 
-.flip-card-back {
-	background-color: white;
-	color: black;
-	transform: rotateY(180deg);
+h5 {
+  letter-spacing: 3px;
 }
-.img2{
-	width: 50px;
-	height: 50px;
-	margin-top: 65%;
-	margin-left: 35%;
+
+.hr-light {
+  border-top: 3px solid #fff;
+  width: 80px;
+}
+.titulo{
+  margin-top: 350px;
+  letter-spacing: 0px;
+  color: #fff;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+.view{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 105%;
+    background-image: url("../imagens/bg-status4.jpg");
+  background-repeat: repeat;
+}
+
+.nav-link{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.nav-link{
+position: relative;
+color: #fff;
+text-decoration: none;
+}
+.nav-link:hover {
+color: #fff;
+opacity: 1;
+}
+.nav-link:before {
+content: "";
+position: absolute;
+width: 100%;
+height: 3px;
+bottom: 0;
+left: 0;
+background-color: #fff;
+visibility: hidden;
+-webkit-transform: scaleX(0);
+transform: scaleX(0);
+-webkit-transition: all 0.3s ease-in-out 0s;
+transition: all 0.3s ease-in-out 0s;
+}
+.nav-link:hover:before {
+visibility: visible;
+-webkit-transform: scaleX(1);
+transform: scaleX(1);
+}
+body{
+    background-color: #e5e5e5;
+
+}
+
+.card-title ,.card-header{
+    color: #000;
+    font-family: 'Nunito', sans-serif; 
+    font-size: 22px;
+    opacity: 0.8;
+    color:#27a582;
+  }
+
+  .card-header{
+        font-weight: bold;
+  }
+  .card-text{
+    font-family: 'Nunito', sans-serif;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+  }
+
+.title-Req{
+  padding-bottom: 10%;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  font-size: 50px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }

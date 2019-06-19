@@ -19,6 +19,7 @@
 	
 
 	<script>
+		/*
 		 $email = isset($_POST["email"]) ? $_POST["email"] : "";
 
 

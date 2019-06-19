@@ -56,7 +56,6 @@ if ($usuario == "aluno") {
     <?php if ($usuario == "aluno") : ?>
       <h5 class="card-header">Dados do <?= $usuario ?> <?= $data["ALN_NOME"] ?></h5>
       <div class="card-body" id="card">
-        <h5 class="card-title"><?= $data["REQ_MOTIVO"] ?></h5>
         <div id="mostrar">
           <h6 class="card-subtitle mb-2 text-muted">Nome do <?= $usuario ?>: <?= $data["ALN_NOME"] ?></h6>
           <h6 class="card-subtitle mb-2 text-muted">Matrícula: <?= $data["ALN_MATRICULA"] ?></h6>
@@ -67,7 +66,6 @@ if ($usuario == "aluno") {
     <?php elseif ($usuario == "funcionario") : ?>
       <h5 class="card-header">Dados do <?= $usuario ?> <?= $data["FNC_NOME"] ?></h5>
       <div class="card-body" id="card">
-        <h5 class="card-title"><?= $data["REQ_MOTIVO"] ?></h5>
         <div id="mostrar">
           <h6 class="card-subtitle mb-2 text-muted">Nome do <?= $usuario ?>: <?= $data["FNC_NOME"] ?></h6>
           <h6 class="card-subtitle mb-2 text-muted">Matrícula: <?= $data["FNC_MATRICULA"] ?></h6>

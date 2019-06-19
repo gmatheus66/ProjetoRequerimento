@@ -71,8 +71,8 @@ try{
       <h5 class="card-header"><?= $req["REQ_TIPO"]?></h5>
       <div class="card wow fadeInRight" data-wow-delay="0.3s" style="opacity: 0.9;">
           <div class="card-body" id="card">
-              <h5 class="card-title"> Motivo: <?= $req["REQ_MOTIVO"]?></h5>
-              <p class="card-text">Observação: <?= $req["REQ_OBSERVACAO"]?></p>
+              <h5 class="card-text"> Motivo: <?= $req["REQ_MOTIVO"]?></h5>
+              <h5 class="card-text">Observação: <?= $req["REQ_OBSERVACAO"]?></h5>
           <div id="mostrar">
               <div class="card card-aln" style="width: 64rem;">
                   <div class="card-body">
@@ -95,26 +95,18 @@ try{
                               <option value="2">ANÁLISE</option>
                               <option value="1">FECHADO</option>
                           </select>
-                          <input type="submit" class="btn btn-outline-success btn1">
+                          <input type="submit" class="btn btn-outline-success btn1 btn-lg" >
                       </form>
                   </div>
               </div>
           </div>
-          <a href="#" class="btn btn-primary" id="show">VER MAIS</a>
+
         </div>
 
       </div>
   </div>
 </div>
 
-   <script>
-       $(document).ready(function () {
-           $('#show').click(function () {
-               console.log("entrou");
-               $('#mostrar').fadeToggle("slow","linear");
-           })
 
-       })
-   </script>
 </body>
 </html>

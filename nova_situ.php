@@ -2,7 +2,9 @@
 include "phpBD/conect.php";
 include "init.php";
 include  "phpBD/func.php";
-
+if (!logado()){
+	redirect('index.php');
+}
 
 
 $email = $_SESSION['email'];
@@ -49,15 +51,18 @@ try{
 	$add_st -> bindParam(2, $protocolo, PDO::PARAM_INT);
 	$add_st->execute();
 
-	$add_si = $con-> prepare("INSERT INTO HISTORICO_SITUACAO(HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, REQ_PROTOCOLO, FNC_CPF) VALUES(?, ?, ?, ?);");
+	$add_si = $con-> prepare("INSERT INTO HISTORICO_SITUACAO(HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, REQ_PROTOCOLO,FNC_CPF,HTS_OBSERVACAO) VALUES(?, ?, ?, ?, ?);");
 	$add_si -> bindParam(1, $sit_ant, PDO::PARAM_INT);
 	$add_si -> bindParam(2, $status, PDO::PARAM_INT);
 	$add_si -> bindParam(3, $protocolo, PDO::PARAM_INT);
-	$add_si -> bindParam(4, $fnc_email['FNC_CPF']);
+	//var_dump($fnc_email["FNC_CPF"]);
+	$add_si -> bindParam(4, $fnc_email["FNC_CPF"]);
+	$add_si -> bindParam(5,$obs);
 	$add_si->execute();
 
 }catch(Exception $e){
     print_r($e);
 }
-redirect("statusfc.php");?>
+redirect("statusfc.php");
+?>
 

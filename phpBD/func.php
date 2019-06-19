@@ -86,6 +86,8 @@ function email_exists($email, $usuario){
 
 }
 
+
+
 function req_exists($cpf_aln, $protocolo){
     $verify = false;
 
@@ -122,9 +124,29 @@ function req_exists($cpf_aln, $protocolo){
         return false;
     }
 }
+
+function historico($protocolo){
+    global $con;
+
+    try {
+        $smt = $con->prepare("SELECT HTS_ID_SIT_ANTERIOR,HTS_ID_SIT_NOVA,DATE_FORMAT(HTS_DATA_HORA,\"%d/%m/%Y\") AS DATA  FROM HISTORICO_SITUACAO WHERE REQ_PROTOCOLO = ?;");
+        $smt->bindParam(1, $protocolo);
+        $smt->execute();
+        $func = $smt->fecth();
+        //print_r($func);
+        return $func;
+    }catch (Exception $e){
+        print_r($e);
+        return false;
+    }
+
+
+}
+
 function req_historico($protocolo){
     global $con;
     try{
+
         $smtt = $con->prepare("SELECT COUNT()  FROM REQUERIMENTO WHERE REQ_PROTOCOLO = ?;");
         $smtt -> bindParam(1, $protocolo);
         $smtt->execute();

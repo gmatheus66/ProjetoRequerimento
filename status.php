@@ -25,18 +25,16 @@ try{
     $req = $smt ->fetchAll();
     $req = array_reverse($req);
     //var_dump($req);
-    // $user = $con -> prepare("SELECT ALN_NOME FROM ALUNO WHERE ");
+
+
 
 /*
+    $aln_situ = $con -> prepare("SELECT * FROM heroku_70137967cfc9460.HISTORICO_SITUACAO;");
 
-    $aln_situ = $con -> prepare("SELECT HTS_ID_SIT_ANTERIOR, HTS_ID_SIT_NOVA, HTS_ID, REQ_PROTOCOLO FROM heroku_70137967cfc9460.HISTORICO_SITUACAO WHERE REQ_PROTOCOLO = ?;");
-    $aln_situ = bindParam(1, $req["REQ_PROTOCOLO"]);
     $aln_situ = execute();
     $historico = $aln_situ -> fetch();
-    $stat_hist;
-
+    var_dump($historico);
 */
-
 }catch(Exception $ex){
 
 }
@@ -85,33 +83,29 @@ try{
 
 <?php foreach($req as $row): ?>
 
-  <div class="card" style="margin-left: 15%; margin-right: 15%;margin-bottom: 1%;border-color: #59e59d; border-width: 2px;">
-      <h5 class="card-header"><?= $row["REQ_TIPO"]?></h5>
-      <div class="card-body" id="card">
-          <h5 class="card-title"><?= $row["REQ_MOTIVO"]?></h5>
-          <p class="card-text"><?= $row["REQ_OBSERVACAO"]?></p>
-          <div id="mostrar">
-              <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $row["DATA"] ?></h6>
-              <h6 class="card-subtitle mb-2 text-muted">Status : <?= $row["REQ_STATUS"]?></h6>
-          </div>
-          <a href="#" class="btn btn-success" id="show" style="background-color: #27a582;">VER MAIS</a>
-      </div>
-      <div class="card-footer">
-        <?php
+    <div class="card" style="margin-left: 15%; margin-right: 15%;margin-bottom: 1%;border-color: #59e59d; border-width: 2px;">
+        <h5 class="card-header"><?= $row["REQ_TIPO"]?></h5>
+        <div class="card-body" id="card">
+            <h5 class="card-text">Motivo : <?= $row["REQ_MOTIVO"]?></h5>
+            <h5 class="card-text">Observação : <?= $row["REQ_OBSERVACAO"]?></h5>
+            <div id="mostrar">
+                <h6 class="card-subtitle mb-2 text-muted">Data de Abertura : <?= $row["DATA"] ?></h6>
+                <?php if ($row["ANX_ID"]!= "Oh shit, Oh no"): ?>
+                    <h6 class="card-subtitle mb-2 text-muted">Anexo : <a href="file://///<?= select_anx($row["ANX_ID"]); ?>" target="_blank" class="card-link">Link</a></h6>
+                <?php endif; ?>
 
-        if ($historico["HTS_ID_SIT_NOVA"] == 0){
-            $stat_hist = "ABERTO";
-        }else if($historico["HTS_ID_SIT_NOVA"] == 1){
-            $stat_hist = "FECHADO";
-        }else{
-            $stat_hist = "ANÁLISE";
-        }
-        ?>
-        <small class="text-muted"><?= $row["REQ_STATUS"]?></small>
-        <small class="text-muted"><?= $row["REQ_DT_ABERTURA"]?></small>
-        
-      </div>
-  </div>
+                    <!-- <h6 class="card-subtitle mb-2 text-muted">Situação Anterior : A espera da análise de um Funcionário</h6> -->
+
+            </div>
+           <!-- <a href="#" class="btn btn-success" id="show" style="background-color: #27a582;">VER MAIS</a> -->
+        </div>
+
+        <div class="card-footer">
+            <small class="text-muted">Status : <?= $row["REQ_STATUS"]?></small>
+
+
+        </div>
+    </div>
 <?php endforeach;?>
 </div>
 
@@ -121,13 +115,17 @@ try{
       //     box.innerText = 'Click';
            //box.style.width = "30%";
            //box.style.transition = "0.9s"
-
+/*
     $(document).ready(function () {
         $('#show').click(function () {
             $('#mostrar').fadeToggle("slow","linear");
         });
     });
+*/
 
+    $('.card-body a').on('click',function () {
+       $('.card-body #mostrar').fadeToggle("slow", "linear");
+    });
 </script>
 
 </body>

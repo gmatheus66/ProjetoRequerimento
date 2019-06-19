@@ -258,10 +258,13 @@ return cpf
 */
         </script>
 <script type="text/javascript">
+function get(id){
+  return document.getElementById(id);
+}
         var bool       = true;
-        function verif(){
-            var adm        = document.getElementById('adm');
-            var opt = document.getElementById('Cadastro').value;
+        function verif(){   //document.getElementById
+           var adm        = get('adm'); //document.getElementById
+           var opt = get('Cadastro').value;
             console.log(opt);
             if (opt == "adm") {
                 adm.className = "";

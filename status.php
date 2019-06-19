@@ -77,8 +77,8 @@ try{
 </div> -->
 
 <div class="containerr">
+<div class="view" style="background-image: url('imagens/bg-status2.jpg');background-repeat: no-repeat; background-size: cover;  height: 60%; padding-top: 10%;">
 
-<div class="view" style="background-image: url('imagens/bg1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;padding-top: 10%;">
   <div class="text-center" >
      <h3 class="title-Req">Meus Requerimentos</h3>
  </div>

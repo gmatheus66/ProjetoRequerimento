@@ -51,6 +51,8 @@ h5 {
   top: 0;
   width: 100%;
   height: 105%;
+    background-image: url("../imagens/bg-status4.jpg");
+  background-repeat: repeat;
 }
 
 .nav-link{
@@ -95,7 +97,8 @@ visibility: visible;
 transform: scaleX(1);
 }
 body{
-    background-color: #bfffc8;
+    background-color: #e5e5e5;
+
 }
 
 .containerr {

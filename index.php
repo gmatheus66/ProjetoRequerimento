@@ -31,7 +31,7 @@ $usuario = $_SESSION['usuario'];
     <body>
         <header>
           <?php include 'nav.php' ?>
-          <div class="view" style="background-image: url('imagens/bg2.jpg'); background-repeat: no-repeat;  background-position: center center; width: 100%;height: 1000px;">
+          <div class="view" style="background-image: url('imagens/bg2.jpg'); background-repeat: no-repeat;  background-position: center center; width: 100%;height: 100%;">
             <div class="mask rgba-black-light align-items-center">
               <div class="container">
                 <div class="row">

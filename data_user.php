@@ -9,7 +9,7 @@ $usuario = $_SESSION['usuario'];
 if ($usuario == "aluno") {
   try {
     $stmt = $con->prepare("SELECT ALN_NOME, ALN_EMAIL, ALN_MATRICULA, ALN_CPF FROM ALUNO WHERE ALN_EMAIL = ?;");
-    $stmt->bindParm(1, $email);
+    $stmt->bindParam(1, $email);
     $stmt->execute();
     $data = $stmt->fetch();
   } catch (Exception $ex) {
@@ -18,7 +18,7 @@ if ($usuario == "aluno") {
 
   try {
     $oson = $con->prepare("SELECT COUNT(REQ_PROTOCOLO) FROM REQUERIMENTO WHERE ALN_CPF = ?;");
-    $oson->bindParm(1, $data["ALN_CPF"]);
+    $oson->bindParam(1, $data["ALN_CPF"]);
     $oson->execute();
     $data_req = $oson->fetch();
   } catch (Exception $ex) {
@@ -27,7 +27,7 @@ if ($usuario == "aluno") {
 } elseif ($usuario == "funcionario") {
   try {
     $stm = $con->prepare("SELECT FNC_NOME, FNC_EMAIL, FNC_MATRICULA, FNC_TELEFONE, FNC_CARGO, FNC_CPF, FNC_RG_ORGAO_EXP, FNC_RG_ESTADO FROM FUNCIONARIO WHERE FNC_EMAIL = ?;");
-    $stm->bindParm(1, $email);
+    $stm->bindParam(1, $email);
     $stm->execute();
     $data = $stm->fetch();
   } catch (Exception $ex) {
@@ -56,7 +56,6 @@ if ($usuario == "aluno") {
     <?php if ($usuario == "aluno") : ?>
       <h5 class="card-header">Dados do <?= $usuario ?> <?= $data["ALN_NOME"] ?></h5>
       <div class="card-body" id="card">
-        <h5 class="card-title"><?= $data["REQ_MOTIVO"] ?></h5>
         <div id="mostrar">
           <h6 class="card-subtitle mb-2 text-muted">Nome do <?= $usuario ?>: <?= $data["ALN_NOME"] ?></h6>
           <h6 class="card-subtitle mb-2 text-muted">Matrícula: <?= $data["ALN_MATRICULA"] ?></h6>
@@ -67,7 +66,6 @@ if ($usuario == "aluno") {
     <?php elseif ($usuario == "funcionario") : ?>
       <h5 class="card-header">Dados do <?= $usuario ?> <?= $data["FNC_NOME"] ?></h5>
       <div class="card-body" id="card">
-        <h5 class="card-title"><?= $data["REQ_MOTIVO"] ?></h5>
         <div id="mostrar">
           <h6 class="card-subtitle mb-2 text-muted">Nome do <?= $usuario ?>: <?= $data["FNC_NOME"] ?></h6>
           <h6 class="card-subtitle mb-2 text-muted">Matrícula: <?= $data["FNC_MATRICULA"] ?></h6>

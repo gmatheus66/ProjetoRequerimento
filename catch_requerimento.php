@@ -91,7 +91,7 @@ try {
     $sm ->bindParam(1,$alunoemail);
     $sm -> execute();
     $res = $sm ->fetch();
-    //var_dump($res);
+    //var_dump($res["ALN_CPF"]);
 
 
     //print_r($res[0][0]);

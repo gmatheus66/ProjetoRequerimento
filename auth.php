@@ -8,10 +8,10 @@ $cpf = $_POST["cpf"]?? "";
 $pw = $_POST["pw"]?? "";
 
 if($cpf == null || $cpf == " "){
-    redirect('login.php/?ml=Senha ou Cpf estão incorretos');
+    redirect('login.php?ml=Senha ou Cpf estão incorretos');
 }
 if ($pw == null || $pw == " "){
-    redirect('login.php/?ml=Senha ou Cpf estão incorretos');
+    redirect('login.php?ml=Senha ou Cpf estão incorretos');
 }
 
 
@@ -30,7 +30,7 @@ if(aluno_nome_cpf($cpf) != null){
     }
     else{
         //echo"login errado aluno";
-        redirect('login.php/?ml=Senha ou Cpf estão incorretos');
+        redirect('login.php?ml=Senha ou Cpf estão incorretos');
     }
 }
 else if (func_nome_cpf($cpf) != null){
@@ -46,11 +46,11 @@ else if (func_nome_cpf($cpf) != null){
         //echo "logado funcionario";
     }else{
         //echo "login errado func";
-        redirect('login.php/?ml=Senha ou Cpf estão incorretos');
+        redirect('login.php?ml=Senha ou Cpf estão incorretos');
     }
 }
 else{
-    redirect('login.php/?ml=Senha ou Cpf estão incorretos');
+    redirect('login.php?ml=Senha ou Cpf estão incorretos');
 }
 
 ?>

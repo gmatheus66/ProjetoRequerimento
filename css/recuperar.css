@@ -113,7 +113,7 @@ transform: scaleX(1);
 
 .r1 {
    text-align:justify;
-   margin-left:32%;
+   margin-left:35%;
    color: black; text-shadow: white 0.2em 0.2em 0.3em ;s
    font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 3em;
@@ -121,7 +121,7 @@ transform: scaleX(1);
 }
 h1{
    text-align:center;
-   margin-left:-8%;
+   margin-left:-4%;
    color: black; text-shadow: white 0.3em 0.3em 0.4em;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
    font-size: 5em;
@@ -139,7 +139,7 @@ h1{
     display: inline-block;
     font-size: 20px;
     border-radius: 15%;
-    margin-left: 40%;
+    margin-left: 43%;
     margin-top: 5%;
 }
 
@@ -155,7 +155,7 @@ input{
 }
 input{
   
-  margin-left: 25%;
+  margin-left: 27%;
 }
 /*form 
 .form{

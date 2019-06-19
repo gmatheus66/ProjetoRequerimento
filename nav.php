@@ -4,35 +4,21 @@ $usuario = $_SESSION['usuario'];
 
 ?>
 <style>
-  /*a.navbar-brand{
-    opacity: 0;
-    animation: mostrartoo 0.9s linear forwards;
-    animation-delay: 1.2s;
-  }
-  @keyframes mostrartoo{
-    0%{
-      opacity: 0;
-      transform: translateX(140px);
-    }
-    100%{
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }*/
+
   a.ani{
     opacity: 0;
     /*transform: translateX(140px);*/
-    animation: mostrar 0.9s linear forwards;
-    animation-delay: 1s;
+    animation: mostrar 0.7s linear forwards;
+    animation-delay: 0.8s;
   }
 @keyframes mostrar{
   0%{
     opacity: 0;
-    transform: translateX(140px);
+    transform: translateY(40px);
   }
   100%{
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 </style>

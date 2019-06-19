@@ -74,7 +74,7 @@ if ($usuario == "aluno") {
           <h6 class="card-subtitle mb-2 text-muted">Cargo: <?= $data["FNC_CARGO"] ?></h6>
           <h6 class="card-subtitle mb-2 text-muted">CPF: <?= $data["FNC_CPF"] ?></h6>
           <h6 class="card-subtitle mb-2 text-muted">Orgão Expedidor: <?= $data["FNC_RG_ORGAO_EXP"] ?></h6>
-          <h6 class="card-subtitle mb-2 text-muted">RG: <?= $data["FNC_RG_ESTADO"] ?></h6>
+          <h6 class="card-subtitle mb-2 text-muted">Estado: <?= $data["FNC_RG_ESTADO"] ?></h6>
         </div>
       </div>
     <?php endif ?>

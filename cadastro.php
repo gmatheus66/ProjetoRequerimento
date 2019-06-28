@@ -135,17 +135,17 @@ return cpfValido
                             $('<div class="md-form mat">\n' +
                                 ' <i class="fas fa-user prefix white-text active"></i>\n' +
                                 ' <label for="form2" class="active">Matricula</label>\n' +
-                                ' <input type="text" name="matricula" id="form3" class="white-text form-control mtr">\n' +
+                                ' <input type="text" name="matricula" id="form3" class="white-text form-control mtr" maxlength="15">\n' +
                                 ' </div>\n' +
                                 ' <div class="md-form">\n' +
                                 ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                                 ' <label for="form4" class="active">Nome Completo</label>\n' +
-                                ' <input type="text" name="name" id="form5" class="white-text form-control">\n' +
+                                ' <input type="text" name="name" id="form5" class="white-text form-control" maxlength="50">\n' +
                                 ' </div>\n' +
                                 '<div class="md-form">\n' +
                                 '<i class="fas fa-lock prefix white-text active"></i>\n' +
                                 '<label for="form6">Email</label>\n' +
-                                '<input type="email" name="email" id="form7" class="white-text form-control">\n' +
+                                '<input type="email" name="email" id="form7" class="white-text form-control" maxlength="50">\n' +
                                 '</div>'+
                             ' <div class="md-form">\n' +
                             ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
@@ -160,12 +160,12 @@ return cpfValido
                             ' <div class="md-form">\n' +
                             ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                             ' <label for="form12" class="active">Senha</label>\n' +
-                            ' <input type="password" name="pw" id="form13" class="white-text form-control">\n' +
+                            ' <input type="password" name="pw" id="form13" class="white-text form-control" maxlength="8">\n' +
                             ' </div>' +
                             ' <div class="md-form">\n' +
                             ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                             ' <label for="form14" class="active">Confirmação Senha</label>\n' +
-                            ' <input type="password" name="pw2" id="form15" class="white-text form-control">\n' +
+                            ' <input type="password" name="pw2" id="form15" class="white-text form-control" maxlength="8">\n' +
                             ' </div>').appendTo(show);
                         })
                     }
@@ -176,42 +176,42 @@ return cpfValido
                     $('<div class="md-form">\n' +
                         ' <i class="fas fa-user prefix white-text active"></i>\n' +
                         ' <label for="form2" class="active">Matricula</label>\n' +
-                        ' <input type="text"  name="matricula" id="form3" class="white-text form-control">\n' +
+                        ' <input type="text"  name="matricula" id="form3" class="white-text form-control" maxlength="10">\n' +
                         ' </div>\n' +
                         ' <div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                         ' <label for="form4" class="active">Nome Completo</label>\n' +
-                        ' <input type="text" name="name" id="form5" class="white-text form-control">\n' +
+                        ' <input type="text" name="name" id="form5" class="white-text form-control" maxlength="45">\n' +
                         ' </div>\n' +
                         '<div class="md-form">\n' +
                         '<i class="fas fa-lock prefix white-text active"></i>\n' +
                         '<label for="form6">Email</label>\n' +
-                        '<input type="text" name="email" id="form7" class="white-text form-control">\n' +
+                        '<input type="text" name="email" id="form7" class="white-text form-control" maxlength="20">\n' +
                         '</div>'+
                         '<div class="md-form">\n' +
                         '<i class="fas fa-lock prefix white-text active"></i>\n' +
                         '<label for="form6">Cargo</label>\n' +
-                        '<input type="text" name="cargo" id="form7" class="white-text form-control">\n' +
+                        '<input type="text" name="cargo" id="form7" class="white-text form-control" maxlength="20">\n' +
                         '</div>'+
                         ' <div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                         ' <label for="form8" class="active">Telefone</label>\n' +
-                        ' <input type="text" name="telefone" id="form9" class="white-text form-control">\n' +
+                        ' <input type="text" name="telefone" id="form9" class="white-text form-control" maxlength="9">\n' +
                         ' </div>'+
                         '<div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                         ' <label for="form10" class="active">RG</label>\n' +
-                        ' <input type="text" name="rg" id="form11" class="white-text form-control">\n' +
+                        ' <input type="text" name="rg" id="form11" class="white-text form-control" maxlength="8">\n' +
                         ' </div>'+
                         '<div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                         ' <label for="form12" class="active">RG Orgao expeditor</label>\n' +
-                        ' <input type="text" name="rg_orgao" id="form13" class="white-text form-control">\n' +
+                        ' <input type="text" name="rg_orgao" id="form13" class="white-text form-control" maxlength="3">\n' +
                         ' </div>'+
                         '<div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                         ' <label for="form14" class="active">RG Estado</label>\n' +
-                        ' <input type="text" name="rg_estado" id="form15" class="white-text form-control">\n' +
+                        ' <input type="text" name="rg_estado" id="form15" class="white-text form-control" maxlength="2">\n' +
                         ' </div>'+
                         ' <div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
@@ -221,12 +221,12 @@ return cpfValido
                         ' <div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                         ' <label for="form18" class="active">Senha</label>\n' +
-                        ' <input type="password"  name="pw" id="form19" class="white-text form-control">\n' +
+                        ' <input type="password"  name="pw" id="form19" class="white-text form-control" maxlength="8">\n' +
                         ' </div>'+
                         ' <div class="md-form">\n' +
                         ' <i class="fas fa-envelope prefix white-text active"></i>\n' +
                         ' <label for="form20" class="active">Confirmação Senha</label>\n' +
-                        ' <input type="password"  name="pw2" id="form21" class="white-text form-control">\n' +
+                        ' <input type="password"  name="pw2" id="form21" class="white-text form-control" maxlength="8">\n' +
                         ' </div>').appendTo(show);
                     }
                     else{

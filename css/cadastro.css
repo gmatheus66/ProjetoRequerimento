@@ -103,3 +103,10 @@ transform: scaleX(1);
 
     font-weight: bold;
   }
+.msg_mr{
+  color:red;
+  letter-spacing: 0px;
+}
+body{
+  background-color: #000;
+}

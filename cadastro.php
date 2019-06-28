@@ -41,7 +41,7 @@ cpf=cpf.replace(/\D/g,"")
 cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
 cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
 cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
-return cpf
+return cpfValido
 }
     </script>
     <body>
@@ -50,18 +50,16 @@ return cpf
             <?php include 'nav.php' ?>
           <!-- Navbar -->
           <!-- Full Page Intro -->
-          <div class="view" style="background-image: url('imagens/bg-3.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+          <div class="view" style="background-image: url('imagens/bg-3.jpg'); background-repeat: repeat; background-size: cover;">
             <!-- Mask & flexbox options-->
-<div class="mask rgba-gradient align-items-center">
+            <div class="mask rgba-gradient align-items-center">
               <!-- Content -->
               <div class="container">
                 <!--Grid row-->
                 <div class="row mt-5">
-                    <div>
-                        <h5><?=$_GET["mr"] ?></h5>
-                    </div>
+                    
                   <!--Grid column-->
-                  <div class="col-md-6 mb-5 mt-md-0 mt-5 mt-0 white-text text-center text-md-left" ;>
+                  <div class="col-md-6 mb-5 mt-md-0 mt-5 mt-0 white-text text-center text-md-left">
                     <h1 class="h1-responsive font-weight-bold wow fadeInLeft txtCadastro" data-wow-delay="0.3s" style="margin-top: 25%; margin-bottom: 5%;font-size: 40px;">Cadastre-se agora.</h1>
                     <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" style="text-shadow: ">
                     <h6 class="mb-3 wow fadeInLeft txtCadastro" data-wow-delay="0.3s" >Tenha mais praticidade na hora de pedir seu requerimento, com nossa plataforma online você poupa o tempo que levaria preenchendo a papelada, além disso vocẽ pode acompanhar o status do mesmo na nossa plataforma, mais agilidade na hora de pedir seu requerimento tudo isso no conforto da sua casa, e na tela do seu smartphone ou computador.</h6>
@@ -78,6 +76,9 @@ return cpf
                         <div class="text-center" >
                           <h3 class="white-text">
                             <i class="fas fa-user white-text"></i> Cadastro</h3>
+                            <div>
+                        <h5 class="msg_mr"><?=$_GET["mr"] ?></h5>
+                    </div>
                           <hr class="hr-light">
 
                             <select name="usuario" id="select" class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
@@ -118,9 +119,7 @@ return cpf
               <!-- Content -->
             </div>
             <!-- Mask & flexbox options-->
-          </div>
-          <!-- Full Page Intro -->
-        </header>
+          
         <!-- Main navigation -->
         <!--Main Layout-->
 
@@ -273,5 +272,8 @@ function get(id){
             }
         }
     </script>
+    </div>
+          <!-- Full Page Intro -->
+        </header>
     </body>
 </html>

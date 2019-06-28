@@ -106,7 +106,7 @@ function mtr($alncpf){
                   </div>
               </div>
           </div>
-          <a href="#" class="btn btn-primary" id="show" style="background-color: #27a582; margin-top: 1%;">VER MAIS</a>
+          <!--<a href="#" class="btn btn-primary" id="show" style="background-color: #27a582; margin-top: 1%;">VER MAIS</a> -->
       </div>
 
          <a href="func_edicao.php/?protocolo=<?=$data["REQ_PROTOCOLO"]?>" class="btn btn-primary" style="background-color: #27a582;">EDITAR</a>
